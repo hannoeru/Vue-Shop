@@ -1,7 +1,11 @@
 <template>
-  <v-navigation-drawer v-model="drawer" app clipped>
+  <v-navigation-drawer
+    v-model="drawer"
+    app
+    clipped
+  >
     <v-list dense>
-      <v-list-item>
+      <v-list-item @click="$router.push({ path: '/admin/products' })">
         <v-list-item-action>
           <v-icon>fas fa-boxes</v-icon>
         </v-list-item-action>
@@ -29,7 +33,16 @@
   </v-navigation-drawer>
 </template>
 <script>
-export default {
-  props: ['drawer']
-}
+  export default {
+    computed: {
+      drawer: {
+        get() {
+          return this.$store.state.admin.drawer;
+        },
+        set(val) {
+          this.$store.commit("admin/updateDrawer", val);
+        }
+      }
+    }
+  };
 </script>

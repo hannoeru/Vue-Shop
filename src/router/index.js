@@ -1,11 +1,22 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Login from '../views/Login'
 import Dashboard from '../views/Admin/Dashboard.vue'
+import Products from '../views/Admin/Products.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '*',
+    redirect: 'Login'
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
   {
     path: '/',
     name: 'Home',
@@ -23,13 +34,19 @@ const routes = [
   {
     path: '/admin',
     name: 'Admin',
-    component: Dashboard
+    component: Dashboard,
+    children: [
+      {
+        path: 'products',
+        name: 'Products',
+        component: Products,
+        meta: { requiresAuth: true }
+      }
+    ]
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 

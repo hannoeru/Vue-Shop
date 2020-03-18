@@ -1,11 +1,13 @@
 <template>
   <div>
-    <NavigationDrawer :drawer="drawer" />
+    <NavigationDrawer />
     <AppBar />
     <v-content>
       <v-container fluid fill-height>
         <v-layout align-center justify-center>
-          <v-flex shrink> </v-flex>
+          <v-flex shrink>
+            <router-view></router-view>
+          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
@@ -23,9 +25,7 @@ export default {
     Footer
   },
   data() {
-    return {
-      drawer: null
-    }
+    return {}
   }
 }
 </script>

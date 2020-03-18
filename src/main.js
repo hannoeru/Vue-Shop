@@ -17,3 +17,16 @@ new Vue({
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    store.dispatch('login/checkLogin')
+    if (!store.state.login.isLogin) {
+      next({ path: '/login' })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
+})

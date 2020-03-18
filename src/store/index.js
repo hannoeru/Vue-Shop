@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 // Admin
-import adminProducts from './modules/Admin/products.js'
+import login from './modules/login'
+import admin from './modules/admin'
 
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  modules: { adminProducts },
+  modules: { login, admin },
   strict: debug
 })
