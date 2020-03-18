@@ -1,13 +1,13 @@
 <template>
-  <v-app id="inspire">
+  <div id="app">
     <router-view />
-  </v-app>
+  </div>
 </template>
 <script>
-  export default {
-    name: "App",
-    data: () => ({
-      //
-    })
-  };
+export default {
+  name: 'App',
+  data: () => ({
+    //
+  })
+}
 </script>

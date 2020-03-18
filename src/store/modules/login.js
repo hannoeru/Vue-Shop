@@ -1,6 +1,7 @@
 import axios from 'axios'
 import router from '../../router'
-axios.defaults.baseURL = process.env.VUE_APP_API_PATH
+axios.defaults.withCredentials = true
+const url = process.env.VUE_APP_API_PATH
 const state = {
   user: { username: '', password: '' },
   isLogin: false,
@@ -11,18 +12,21 @@ const getters = {}
 
 const actions = {
   async signin({ commit }) {
-    await axios.post('admin/signin', state.user).then(res => {
+    await axios.post(url + '/admin/signin', state.user).then(res => {
       console.log(res.data)
-      commit('saveLoginState', res.data.success)
+      commit('updateMessage', res.data.message)
       if (res.data.success) {
         commit('saveLoginState', true)
-        router.push('/admin')
+        commit('updateUsername', '')
+        commit('updatePassword', '')
+        router.push('/')
       }
     })
   },
   async signout({ commit }) {
-    await axios.post('logout').then(res => {
+    await axios.post(url + '/logout').then(res => {
       console.log(res.data)
+      commit('updateMessage', res.data.message)
       if (res.data.success) {
         commit('saveLoginState', false)
         router.push('/login')
@@ -44,6 +48,9 @@ const mutations = {
   },
   saveLoginState(state, message) {
     state.isLogin = message
+  },
+  updateMessage(state, message) {
+    state.message = message
   }
 }
 
