@@ -2,10 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login'
-import Dashboard from '../views/Admin/Dashboard.vue'
-import Products from '../views/Admin/Products.vue'
-import Orders from '../views/Admin/Orders.vue'
+import Dashboard from '../views/Admin/Dashboard'
+import Products from '../views/Admin/Products'
+import Orders from '../views/Admin/Orders'
 import Coupons from '../views/Admin/Coupons'
+import CustomerOrder from '../views/Front/CustomerOrder'
 
 Vue.use(VueRouter)
 
@@ -53,6 +54,18 @@ const routes = [
         path: 'coupons',
         name: 'Coupons',
         component: Coupons
+      }
+    ]
+  },
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: Dashboard,
+    children: [
+      {
+        path: 'customer_order',
+        name: 'Customer Order',
+        component: CustomerOrder
       }
     ]
   }

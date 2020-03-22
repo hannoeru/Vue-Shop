@@ -13,7 +13,7 @@
     >
       <q-card>
         <q-card-section class="row items-center">
-          <div class="q-ma-md">確定要刪除此商品？</div>
+          <div class="q-ma-md">確定要刪除此優惠卷？</div>
         </q-card-section>
 
         <q-card-actions align="right">
@@ -46,11 +46,11 @@
       };
     },
     computed: mapState("admin", {
-      loading: state => state.loadings.productDelete
+      loading: state => state.loadings.couponDelete
     }),
     methods: {
       async deleteProduct() {
-        await this.$store.dispatch("admin/deleteProduct", this.item);
+        await this.$store.dispatch("admin/deleteCoupon", this.item);
       }
     }
   };

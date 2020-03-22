@@ -1,18 +1,10 @@
 <template>
   <div>
     <q-btn
-      color="primary"
-      label="新增商品"
-      @click="init"
-      v-if="isNew"
-      :loading="loading == 'new'"
-    />
-    <q-btn
       flat
       color="primary"
       icon="fas fa-edit"
       @click="init"
-      v-else
       :loading="loading == item.id"
     />
     <q-dialog
@@ -23,7 +15,7 @@
     >
       <q-card style="width:80vw;max-width:700px">
         <q-card-section>
-          <div class="text-h6">{{isNew ? '新增商品' : '編輯商品'}}</div>
+          <div class="text-h6">修改訂單</div>
         </q-card-section>
         <q-card-section horizontal>
           <q-card-section class="col-4 q-pt-none">
@@ -32,7 +24,7 @@
                 <div>圖片網址</div>
                 <q-input
                   outlined
-                  v-model="tempProduct.imageUrl"
+                  v-model="tempOrder.imageUrl"
                   label="請輸入圖片網址"
                 />
                 <div>或 上傳圖片</div>
@@ -46,8 +38,8 @@
                   :loading="uploading"
                 />
                 <q-img
-                  v-if="tempProduct.imageUrl"
-                  :src="tempProduct.imageUrl"
+                  v-if="tempOrder.imageUrl"
+                  :src="tempOrder.imageUrl"
                   spinner-color="white"
                   class="rounded-borders"
                 />
@@ -60,7 +52,7 @@
               <div>標題</div>
               <q-input
                 outlined
-                v-model="tempProduct.title"
+                v-model="tempOrder.title"
                 label="請輸入標題"
                 :rules="rules"
               />
@@ -69,7 +61,7 @@
               <div>分類</div>
               <q-input
                 outlined
-                v-model="tempProduct.category"
+                v-model="tempOrder.category"
                 label="請輸入分類"
                 :rules="rules"
               />
@@ -78,7 +70,7 @@
               <div>單位</div>
               <q-input
                 outlined
-                v-model="tempProduct.unit"
+                v-model="tempOrder.unit"
                 label="請輸入單位"
                 :rules="rules"
               />
@@ -88,7 +80,7 @@
               <q-input
                 outlined
                 type="number"
-                v-model="tempProduct.origin_price"
+                v-model="tempOrder.origin_price"
                 label="請輸入原價"
                 prefix="$"
                 :rules="rules"
@@ -99,7 +91,7 @@
               <q-input
                 outlined
                 type="number"
-                v-model="tempProduct.price"
+                v-model="tempOrder.price"
                 label="請輸入售價"
                 prefix="$"
                 :rules="rules"
@@ -119,14 +111,14 @@
               <q-input
                 filled
                 type="textarea"
-                v-model="tempProduct.description"
+                v-model="tempOrder.description"
                 label="請輸入產品描述"
               />
               <div>說明內容</div>
               <q-input
                 filled
                 type="textarea"
-                v-model="tempProduct.content"
+                v-model="tempOrder.content"
                 label="請輸入說明內容"
               />
             </div>
@@ -143,9 +135,9 @@
           />
           <q-btn
             flat
-            :label="isNew ? '新增' : '更新'"
+            :label="修改"
             v-close-popup
-            @click="updateProduct"
+            @click="updateOrder"
           />
         </q-card-actions>
       </q-card>
@@ -159,7 +151,7 @@
     data() {
       return {
         persistent: false,
-        tempProduct: {},
+        tempOrder: {},
         file: null,
         rules: [val => !!val || "* 必填"]
       };
@@ -167,40 +159,39 @@
     computed: {
       isEnabled: {
         get() {
-          return this.tempProduct.is_enabled == 1 ? true : false;
+          return this.tempOrder.is_enabled == 1 ? true : false;
         },
         set(value) {
-          this.tempProduct.is_enabled = value ? 1 : 0;
+          this.tempOrder.is_enabled = value ? 1 : 0;
         }
       },
       ...mapState("admin", {
-        loading: state => state.loadings.productUpdate,
+        loading: state => state.loadings.orderUpdate,
         uploading: state => state.loadings.uploading
       })
     },
     methods: {
-      updateProduct() {
-        // this.$store.commit("admin/updateTempProduct", this.tempProduct);
-        this.$store.dispatch("admin/updateProduct", {
+      updateOrder() {
+        this.$store.dispatch("admin/updateOrder", {
           isNew: this.isNew,
-          product: this.tempProduct
+          product: this.tempOrder
         });
       },
       init() {
         this.persistent = true;
         if (this.isNew) {
-          this.tempProduct = {
+          this.tempOrder = {
             is_enabled: 0
           };
         } else {
-          this.tempProduct = { ...this.item };
+          this.tempOrder = { ...this.item };
         }
       }
     },
     watch: {
       file: async function() {
         const url = await this.$store.dispatch("admin/uploadFile", this.file);
-        await this.$set(this.tempProduct, "imageUrl", url);
+        await this.$set(this.tempOrder, "imageUrl", url);
       }
     }
   };

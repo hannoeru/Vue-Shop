@@ -1,10 +1,23 @@
 import axiosBase from 'axios'
 import { Notify } from 'quasar'
+import headers from '../headers'
 
 const axios = axiosBase.create({
   baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin`,
   withCredentials: true
 })
+
+const notify = function(data, isUpload = false) {
+  const message = isUpload
+    ? data.success
+      ? '上傳成功'
+      : '上傳失敗'
+    : data.message
+  Notify.create({
+    type: data.success ? 'positive' : 'negative',
+    message: message
+  })
+}
 
 const state = {
   products: [],
@@ -14,11 +27,13 @@ const state = {
   title: '後台管理',
   loadings: {
     products: false,
-    update: false,
-    delete: false,
+    productUpdate: null,
+    productDelete: null,
     uploading: false,
     orders: false,
-    coupons: false
+    coupons: false,
+    couponUpdate: null,
+    couponDelete: null
   },
   pagination: {
     products: {},
@@ -56,78 +71,17 @@ const state = {
       iconColor: 'warning',
       label: '優惠卷',
       separator: true,
-      link: '/admin/products'
+      link: '/admin/coupons'
+    },
+    {
+      icon: 'fas fa-shopping-bag',
+      iconColor: 'dark',
+      label: '模擬訂單',
+      separator: false,
+      link: '/customer_order'
     }
   ],
-  headers: {
-    products: [
-      {
-        name: 'start',
-        label: '分類',
-        align: 'left',
-        field: row => row.category,
-        format: val => `${val}`,
-        sortable: false
-      },
-      { name: 'title', label: '名稱', field: 'title' },
-      {
-        name: 'origin_price',
-        label: '原價',
-        align: 'right',
-        field: 'origin_price',
-        sortable: true
-      },
-      {
-        name: 'price',
-        label: '售價',
-        align: 'right',
-        field: 'price',
-        sortable: true
-      },
-      { name: 'is_enabled', label: '是否啟用', field: 'is_enabled' },
-      {
-        name: 'edit',
-        label: '編輯',
-        align: 'center',
-        field: 'edit',
-        style: 'width: 200px'
-      }
-    ],
-    orders: [
-      {
-        name: 'time',
-        label: '購買時間',
-        align: 'left',
-        field: 'create_at',
-        sortable: true
-      },
-      {
-        name: 'email',
-        label: 'Email',
-        align: 'left',
-        field: 'user'
-      },
-      {
-        name: 'item',
-        label: '購買款項',
-        align: 'left'
-      },
-      {
-        name: 'total',
-        label: '應付金額',
-        align: 'left',
-        field: 'total',
-        sortable: true
-      },
-      {
-        name: 'paid',
-        label: '是否付款',
-        align: 'left',
-        field: 'is_paid',
-        sortable: true
-      }
-    ]
-  }
+  headers: headers
 }
 
 const getters = {
@@ -144,17 +98,7 @@ const getters = {
     return newOrder
   }
 }
-const notify = function(data, isUpload = false) {
-  const message = isUpload
-    ? data.success
-      ? '上傳成功'
-      : '上傳失敗'
-    : data.message
-  Notify.create({
-    type: data.success ? 'positive' : 'negative',
-    message: message
-  })
-}
+
 const actions = {
   async getProducts({ commit }, page = 1) {
     commit('updateLoading', ['products', true])
@@ -176,9 +120,9 @@ const actions = {
       commit('updateLoading', ['orders', false])
     })
   },
-  async getCoupons({ commit }, page = 1) {
+  async getCoupons({ commit }) {
     commit('updateLoading', ['coupons', true])
-    await axios.get('coupons' + page).then(res => {
+    await axios.get('coupons').then(res => {
       if (res.data.success) {
         commit('updateCoupons', res.data.coupons)
       }
@@ -186,7 +130,7 @@ const actions = {
     })
   },
   async updateProduct({ dispatch, commit }, { isNew, product }) {
-    commit('updateLoading', ['update', isNew ? 'new' : product.id])
+    commit('updateLoading', ['productUpdate', isNew ? 'new' : product.id])
     const url = isNew ? 'product' : 'product/' + product.id
     const httpMethod = isNew ? 'post' : 'put'
     const data = { data: product }
@@ -195,18 +139,43 @@ const actions = {
       if (res.data.success) {
         dispatch('getProducts')
       }
-      commit('updateLoading', ['update', null])
+      commit('updateLoading', ['productUpdate', null])
+    })
+  },
+  async updateCoupon({ dispatch, commit }, { isNew, coupon }) {
+    commit('updateLoading', ['couponUpdate', isNew ? 'new' : coupon.id])
+    const url = isNew ? 'coupon' : 'coupon/' + coupon.id
+    const httpMethod = isNew ? 'post' : 'put'
+    const data = { data: coupon }
+    await axios[httpMethod](url, data).then(res => {
+      notify(res.data)
+      console.log(coupon)
+      if (res.data.success) {
+        dispatch('getCoupons')
+      }
+      commit('updateLoading', ['couponUpdate', null])
     })
   },
   async deleteProduct({ dispatch, commit }, product) {
-    commit('updateLoading', ['delete', product.id])
+    commit('updateLoading', ['productDelete', product.id])
     let url = 'product/' + product.id
     await axios.delete(url).then(res => {
       notify(res.data)
       if (res.data.success) {
         dispatch('getProducts')
       }
-      commit('updateLoading', ['delete', null])
+      commit('updateLoading', ['productDelete', null])
+    })
+  },
+  async deleteCoupon({ dispatch, commit }, coupon) {
+    commit('updateLoading', ['couponDelete', coupon.id])
+    let url = 'coupon/' + coupon.id
+    await axios.delete(url).then(res => {
+      notify(res.data)
+      if (res.data.success) {
+        dispatch('getCoupons')
+      }
+      commit('updateLoading', ['couponDelete', null])
     })
   },
   async uploadFile({ commit }, file) {
@@ -238,6 +207,9 @@ const mutations = {
   },
   updateOrders(state, orders) {
     state.orders = orders
+  },
+  updateCoupons(state, coupons) {
+    state.coupons = coupons
   },
   updateLoading(state, [which, value]) {
     state.loadings[which] = value

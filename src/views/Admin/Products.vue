@@ -25,22 +25,11 @@
         </q-td>
       </template>
       <template v-slot:body-cell-is_enabled="props">
-        <q-td :props="props">
-          <q-icon
-            name="fas fa-check"
-            color="positive"
-            v-if="props.row.is_enabled == 1"
-          />
-          <q-icon
-            name="fas fa-times"
-            color="negative"
-            v-else
-          ></q-icon>
-        </q-td>
+        <isEnabled :props="props" />
       </template>
       <template v-slot:body-cell-edit="props">
         <q-td :props="props">
-          <div class="row justify-center q-gutter-xs">
+          <div class="row justify-center">
             <EditProduct
               :isNew="false"
               :item="props.row"
@@ -60,9 +49,10 @@
   import EditProduct from "@/components/Admin/EditProduct";
   import DeleteProduct from "@/components/Admin/DeleteProduct";
   import Pagination from "@/components/Admin/Pagination";
+  import isEnabled from "@/components/Admin/Table/isEnabled";
   import { mapState } from "vuex";
   export default {
-    components: { DeleteProduct, Pagination, EditProduct },
+    components: { DeleteProduct, Pagination, EditProduct, isEnabled },
     data() {
       return {};
     },

@@ -10,7 +10,7 @@
       :pagination="pagination"
     >
       <template v-slot:top>
-        <div class="text-h6">商品列表</div>
+        <div class="text-h6">訂單列表</div>
         <q-space />
       </template>
       <template v-slot:body-cell-time="props">
@@ -80,7 +80,7 @@
       ...mapState("admin", ["orders", "separator"]),
       ...mapState("admin", {
         loading: state => state.loadings.orders,
-        pagination: state => state.pagination.orders,
+        pagination: state => state.tablePage,
         headers: state => state.headers.orders
       })
     },
