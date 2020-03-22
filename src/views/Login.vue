@@ -7,7 +7,10 @@
             <div class="text-h6">Login</div>
           </q-card-section>
           <q-card-section class="q-pb-lg">
-            <q-form class="q-gutter-y-md column" @submit="signin">
+            <q-form
+              class="q-gutter-y-md column"
+              @submit="signin"
+            >
               <q-input
                 outlined
                 v-model="username"
@@ -19,6 +22,7 @@
                 v-model="password"
                 type="password"
                 label="password"
+                autocomplete="off"
               />
               <q-btn
                 unelevated
@@ -36,42 +40,31 @@
   </q-layout>
 </template>
 <script>
-import { mapActions } from 'vuex'
-export default {
-  name: 'Login',
-  methods: {
-    ...mapActions('login', ['signin'])
-  },
-  computed: {
-    username: {
-      get() {
-        return this.$store.state.login.user.username
-      },
-      set(val) {
-        this.$store.commit('login/updateUsername', val)
-      }
+  import { mapActions } from "vuex";
+  export default {
+    name: "Login",
+    methods: {
+      ...mapActions("login", ["signin"])
     },
-    password: {
-      get() {
-        return this.$store.state.login.user.password
+    computed: {
+      username: {
+        get() {
+          return this.$store.state.login.user.username;
+        },
+        set(val) {
+          this.$store.commit("login/updateUsername", val);
+        }
       },
-      set(val) {
-        this.$store.commit('login/updatePassword', val)
+      password: {
+        get() {
+          return this.$store.state.login.user.password;
+        },
+        set(val) {
+          this.$store.commit("login/updatePassword", val);
+        }
       }
-    },
-    message: function() {
-      return this.$store.state.login.message
     }
-  },
-  watch: {
-    message: function(msg) {
-      this.$q.notify({
-        type: 'positive',
-        message: msg
-      })
-    }
-  }
-}
+  };
 </script>
 <style lang="sass">
 .login

@@ -9,6 +9,12 @@ import './quasar'
 axios.defaults.withCredentials = true
 Vue.use(VueAxios, axios)
 
+import currencyFilter from './filters/currency'
+import dateFilter from './filters/date'
+// Install filter globally
+Vue.filter('currency', currencyFilter)
+Vue.filter('date', dateFilter)
+
 Vue.config.productionTip = false
 
 new Vue({
@@ -18,12 +24,18 @@ new Vue({
 }).$mount('#app')
 
 router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
-    store.dispatch('login/checkLogin')
-    if (!store.state.login.isLogin) {
-      next({ path: '/login' })
+  if (to.path == '/login') {
+    if (store.dispatch('login/checkLogin')) {
+      next({ path: '/admin' })
     } else {
       next()
+    }
+  }
+  if (to.meta.requiresAuth) {
+    if (store.dispatch('login/checkLogin')) {
+      next()
+    } else {
+      next({ path: '/login' })
     }
   } else {
     next()

@@ -1,15 +1,19 @@
 <template>
-  <v-app-bar
-    app
-    clipped-left
+  <q-header
+    elevated
+    class="bg-black"
   >
-    <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    <v-toolbar-title>後台管理</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn @click="signout">
-      登出
-    </v-btn>
-  </v-app-bar>
+    <q-toolbar>
+      <q-btn
+        flat
+        @click="drawer = !drawer"
+        round
+        dense
+        icon="menu"
+      />
+      <q-toolbar-title>{{ title }}</q-toolbar-title>
+    </q-toolbar>
+  </q-header>
 </template>
 <script>
   import { mapActions } from "vuex";
@@ -28,6 +32,9 @@
         set(val) {
           this.$store.commit("admin/updateDrawer", val);
         }
+      },
+      title() {
+        return this.$store.state.admin.title;
       }
     }
   };

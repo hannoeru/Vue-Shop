@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login'
 import Dashboard from '../views/Admin/Dashboard.vue'
 import Products from '../views/Admin/Products.vue'
+import Orders from '../views/Admin/Orders.vue'
+import Coupons from '../views/Admin/Coupons'
 
 Vue.use(VueRouter)
 
@@ -35,12 +37,22 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: Dashboard,
+    meta: { requiresAuth: true },
     children: [
       {
-        path: 'products',
+        path: '',
         name: 'Products',
-        component: Products,
-        meta: { requiresAuth: true }
+        component: Products
+      },
+      {
+        path: 'orders',
+        name: 'Orders',
+        component: Orders
+      },
+      {
+        path: 'coupons',
+        name: 'Coupons',
+        component: Coupons
       }
     ]
   }

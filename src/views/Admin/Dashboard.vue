@@ -1,31 +1,19 @@
 <template>
-  <div>
-    <NavigationDrawer />
-    <AppBar />
-    <v-content>
-      <v-container fluid fill-height>
-        <v-layout align-center justify-center>
-          <v-flex shrink>
-            <router-view></router-view>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-    <Footer />
-  </div>
+  <q-layout class="shadow-2 rounded-borders">
+    <Header />
+    <Drawer />
+    <q-page-container>
+      <router-view></router-view>
+    </q-page-container>
+  </q-layout>
 </template>
 <script>
-import NavigationDrawer from '@/components/Admin/NavigationDrawer'
-import AppBar from '@/components/Admin/AppBar'
-import Footer from '@/components/Admin/Footer'
-export default {
-  components: {
-    NavigationDrawer,
-    AppBar,
-    Footer
-  },
-  data() {
-    return {}
-  }
-}
+  import Header from "@/components/Admin/Header";
+  import Drawer from "@/components/Admin/Drawer";
+  export default {
+    components: { Header, Drawer },
+    data() {
+      return {};
+    }
+  };
 </script>

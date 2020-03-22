@@ -1,46 +1,80 @@
 <template>
-  <v-card>
-    <v-card-title>
-      <v-text-field
-        v-model="search"
-        append-icon="search"
-        label="Search"
-        single-line
-        hide-details
-      ></v-text-field>
-    </v-card-title>
-    <v-data-table :headers="headers" :items="products" class="elevation-1">
-      <template v-slot:item.is_enabled="{ item }">
-        <v-icon v-if="item.is_enabled == 1">check</v-icon>
-        <v-icon v-else>close</v-icon>
+  <q-page class="q-pa-lg">
+    <q-table
+      title="商品"
+      :data="products"
+      :columns="headers"
+      row-key="name"
+      :loading="loading"
+      :separator="separator"
+      :pagination="pagination"
+    >
+      <template v-slot:top>
+        <div class="text-h6">商品列表</div>
+        <q-space />
+        <EditProduct :isNew="true" />
       </template>
-      <template v-slot:item.edit="{}">
-        <v-btn class="ma-2" outlined color="success">
-          <v-icon left>mdi-pencil</v-icon>編輯
-        </v-btn>
-        <v-btn class="ma-2" outlined color="error">
-          <v-icon left>delete</v-icon> 刪除
-        </v-btn>
+      <template v-slot:body-cell-origin_price="props">
+        <q-td :props="props">
+          {{ props.row.origin_price | currency }}
+        </q-td>
       </template>
-    </v-data-table>
-  </v-card>
+      <template v-slot:body-cell-price="props">
+        <q-td :props="props">
+          {{ props.row.price | currency }}
+        </q-td>
+      </template>
+      <template v-slot:body-cell-is_enabled="props">
+        <q-td :props="props">
+          <q-icon
+            name="fas fa-check"
+            color="positive"
+            v-if="props.row.is_enabled == 1"
+          />
+          <q-icon
+            name="fas fa-times"
+            color="negative"
+            v-else
+          ></q-icon>
+        </q-td>
+      </template>
+      <template v-slot:body-cell-edit="props">
+        <q-td :props="props">
+          <div class="row justify-center q-gutter-xs">
+            <EditProduct
+              :isNew="false"
+              :item="props.row"
+            />
+            <DeleteProduct :item="props.row" />
+          </div>
+        </q-td>
+      </template>
+      <template v-slot:bottom>
+      </template>
+    </q-table>
+    <Pagination location="products" />
+  </q-page>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-export default {
-  data() {
-    return {}
-  },
-  computed: mapState('admin', {
-    products: state => state.products,
-    headers: state => state.headers
-  }),
-  created() {
-    this.$store.dispatch('admin/getProducts')
-  },
-  mounted() {
-    console.log(this.products)
-  }
-}
+  import EditProduct from "@/components/Admin/EditProduct";
+  import DeleteProduct from "@/components/Admin/DeleteProduct";
+  import Pagination from "@/components/Admin/Pagination";
+  import { mapState } from "vuex";
+  export default {
+    components: { DeleteProduct, Pagination, EditProduct },
+    data() {
+      return {};
+    },
+    computed: mapState("admin", {
+      products: state => state.products,
+      headers: state => state.headers.products,
+      loading: state => state.loadings.products,
+      separator: state => state.separator,
+      pagination: state => state.tablePage
+    }),
+    created() {
+      this.$store.dispatch("admin/getProducts");
+    }
+  };
 </script>
