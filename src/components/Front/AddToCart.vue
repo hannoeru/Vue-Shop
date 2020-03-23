@@ -8,16 +8,17 @@
   />
 </template>
 <script>
-  import { mapState } from "vuex";
-  export default {
-    props: ["id", "num"],
-    computed: mapState("front", {
-      loading: state => state.loadings.addToCart
-    }),
-    methods: {
-      async addToCart() {
-        this.$store.dispatch("front/addToCart", [this.id, this.num]);
-      }
+import { mapState } from 'vuex'
+export default {
+  props: ['id', 'num'],
+  computed: mapState('front', {
+    loading: state => state.loadings.addToCart
+  }),
+  methods: {
+    async addToCart() {
+      console.log(this.id, this.num)
+      this.$store.dispatch('front/addToCart', [this.id, this.num])
     }
-  };
+  }
+}
 </script>

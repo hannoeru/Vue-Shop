@@ -50,7 +50,7 @@
     }),
     methods: {
       async deleteProduct() {
-        await this.$store.dispatch("admin/deleteCoupon", this.item);
+        await this.$store.dispatch("admin/deleteCoupon", this.item.id);
       }
     }
   };

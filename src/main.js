@@ -6,6 +6,7 @@ import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import './quasar'
+import './plugins/veeValidate'
 axios.defaults.withCredentials = true
 Vue.use(VueAxios, axios)
 

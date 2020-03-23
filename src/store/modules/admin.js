@@ -156,9 +156,9 @@ const actions = {
       commit('updateLoading', ['couponUpdate', null])
     })
   },
-  async deleteProduct({ dispatch, commit }, product) {
-    commit('updateLoading', ['productDelete', product.id])
-    let url = 'product/' + product.id
+  async deleteProduct({ dispatch, commit }, id) {
+    commit('updateLoading', ['productDelete', id])
+    let url = 'product/' + id
     await axios.delete(url).then(res => {
       notify(res.data)
       if (res.data.success) {
@@ -167,9 +167,9 @@ const actions = {
       commit('updateLoading', ['productDelete', null])
     })
   },
-  async deleteCoupon({ dispatch, commit }, coupon) {
-    commit('updateLoading', ['couponDelete', coupon.id])
-    let url = 'coupon/' + coupon.id
+  async deleteCoupon({ dispatch, commit }, id) {
+    commit('updateLoading', ['couponDelete', id])
+    let url = 'coupon/' + id
     await axios.delete(url).then(res => {
       notify(res.data)
       if (res.data.success) {

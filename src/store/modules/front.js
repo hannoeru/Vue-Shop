@@ -1,5 +1,6 @@
 import axiosBase from 'axios'
 import { Notify } from 'quasar'
+import router from '../../router'
 
 const axios = axiosBase.create({
   baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}`,
@@ -20,9 +21,21 @@ const notify = function(data, isUpload = false) {
 
 const state = {
   products: [],
-  carts: [],
+  cartData: {},
+  order: {
+    user: {}
+  },
   pagination: {},
-  loadings: {}
+  loadings: {
+    products: false,
+    product: null,
+    addToCart: null,
+    cart: false,
+    deleteCart: null,
+    addCouponCode: false,
+    createOrder: false,
+    payOrder: false
+  }
 }
 
 const getters = {
@@ -80,10 +93,62 @@ const actions = {
     commit('updateLoading', ['cart', true])
     await axios.get('cart').then(res => {
       if (res.data.success) {
-        console.log(res.data)
-        commit('updateCarts', res.data.data.carts)
+        commit('updateCartData', res.data.data)
       }
       commit('updateLoading', ['cart', false])
+    })
+  },
+  async deleteCart({ dispatch, commit }, id) {
+    commit('updateLoading', ['deleteCart', id])
+    let url = 'cart/' + id
+    await axios.delete(url).then(res => {
+      notify(res.data)
+      if (res.data.success) {
+        dispatch('getCarts')
+      }
+      commit('updateLoading', ['deleteCart', null])
+    })
+  },
+  async addCouponCode({ dispatch, commit }, code) {
+    commit('updateLoading', ['addCouponCode', true])
+    const coupon = {
+      data: { code: code }
+    }
+    await axios.post('coupon', coupon).then(res => {
+      notify(res.data)
+      dispatch('getCarts')
+      commit('updateLoading', ['addCouponCode', false])
+    })
+  },
+  async createOrder({ dispatch, commit }, order) {
+    commit('updateLoading', ['createOrder', true])
+    const data = { data: order }
+    await axios.post('order', data).then(res => {
+      notify(res.data)
+      if (res.data.success) {
+        dispatch('getCarts')
+        router.push('customer_checkout/' + res.data.orderId)
+      }
+      commit('updateLoading', ['createOrder', false])
+    })
+  },
+  async getOrder({ commit }, id) {
+    commit('updateLoading', ['getOrder', true])
+    await axios.get('order/' + id).then(res => {
+      if (res.data.success) {
+        commit('updateOrder', res.data.order)
+      }
+      commit('updateLoading', ['getOrder', false])
+    })
+  },
+  async payOrder({ dispatch, commit }, id) {
+    commit('updateLoading', ['payOrder', true])
+    await axios.post('pay/' + id).then(res => {
+      notify(res.data)
+      if (res.data.success) {
+        dispatch('getOrder', id)
+      }
+      commit('updateLoading', ['payOrder', false])
     })
   }
 }
@@ -98,8 +163,11 @@ const mutations = {
   updatePagination(state, [value, location]) {
     state.pagination[location] = value
   },
-  updateCarts(state, carts) {
-    state.carts = carts
+  updateCartData(state, cartData) {
+    state.cartData = cartData
+  },
+  updateOrder(state, order) {
+    state.order = order
   }
 }
 

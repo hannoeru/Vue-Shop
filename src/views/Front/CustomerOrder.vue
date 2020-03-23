@@ -7,77 +7,61 @@
         v-for="item in products"
         :key="item.id"
       >
-        <q-card class="q-ma-md">
-          <q-card-section
-            horizontal
-            style="height: 250px"
-          >
-            <q-img
-              class="col-6"
-              :src="item.imageUrl"
-            />
-            <q-card-section>
-              <q-badge
-                outline
-                color="orange"
-                :label="item.category"
-              />
-              <div class="text-h6">{{ item.title }}</div>
-              <div class="text-subtitle2">{{ item.content }}</div>
-              <div class="column q-mt-xl">
-                <div
-                  class="text-body1"
-                  v-if="!item.price"
-                >{{ item.origin_price }} 元</div>
-                <del
-                  class="text-body2"
-                  v-if="item.price"
-                >原價 {{ item.origin_price }} 元</del>
-                <div
-                  class="text-body1"
-                  v-if="item.price"
-                >現在只要 <br />{{ item.price }} 元</div>
-              </div>
-            </q-card-section>
-          </q-card-section>
-          <q-separator />
-          <q-card-actions>
-            <q-space />
-            <ShowProduct
-              :item="item"
-              class="q-mr-md"
-            />
-            <AddToCart
-              :id="item.id"
-              num="1"
-            />
-          </q-card-actions>
-        </q-card>
+        <ProductCard :item="item" />
       </div>
     </div>
+    <q-separator class="full-width q-ma-xl" />
     <div class="row justify-center">
-      <div class="col">
-        {{ carts }}
+      <div class="col-4">
+        <Cart />
+        <Coupon />
+        <div class="row justify-center q-my-xl">
+          <q-btn
+            color="primary"
+            label="下一步"
+            @click="scrollToElement($refs.form)"
+          />
+        </div>
+      </div>
+    </div>
+    <q-separator class="full-width q-ma-xl" />
+    <div
+      class="row justify-center"
+      ref="form"
+    >
+      <div class="col-4">
+        <Order />
       </div>
     </div>
   </q-page>
 </template>
 <script>
-  import AddToCart from "@/components/Front/AddToCart";
-  import ShowProduct from "@/components/Front/ShowProduct";
+  import Order from "@/components/Front/Order";
+  import Coupon from "@/components/Front/Coupon";
+  import ProductCard from "@/components/Front/ProductCard";
+  import Cart from "@/components/Front/Cart";
+  import { scroll } from "quasar";
+  const { getScrollTarget, setScrollPosition } = scroll;
   import { mapState, mapActions } from "vuex";
   export default {
-    components: { ShowProduct, AddToCart },
-    computed: mapState("front", ["products", "carts"]),
-    methods: mapActions("front", ["getProducts", "getCarts"]),
+    data() {
+      return {
+        showForm: false
+      };
+    },
+    components: { Cart, Coupon, Order, ProductCard },
+    computed: mapState("front", ["products"]),
+    methods: {
+      ...mapActions("front", ["getProducts"]),
+      scrollToElement(el) {
+        const target = getScrollTarget(el);
+        const offset = el.offsetTop;
+        const duration = 1000;
+        setScrollPosition(target, offset, duration);
+      }
+    },
     created() {
       this.getProducts();
-      this.getCarts();
     }
   };
 </script>
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 350px
-</style>

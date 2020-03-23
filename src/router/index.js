@@ -7,6 +7,7 @@ import Products from '../views/Admin/Products'
 import Orders from '../views/Admin/Orders'
 import Coupons from '../views/Admin/Coupons'
 import CustomerOrder from '../views/Front/CustomerOrder'
+import CustomerCheckout from '../views/Front/CustomerCheckout'
 
 Vue.use(VueRouter)
 
@@ -64,8 +65,13 @@ const routes = [
     children: [
       {
         path: 'customer_order',
-        name: 'Customer Order',
+        name: 'CustomerOrder',
         component: CustomerOrder
+      },
+      {
+        path: 'customer_checkout/:orderId',
+        name: 'CustomerCheckout',
+        component: CustomerCheckout
       }
     ]
   }
