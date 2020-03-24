@@ -16,7 +16,6 @@ const getters = {}
 const actions = {
   async signin({ commit }) {
     await axios.post('admin/signin', state.user).then(res => {
-      console.log(res.data)
       if (res.data.success) {
         commit('saveLoginState', true)
         commit('updateUsername', '')
@@ -31,7 +30,6 @@ const actions = {
   },
   async signout({ commit }) {
     await axios.post('logout').then(res => {
-      console.log(res.data)
       commit('updateMessage', res.data.message)
       if (res.data.success) {
         commit('saveLoginState', false)
