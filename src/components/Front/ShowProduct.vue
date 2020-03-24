@@ -13,20 +13,23 @@
       transition-show="scale"
       transition-hide="scale"
     >
-      <q-card style="width:80vw;max-width:700px">
+      <q-card dark style="width:80vw;max-width:700px">
         <q-card-section class="row">
           <div class="text-h6">商品詳細</div>
           <q-space />
           <q-btn flat icon="fas fa-times" v-close-popup />
         </q-card-section>
-        <q-separator />
+        <q-separator dark />
         <q-card-section class="row q-pt-none">
-          <q-img class="col-6 rounded-borders" :src="product.imageUrl" />
+          <div class="col-6 q-pa-md">
+            <q-img class="rounded-borders" :src="product.imageUrl" />
+          </div>
+
           <div class="col-6 q-pa-lg">
             <q-badge outline color="orange" :label="item.category" />
             <div class="text-h6">{{ item.title }}</div>
             <div class="text-subtitle2">{{ item.content }}</div>
-            <div class="column q-mt-xl">
+            <div class="column q-my-xl">
               <div class="text-body1" v-if="!item.price">
                 {{ item.origin_price }} 元
               </div>
@@ -38,6 +41,7 @@
               </div>
             </div>
             <q-select
+              dark
               outlined
               emit-value
               map-options
@@ -47,8 +51,8 @@
             />
           </div>
         </q-card-section>
-        <q-separator />
-        <q-card-actions align="right" class="bg-white text-teal">
+        <q-separator dark />
+        <q-card-actions align="right">
           <AddToCart :id="product.id" :num="num" v-close-popup />
         </q-card-actions>
       </q-card>
