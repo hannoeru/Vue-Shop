@@ -20,7 +20,7 @@ const notify = function(data, isUpload = false) {
 }
 
 const state = {
-  title: '商城',
+  title: '網路點數專賣',
   products: [],
   cartData: {
     carts: {}

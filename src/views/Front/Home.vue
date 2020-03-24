@@ -1,5 +1,5 @@
 <template>
-  <q-layout class="shadow-2 rounded-borders" style="background: #bfbfbf">
+  <q-layout class="shadow-2 rounded-borders">
     <Header />
     <q-page-container>
       <router-view></router-view>

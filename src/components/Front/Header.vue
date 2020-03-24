@@ -1,7 +1,9 @@
 <template>
   <q-header class="bg-dark">
     <q-toolbar style="height:70px" class="q-px-xl text-grey-6">
-      <q-toolbar-title class="text-white">{{ title }}</q-toolbar-title>
+      <q-toolbar-title class="text-white" @click="$router.push('/')">{{
+        title
+      }}</q-toolbar-title>
       <q-space />
       <MenuCart v-if="$route.path !== '/checkout'" />
       <q-btn flat icon="fas fa-user-circle" to="/login" />
