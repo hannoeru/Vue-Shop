@@ -159,7 +159,6 @@ const actions = {
     const data = { data: coupon }
     await axios[httpMethod](url, data).then(res => {
       notify(res.data)
-      console.log(coupon)
       if (res.data.success) {
         dispatch('getCoupons')
       }
