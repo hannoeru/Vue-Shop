@@ -36,7 +36,10 @@ router.beforeEach((to, from, next) => {
     if (store.dispatch('login/checkLogin')) {
       next()
     } else {
-      next({ path: '/login' })
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
     }
   } else {
     next()

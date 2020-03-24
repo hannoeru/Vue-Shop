@@ -20,8 +20,12 @@ const notify = function(data, isUpload = false) {
 }
 
 const state = {
+  title: '商城',
   products: [],
-  cartData: {},
+  cartData: {
+    carts: {}
+  },
+  checkOrderInfo: true,
   order: {
     user: {}
   },
@@ -58,6 +62,15 @@ const actions = {
       if (res.data.success) {
         commit('updateProducts', res.data.products)
         commit('updatePagination', [res.data.pagination, 'products'])
+      }
+      commit('updateLoading', ['products', false])
+    })
+  },
+  async getAllProducts({ commit }) {
+    commit('updateLoading', ['products', true])
+    await axios.get('products/all').then(res => {
+      if (res.data.success) {
+        commit('updateProducts', res.data.products)
       }
       commit('updateLoading', ['products', false])
     })
@@ -127,7 +140,7 @@ const actions = {
       notify(res.data)
       if (res.data.success) {
         dispatch('getCarts')
-        router.push('customer_checkout/' + res.data.orderId)
+        router.push('payment/' + res.data.orderId)
       }
       commit('updateLoading', ['createOrder', false])
     })
@@ -168,6 +181,9 @@ const mutations = {
   },
   updateOrder(state, order) {
     state.order = order
+  },
+  checkOrderInfo(state, info) {
+    state.checkOrderInfo = info
   }
 }
 

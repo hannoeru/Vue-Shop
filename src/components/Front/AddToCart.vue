@@ -1,7 +1,8 @@
 <template>
   <q-btn
-    color="primary"
-    icon="fas fa-cart-plus"
+    outline
+    color="red"
+    icon="fas fa-shopping-bag"
     label="加入購物車"
     @click="addToCart"
     :loading="loading == id"
@@ -16,7 +17,6 @@ export default {
   }),
   methods: {
     async addToCart() {
-      console.log(this.id, this.num)
       this.$store.dispatch('front/addToCart', [this.id, this.num])
     }
   }

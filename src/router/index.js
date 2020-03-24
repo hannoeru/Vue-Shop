@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Front/Home.vue'
 import Login from '../views/Login'
 import Dashboard from '../views/Admin/Dashboard'
 import Products from '../views/Admin/Products'
@@ -8,6 +8,8 @@ import Orders from '../views/Admin/Orders'
 import Coupons from '../views/Admin/Coupons'
 import CustomerOrder from '../views/Front/CustomerOrder'
 import CustomerCheckout from '../views/Front/CustomerCheckout'
+import FrontProducts from '../views/Front/Products'
+// import Checkout from '../views/Front/Checkout'
 
 Vue.use(VueRouter)
 
@@ -24,7 +26,24 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '',
+        name: 'Products',
+        component: FrontProducts
+      },
+      {
+        path: 'Checkout',
+        name: 'Checkout',
+        component: CustomerOrder
+      },
+      {
+        path: 'payment/:orderId',
+        name: 'Payment',
+        component: CustomerCheckout
+      }
+    ]
   },
   {
     path: '/about',
@@ -39,22 +58,24 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: Dashboard,
-    meta: { requiresAuth: true },
     children: [
       {
         path: '',
         name: 'Products',
-        component: Products
+        component: Products,
+        meta: { requiresAuth: true }
       },
       {
         path: 'orders',
         name: 'Orders',
-        component: Orders
+        component: Orders,
+        meta: { requiresAuth: true }
       },
       {
         path: 'coupons',
         name: 'Coupons',
-        component: Coupons
+        component: Coupons,
+        meta: { requiresAuth: true }
       }
     ]
   },

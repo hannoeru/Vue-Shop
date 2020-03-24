@@ -1,5 +1,10 @@
 <template>
-  <ValidationObserver tag="div" class="column q-mt-sm" v-slot="{ invalid }">
+  <ValidationObserver
+    tag="div"
+    class="column q-mt-sm"
+    v-slot="{ invalid }"
+    ref="check"
+  >
     <div class="col q-gutter-sm q-pa-sm">
       <div>Email</div>
       <ValidationProvider
@@ -82,7 +87,9 @@
         :error-message="errors[0]"
       />
     </ValidationProvider>
-    <div class="col q-pa-sm q-my-md row justify-end">
+    <div
+      class="col q-pa-sm q-my-md row justify-end"
+    >
       <q-btn
         color="primary"
         label="送出訂單"
@@ -96,17 +103,30 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
+  props: ['submit'],
   data() {
     return {
       order: {
         user: {}
-      },
-      rules: [val => !!val || '* 必填']
+      }
     }
   },
   computed: mapState('front', {
     loading: state => state.loadings.createOrder
   }),
-  methods: mapActions('front', ['createOrder'])
+  methods: mapActions('front', ['createOrder']),
+  mounted() {
+    this.$watch(() => {
+      if (!this.$refs.check.flags.invalid) {
+        this.$store.commit(
+          'front/checkOrderInfo',
+          this.$refs.check.flags.invalid
+        )
+        if (this.submit) {
+          this.createOrder(this.order)
+        }
+      }
+    })
+  }
 }
 </script>

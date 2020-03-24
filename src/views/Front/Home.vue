@@ -1,17 +1,15 @@
 <template>
-  <q-layout class="shadow-2 rounded-borders">
+  <q-layout class="shadow-2 rounded-borders" style="background: #bfbfbf">
     <Header />
-    <Drawer />
     <q-page-container>
       <router-view></router-view>
     </q-page-container>
   </q-layout>
 </template>
 <script>
-import Header from '@/components/Admin/Header'
-import Drawer from '@/components/Admin/Drawer'
+import Header from '@/components/Front/Header'
 export default {
-  components: { Header, Drawer },
+  components: { Header },
   data() {
     return {}
   }

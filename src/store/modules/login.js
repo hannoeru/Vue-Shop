@@ -40,10 +40,12 @@ const actions = {
     })
   },
   async checkLogin({ commit }) {
+    let isLogin = false
     await axios.post('api/user/check').then(res => {
       commit('saveLoginState', res.data.success)
-      return res.data.success
+      isLogin = res.data.success
     })
+    return await isLogin
   }
 }
 const mutations = {

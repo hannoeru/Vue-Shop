@@ -1,6 +1,7 @@
 import axiosBase from 'axios'
 import { Notify } from 'quasar'
 import headers from '../headers'
+import router from '../../router'
 
 const axios = axiosBase.create({
   baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin`,
@@ -106,6 +107,9 @@ const actions = {
       if (res.data.success) {
         commit('updateProducts', res.data.products)
         commit('updatePagination', [res.data.pagination, 'products'])
+      } else {
+        notify(res.data)
+        router.push('login')
       }
       commit('updateLoading', ['products', false])
     })
@@ -116,6 +120,9 @@ const actions = {
       if (res.data.success) {
         commit('updateOrders', res.data.orders)
         commit('updatePagination', [res.data.pagination, 'orders'])
+      } else {
+        notify(res.data)
+        router.push('login')
       }
       commit('updateLoading', ['orders', false])
     })
@@ -125,6 +132,9 @@ const actions = {
     await axios.get('coupons').then(res => {
       if (res.data.success) {
         commit('updateCoupons', res.data.coupons)
+      } else {
+        notify(res.data)
+        router.push('login')
       }
       commit('updateLoading', ['coupons', false])
     })
