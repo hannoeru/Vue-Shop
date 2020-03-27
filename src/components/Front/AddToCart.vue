@@ -9,7 +9,7 @@
   />
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
   props: ['id', 'num'],
   computed: mapState('front', {
@@ -17,8 +17,8 @@ export default {
   }),
   methods: {
     async addToCart() {
-      this.$store.dispatch('front/addToCart', [this.id, this.num])
+      this.$store.dispatch('front/addToCart', [this.id, this.num]);
     }
   }
-}
+};
 </script>

@@ -102,5 +102,5 @@ const headers = {
       align: 'center'
     }
   ]
-}
-export default headers
+};
+export default headers;

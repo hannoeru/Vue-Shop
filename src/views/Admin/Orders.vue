@@ -26,16 +26,8 @@
       <template v-slot:body-cell-item="props">
         <q-td :props="props">
           <q-list bordered class="rounded-borders">
-            <q-expansion-item
-              expand-separator
-              icon="fas fa-stream"
-              label="商品列表"
-            >
-              <q-item
-                v-ripple
-                v-for="(product, i) in props.row.products"
-                :key="i"
-              >
+            <q-expansion-item expand-separator icon="fas fa-stream" label="商品列表">
+              <q-item v-ripple v-for="(product, i) in props.row.products" :key="i">
                 <q-item-section>
                   {{ product.product.title }} 數量：{{ product.qty }}
                   {{ product.product.unit }}
@@ -57,8 +49,8 @@
   </q-page>
 </template>
 <script>
-import Pagination from '@/components/Admin/Pagination'
-import { mapGetters, mapActions, mapState } from 'vuex'
+import Pagination from '@/components/Admin/Pagination';
+import { mapGetters, mapActions, mapState } from 'vuex';
 export default {
   components: { Pagination },
   methods: {
@@ -74,7 +66,7 @@ export default {
     })
   },
   created() {
-    this.getOrders()
+    this.getOrders();
   }
-}
+};
 </script>

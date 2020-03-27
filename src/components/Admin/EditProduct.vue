@@ -1,32 +1,9 @@
 <template>
   <div>
-    <q-btn
-      color="primary"
-      label="新增商品"
-      @click="init"
-      v-if="isNew"
-      :loading="loading == 'new'"
-    />
-    <q-btn
-      flat
-      color="primary"
-      icon="fas fa-edit"
-      @click="init"
-      v-else
-      :loading="loading == item.id"
-    />
-    <q-dialog
-      v-model="persistent"
-      persistent
-      transition-show="scale"
-      transition-hide="scale"
-    >
-      <ValidationObserver
-        tag="div"
-        class="q-card"
-        style="width:80vw;max-width:700px"
-        v-slot="{ invalid }"
-      >
+    <q-btn color="primary" label="新增商品" @click="init" v-if="isNew" :loading="loading == 'new'" />
+    <q-btn flat color="primary" icon="fas fa-edit" @click="init" v-else :loading="loading == item.id" />
+    <q-dialog v-model="persistent" persistent transition-show="scale" transition-hide="scale">
+      <ValidationObserver tag="div" class="q-card" style="width:80vw;max-width:700px" v-slot="{ invalid }">
         <q-card-section>
           <div class="text-h6">{{ isNew ? '新增商品' : '編輯商品' }}</div>
         </q-card-section>
@@ -36,12 +13,7 @@
             <div class="row">
               <div class="col-12 q-px-md">
                 <div class="q-mb-sm">圖片網址</div>
-                <q-input
-                  outlined
-                  v-model="tempProduct.imageUrl"
-                  label="請輸入圖片網址"
-                  class="q-mb-md"
-                />
+                <q-input outlined v-model="tempProduct.imageUrl" label="請輸入圖片網址" class="q-mb-md" />
                 <div class="q-mb-sm">或 上傳圖片</div>
                 <q-file
                   v-model="file"
@@ -205,7 +177,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
   props: ['isNew', 'item'],
   data() {
@@ -214,15 +186,15 @@ export default {
       tempProduct: {},
       file: null,
       rules: [val => !!val || '* 必填']
-    }
+    };
   },
   computed: {
     isEnabled: {
       get() {
-        return this.tempProduct.is_enabled == 1 ? true : false
+        return this.tempProduct.is_enabled == 1 ? true : false;
       },
       set(value) {
-        this.tempProduct.is_enabled = value ? 1 : 0
+        this.tempProduct.is_enabled = value ? 1 : 0;
       }
     },
     ...mapState('admin', {
@@ -236,24 +208,24 @@ export default {
       this.$store.dispatch('admin/updateProduct', {
         isNew: this.isNew,
         product: this.tempProduct
-      })
+      });
     },
     init() {
-      this.persistent = true
+      this.persistent = true;
       if (this.isNew) {
         this.tempProduct = {
           is_enabled: 0
-        }
+        };
       } else {
-        this.tempProduct = { ...this.item }
+        this.tempProduct = { ...this.item };
       }
     }
   },
   watch: {
     file: async function() {
-      const url = await this.$store.dispatch('admin/uploadFile', this.file)
-      await this.$set(this.tempProduct, 'imageUrl', url)
+      const url = await this.$store.dispatch('admin/uploadFile', this.file);
+      await this.$set(this.tempProduct, 'imageUrl', url);
     }
   }
-}
+};
 </script>

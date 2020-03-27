@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Front/Home.vue'
-import Login from '../views/Login'
-import Dashboard from '../views/Admin/Dashboard'
-import Products from '../views/Admin/Products'
-import Orders from '../views/Admin/Orders'
-import Coupons from '../views/Admin/Coupons'
-import CustomerOrder from '../views/Front/CustomerOrder'
-import CustomerCheckout from '../views/Front/CustomerCheckout'
-import FrontProducts from '../views/Front/Products'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from '../views/Front/Home.vue';
+import Login from '../views/Login';
+import Dashboard from '../views/Admin/Dashboard';
+import Products from '../views/Admin/Products';
+import Orders from '../views/Admin/Orders';
+import Coupons from '../views/Admin/Coupons';
+import CustomerOrder from '../views/Front/CustomerOrder';
+import CustomerCheckout from '../views/Front/CustomerCheckout';
+import FrontProducts from '../views/Front/Products';
 // import Checkout from '../views/Front/Checkout'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
@@ -51,8 +51,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/admin',
@@ -96,10 +95,10 @@ const routes = [
       }
     ]
   }
-]
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;

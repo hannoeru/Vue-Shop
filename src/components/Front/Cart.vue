@@ -45,10 +45,10 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 export default {
   data() {
-    return { coupon: '' }
+    return { coupon: '' };
   },
   computed: {
     ...mapState('front', ['cartData']),
@@ -58,7 +58,7 @@ export default {
   },
   methods: mapActions('front', ['getCarts', 'deleteCart', 'addCouponCode']),
   created() {
-    this.getCarts()
+    this.getCarts();
   }
-}
+};
 </script>

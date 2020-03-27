@@ -12,27 +12,26 @@
   </div>
 </template>
 <script>
-  export default {
-    props: ["location"],
-    data() {
-      return {
-        current: 6
-      };
-    },
-    computed: {
-      page: {
-        get() {
-          return this.pagination.current_page;
-        },
-        set(val) {
-          const patch =
-            this.location == "products" ? "admin/getProducts" : "admin/getOrders";
-          this.$store.dispatch(patch, val);
-        }
+export default {
+  props: ['location'],
+  data() {
+    return {
+      current: 6
+    };
+  },
+  computed: {
+    page: {
+      get() {
+        return this.pagination.current_page;
       },
-      pagination() {
-        return this.$store.state.admin.pagination[this.location];
+      set(val) {
+        const patch = this.location == 'products' ? 'admin/getProducts' : 'admin/getOrders';
+        this.$store.dispatch(patch, val);
       }
+    },
+    pagination() {
+      return this.$store.state.admin.pagination[this.location];
     }
-  };
+  }
+};
 </script>

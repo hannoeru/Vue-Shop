@@ -1,32 +1,9 @@
 <template>
   <div>
-    <q-btn
-      color="primary"
-      label="新增優惠卷"
-      @click="init"
-      v-if="isNew"
-      :loading="loadings.update == 'new'"
-    />
-    <q-btn
-      flat
-      color="primary"
-      icon="fas fa-edit"
-      @click="init"
-      v-else
-      :loading="loadings.update == item.id"
-    />
-    <q-dialog
-      v-model="persistent"
-      persistent
-      transition-show="scale"
-      transition-hide="scale"
-    >
-      <ValidationObserver
-        tag="div"
-        class="q-card"
-        style="width:80vw;max-width:700px"
-        v-slot="{ invalid }"
-      >
+    <q-btn color="primary" label="新增優惠卷" @click="init" v-if="isNew" :loading="loadings.update == 'new'" />
+    <q-btn flat color="primary" icon="fas fa-edit" @click="init" v-else :loading="loadings.update == item.id" />
+    <q-dialog v-model="persistent" persistent transition-show="scale" transition-hide="scale">
+      <ValidationObserver tag="div" class="q-card" style="width:80vw;max-width:700px" v-slot="{ invalid }">
         <q-card-section>
           <div class="text-h6">{{ isNew ? '新增優惠卷' : '編輯優惠卷' }}</div>
         </q-card-section>
@@ -54,12 +31,7 @@
               <q-date v-model="date" />
             </div>
             <div class="col-6 q-pa-md">
-              <ValidationProvider
-                rules="required|alpha_num"
-                name="優惠碼"
-                v-slot="{ failed, errors }"
-                tag="div"
-              >
+              <ValidationProvider rules="required|alpha_num" name="優惠碼" v-slot="{ failed, errors }" tag="div">
                 <div class="q-mb-sm">優惠碼</div>
                 <q-input
                   outlined
@@ -106,7 +78,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState } from 'vuex';
 export default {
   props: ['isNew', 'item'],
   data() {
@@ -115,31 +87,27 @@ export default {
       tempCoupon: {},
       file: null,
       rules: [val => !!val || '* 必填']
-    }
+    };
   },
   computed: {
     isEnabled: {
       get() {
-        return this.tempCoupon.is_enabled == 1 ? true : false
+        return this.tempCoupon.is_enabled == 1 ? true : false;
       },
       set(value) {
-        this.tempCoupon.is_enabled = value ? 1 : 0
+        this.tempCoupon.is_enabled = value ? 1 : 0;
       }
     },
     date: {
       get() {
-        const date = new Date(this.tempCoupon.due_date * 1000)
+        const date = new Date(this.tempCoupon.due_date * 1000);
         const time =
-          date.getFullYear() +
-          '/' +
-          ('0' + (date.getMonth() + 1)).slice(-2) +
-          '/' +
-          ('0' + date.getDate()).slice(-2)
-        return `${time}`
+          date.getFullYear() + '/' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' + ('0' + date.getDate()).slice(-2);
+        return `${time}`;
       },
       set(val) {
-        const timestamp = Math.floor(new Date(val) / 1000)
-        this.$set(this.tempCoupon, 'due_date', timestamp)
+        const timestamp = Math.floor(new Date(val) / 1000);
+        this.$set(this.tempCoupon, 'due_date', timestamp);
       }
     },
     ...mapState('admin', ['loadings'])
@@ -149,19 +117,19 @@ export default {
       this.$store.dispatch('admin/updateCoupon', {
         isNew: this.isNew,
         coupon: this.tempCoupon
-      })
+      });
     },
     init() {
-      this.persistent = true
+      this.persistent = true;
       if (this.isNew) {
         this.tempCoupon = {
           is_enabled: 0
-        }
-        this.$set(this.tempCoupon, 'due_date', Math.floor(new Date() / 1000))
+        };
+        this.$set(this.tempCoupon, 'due_date', Math.floor(new Date() / 1000));
       } else {
-        this.tempCoupon = { ...this.item }
+        this.tempCoupon = { ...this.item };
       }
     }
   }
-}
+};
 </script>

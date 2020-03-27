@@ -2,22 +2,12 @@
   <q-page class="q-pa-lg row justify-center items-center">
     <div class="col-6">
       <q-stepper v-model="step" ref="stepper" color="primary" animated>
-        <q-step
-          :name="1"
-          title="確認訂單內容"
-          icon="fas fa-shopping-bag"
-          :done="step > 1"
-        >
+        <q-step :name="1" title="確認訂單內容" icon="fas fa-shopping-bag" :done="step > 1">
           <Cart />
           <Coupon />
         </q-step>
 
-        <q-step
-          :name="2"
-          title="填寫用戶資料"
-          icon="assignment"
-          :done="step > 2"
-        >
+        <q-step :name="2" title="填寫用戶資料" icon="assignment" :done="step > 2">
           <Order :submit="submit" />
         </q-step>
 
@@ -60,19 +50,19 @@
   </q-page>
 </template>
 <script>
-import CheckUserInfo from '@/components/Front/CheckUserInfo'
-import CheckOrderList from '@/components/Front/CheckOrderList'
-import Coupon from '@/components/Front/Coupon'
-import Cart from '@/components/Front/Cart'
-import Order from '@/components/Front/Order'
-import { mapState, mapActions } from 'vuex'
+import CheckUserInfo from '@/components/Front/CheckUserInfo';
+import CheckOrderList from '@/components/Front/CheckOrderList';
+import Coupon from '@/components/Front/Coupon';
+import Cart from '@/components/Front/Cart';
+import Order from '@/components/Front/Order';
+import { mapState, mapActions } from 'vuex';
 export default {
   components: { Cart, Coupon, Order, CheckUserInfo, CheckOrderList },
   data() {
     return {
       step: 1,
       submit: false
-    }
+    };
   },
   computed: {
     ...mapState('front', ['checkOrderInfo', 'order']),
@@ -84,11 +74,11 @@ export default {
     ...mapActions('front', ['payOrder']),
     next() {
       if (this.step === 2) {
-        this.submit = true
+        this.submit = true;
       } else {
-        this.$refs.stepper.next()
+        this.$refs.stepper.next();
       }
     }
   }
-}
+};
 </script>

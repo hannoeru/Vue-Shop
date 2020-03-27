@@ -30,41 +30,37 @@
       <template v-slot:body-cell-edit="props">
         <q-td :props="props">
           <div class="row justify-center">
-            <EditProduct
-              :isNew="false"
-              :item="props.row"
-            />
+            <EditProduct :isNew="false" :item="props.row" />
             <DeleteProduct :item="props.row" />
           </div>
         </q-td>
       </template>
-      <template v-slot:bottom>
-      </template>
+      <template v-slot:bottom> </template>
     </q-table>
     <Pagination location="products" />
   </q-page>
 </template>
 
 <script>
-  import EditProduct from "@/components/Admin/EditProduct";
-  import DeleteProduct from "@/components/Admin/DeleteProduct";
-  import Pagination from "@/components/Admin/Pagination";
-  import isEnabled from "@/components/Admin/Table/isEnabled";
-  import { mapState } from "vuex";
-  export default {
-    components: { DeleteProduct, Pagination, EditProduct, isEnabled },
-    data() {
-      return {};
-    },
-    computed: mapState("admin", {
-      products: state => state.products,
-      headers: state => state.headers.products,
-      loading: state => state.loadings.products,
-      separator: state => state.separator,
-      pagination: state => state.tablePage
-    }),
-    created() {
-      this.$store.dispatch("admin/getProducts");
-    }
-  };
+import EditProduct from '@/components/Admin/EditProduct';
+import DeleteProduct from '@/components/Admin/DeleteProduct';
+import Pagination from '@/components/Admin/Pagination';
+import isEnabled from '@/components/Admin/Table/isEnabled';
+import { mapState } from 'vuex';
+export default {
+  components: { DeleteProduct, Pagination, EditProduct, isEnabled },
+  data() {
+    return {};
+  },
+  computed: mapState('admin', {
+    products: state => state.products,
+    headers: state => state.headers.products,
+    loading: state => state.loadings.products,
+    separator: state => state.separator,
+    pagination: state => state.tablePage
+  }),
+  created() {
+    this.$store.dispatch('admin/getProducts');
+  }
+};
 </script>

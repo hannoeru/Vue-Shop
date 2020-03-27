@@ -10,10 +10,10 @@
   </q-header>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 export default {
   data() {
-    return {}
+    return {};
   },
   methods: {
     ...mapActions('login', ['signout'])
@@ -21,15 +21,15 @@ export default {
   computed: {
     drawer: {
       get() {
-        return this.$store.state.admin.drawer
+        return this.$store.state.admin.drawer;
       },
       set(val) {
-        this.$store.commit('admin/updateDrawer', val)
+        this.$store.commit('admin/updateDrawer', val);
       }
     },
     title() {
-      return this.$store.state.admin.title
+      return this.$store.state.admin.title;
     }
   }
-}
+};
 </script>

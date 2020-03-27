@@ -8,12 +8,12 @@
   </q-layout>
 </template>
 <script>
-import Header from '@/components/Admin/Header'
-import Drawer from '@/components/Admin/Drawer'
+import Header from '@/components/Admin/Header';
+import Drawer from '@/components/Admin/Drawer';
 export default {
   components: { Header, Drawer },
   data() {
-    return {}
+    return {};
   }
-}
+};
 </script>

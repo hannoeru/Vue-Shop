@@ -1,9 +1,7 @@
 <template>
   <q-header class="bg-dark">
     <q-toolbar style="height:70px" class="q-px-xl text-grey-6">
-      <q-toolbar-title class="text-white" @click="$router.push('/')">{{
-        title
-      }}</q-toolbar-title>
+      <q-toolbar-title class="text-white" @click="$router.push('/')">{{ title }}</q-toolbar-title>
       <q-space />
       <MenuCart v-if="$route.path !== '/checkout'" />
       <q-btn flat icon="fas fa-user-circle" to="/login" />
@@ -11,20 +9,20 @@
   </q-header>
 </template>
 <script>
-import MenuCart from '@/components/Front/MenuCart'
-import { mapActions } from 'vuex'
+import MenuCart from '@/components/Front/MenuCart';
+import { mapActions } from 'vuex';
 export default {
   components: { MenuCart },
   data() {
-    return {}
+    return {};
   },
   methods: {
     ...mapActions('login', ['signout'])
   },
   computed: {
     title() {
-      return this.$store.state.front.title
+      return this.$store.state.front.title;
     }
   }
-}
+};
 </script>

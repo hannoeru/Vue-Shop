@@ -1,12 +1,6 @@
 <template>
   <q-btn flat icon="fas fa-shopping-bag">
-    <q-badge
-      color="red"
-      floating
-      transparent
-      v-if="cartData.carts.length !== 0"
-      >{{ cartData.carts.length }}</q-badge
-    >
+    <q-badge color="red" floating transparent v-if="cartData.carts.length !== 0">{{ cartData.carts.length }}</q-badge>
     <q-menu>
       <q-list style="min-width: 300px">
         <q-item class="q-py-md">
@@ -30,9 +24,7 @@
           </q-item-section>
           <div class="column justify-end q-px-sm">
             <div class="row">
-              <div class="q-ma-sm">
-                {{ item.product.num }}/{{ item.product.unit }}
-              </div>
+              <div class="q-ma-sm">{{ item.product.num }}/{{ item.product.unit }}</div>
               <q-btn
                 flat
                 color="negative"
@@ -53,12 +45,7 @@
             </q-item-section>
           </div>
           <div class="q-ma-sm">
-            <q-btn
-              color="black"
-              class="full-width "
-              label="結帳"
-              to="/checkout"
-            />
+            <q-btn color="black" class="full-width " label="結帳" to="/checkout" />
           </div>
         </q-item>
       </q-list>
@@ -66,10 +53,10 @@
   </q-btn>
 </template>
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
 export default {
   data() {
-    return { coupon: '' }
+    return { coupon: '' };
   },
   computed: {
     ...mapState('front', ['cartData']),
@@ -79,7 +66,7 @@ export default {
   },
   methods: mapActions('front', ['getCarts', 'deleteCart', 'addCouponCode']),
   created() {
-    this.getCarts()
+    this.getCarts();
   }
-}
+};
 </script>

@@ -1,24 +1,20 @@
-import axiosBase from 'axios'
-import { Notify } from 'quasar'
-import headers from '../headers'
-import router from '../../router'
+import axiosBase from 'axios';
+import { Notify } from 'quasar';
+import headers from '../headers';
+import router from '../../router';
 
 const axios = axiosBase.create({
   baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin`,
   withCredentials: true
-})
+});
 
 const notify = function(data, isUpload = false) {
-  const message = isUpload
-    ? data.success
-      ? '上傳成功'
-      : '上傳失敗'
-    : data.message
+  const message = isUpload ? (data.success ? '上傳成功' : '上傳失敗') : data.message;
   Notify.create({
     type: data.success ? 'positive' : 'negative',
     message: message
-  })
-}
+  });
+};
 
 const state = {
   products: [],
@@ -83,153 +79,153 @@ const state = {
     }
   ],
   headers: headers
-}
+};
 
 const getters = {
   sortOrder: state => {
-    const orders = [...state.orders]
-    let newOrder = []
+    const orders = [...state.orders];
+    let newOrder = [];
     if (orders.length) {
       newOrder = orders.sort((a, b) => {
-        const aIsPaid = a.is_paid ? 1 : 0
-        const bIsPaid = b.is_paid ? 1 : 0
-        return bIsPaid - aIsPaid
-      })
+        const aIsPaid = a.is_paid ? 1 : 0;
+        const bIsPaid = b.is_paid ? 1 : 0;
+        return bIsPaid - aIsPaid;
+      });
     }
-    return newOrder
+    return newOrder;
   }
-}
+};
 
 const actions = {
   async getProducts({ commit }, page = 1) {
-    commit('updateLoading', ['products', true])
+    commit('updateLoading', ['products', true]);
     await axios.get('products?page=' + page).then(res => {
       if (res.data.success) {
-        commit('updateProducts', res.data.products)
-        commit('updatePagination', [res.data.pagination, 'products'])
+        commit('updateProducts', res.data.products);
+        commit('updatePagination', [res.data.pagination, 'products']);
       } else {
-        notify(res.data)
-        router.push('login')
+        notify(res.data);
+        router.push('login');
       }
-      commit('updateLoading', ['products', false])
-    })
+      commit('updateLoading', ['products', false]);
+    });
   },
   async getOrders({ commit }, page = 1) {
-    commit('updateLoading', ['orders', true])
+    commit('updateLoading', ['orders', true]);
     await axios.get('orders?page=' + page).then(res => {
       if (res.data.success) {
-        commit('updateOrders', res.data.orders)
-        commit('updatePagination', [res.data.pagination, 'orders'])
+        commit('updateOrders', res.data.orders);
+        commit('updatePagination', [res.data.pagination, 'orders']);
       } else {
-        notify(res.data)
-        router.push('login')
+        notify(res.data);
+        router.push('login');
       }
-      commit('updateLoading', ['orders', false])
-    })
+      commit('updateLoading', ['orders', false]);
+    });
   },
   async getCoupons({ commit }) {
-    commit('updateLoading', ['coupons', true])
+    commit('updateLoading', ['coupons', true]);
     await axios.get('coupons').then(res => {
       if (res.data.success) {
-        commit('updateCoupons', res.data.coupons)
+        commit('updateCoupons', res.data.coupons);
       } else {
-        notify(res.data)
-        router.push('login')
+        notify(res.data);
+        router.push('login');
       }
-      commit('updateLoading', ['coupons', false])
-    })
+      commit('updateLoading', ['coupons', false]);
+    });
   },
   async updateProduct({ dispatch, commit }, { isNew, product }) {
-    commit('updateLoading', ['productUpdate', isNew ? 'new' : product.id])
-    const url = isNew ? 'product' : 'product/' + product.id
-    const httpMethod = isNew ? 'post' : 'put'
-    const data = { data: product }
+    commit('updateLoading', ['productUpdate', isNew ? 'new' : product.id]);
+    const url = isNew ? 'product' : 'product/' + product.id;
+    const httpMethod = isNew ? 'post' : 'put';
+    const data = { data: product };
     await axios[httpMethod](url, data).then(res => {
-      notify(res.data)
+      notify(res.data);
       if (res.data.success) {
-        dispatch('getProducts')
+        dispatch('getProducts');
       }
-      commit('updateLoading', ['productUpdate', null])
-    })
+      commit('updateLoading', ['productUpdate', null]);
+    });
   },
   async updateCoupon({ dispatch, commit }, { isNew, coupon }) {
-    commit('updateLoading', ['couponUpdate', isNew ? 'new' : coupon.id])
-    const url = isNew ? 'coupon' : 'coupon/' + coupon.id
-    const httpMethod = isNew ? 'post' : 'put'
-    const data = { data: coupon }
+    commit('updateLoading', ['couponUpdate', isNew ? 'new' : coupon.id]);
+    const url = isNew ? 'coupon' : 'coupon/' + coupon.id;
+    const httpMethod = isNew ? 'post' : 'put';
+    const data = { data: coupon };
     await axios[httpMethod](url, data).then(res => {
-      notify(res.data)
+      notify(res.data);
       if (res.data.success) {
-        dispatch('getCoupons')
+        dispatch('getCoupons');
       }
-      commit('updateLoading', ['couponUpdate', null])
-    })
+      commit('updateLoading', ['couponUpdate', null]);
+    });
   },
   async deleteProduct({ dispatch, commit }, id) {
-    commit('updateLoading', ['productDelete', id])
-    let url = 'product/' + id
+    commit('updateLoading', ['productDelete', id]);
+    let url = 'product/' + id;
     await axios.delete(url).then(res => {
-      notify(res.data)
+      notify(res.data);
       if (res.data.success) {
-        dispatch('getProducts')
+        dispatch('getProducts');
       }
-      commit('updateLoading', ['productDelete', null])
-    })
+      commit('updateLoading', ['productDelete', null]);
+    });
   },
   async deleteCoupon({ dispatch, commit }, id) {
-    commit('updateLoading', ['couponDelete', id])
-    let url = 'coupon/' + id
+    commit('updateLoading', ['couponDelete', id]);
+    let url = 'coupon/' + id;
     await axios.delete(url).then(res => {
-      notify(res.data)
+      notify(res.data);
       if (res.data.success) {
-        dispatch('getCoupons')
+        dispatch('getCoupons');
       }
-      commit('updateLoading', ['couponDelete', null])
-    })
+      commit('updateLoading', ['couponDelete', null]);
+    });
   },
   async uploadFile({ commit }, file) {
-    commit('updateLoading', ['uploading', true])
-    let imageUrl = null
-    const formData = new FormData()
-    formData.append('file-to-upload', file)
+    commit('updateLoading', ['uploading', true]);
+    let imageUrl = null;
+    const formData = new FormData();
+    formData.append('file-to-upload', file);
     await axios
       .post('upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       .then(res => {
-        notify(res.data, true)
+        notify(res.data, true);
         if (res.data.success) {
-          commit('updateLoading', ['uploading', false])
-          imageUrl = res.data.imageUrl
+          commit('updateLoading', ['uploading', false]);
+          imageUrl = res.data.imageUrl;
         }
-      })
-    return await imageUrl
+      });
+    return await imageUrl;
   }
-}
+};
 
 const mutations = {
   updateDrawer(state, value) {
-    state.drawer = value
+    state.drawer = value;
   },
   updateProducts(state, products) {
-    state.products = products
+    state.products = products;
   },
   updateOrders(state, orders) {
-    state.orders = orders
+    state.orders = orders;
   },
   updateCoupons(state, coupons) {
-    state.coupons = coupons
+    state.coupons = coupons;
   },
   updateLoading(state, [which, value]) {
-    state.loadings[which] = value
+    state.loadings[which] = value;
   },
   updateTempProduct(state, value) {
-    state.tempProducts = value
+    state.tempProducts = value;
   },
   updatePagination(state, [value, location]) {
-    state.pagination[location] = value
+    state.pagination[location] = value;
   }
-}
+};
 
 export default {
   namespaced: true,
@@ -237,4 +233,4 @@ export default {
   getters,
   actions,
   mutations
-}
+};

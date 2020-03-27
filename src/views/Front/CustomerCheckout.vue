@@ -17,9 +17,9 @@
   </q-page>
 </template>
 <script>
-import CheckUserInfo from '@/components/Front/CheckUserInfo'
-import CheckOrderList from '@/components/Front/CheckOrderList'
-import { mapState, mapActions } from 'vuex'
+import CheckUserInfo from '@/components/Front/CheckUserInfo';
+import CheckOrderList from '@/components/Front/CheckOrderList';
+import { mapState, mapActions } from 'vuex';
 export default {
   components: { CheckOrderList, CheckUserInfo },
   computed: {
@@ -30,7 +30,7 @@ export default {
   },
   methods: mapActions('front', ['getOrder', 'payOrder']),
   created() {
-    this.getOrder(this.$route.params.orderId)
+    this.getOrder(this.$route.params.orderId);
   }
-}
+};
 </script>
