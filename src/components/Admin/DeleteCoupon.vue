@@ -1,6 +1,12 @@
 <template>
   <div>
-    <q-btn flat color="negative" icon="fas fa-trash-alt" @click="confirm = true" :loading="loading == item.id" />
+    <q-btn
+      flat
+      color="negative"
+      icon="fas fa-trash-alt"
+      @click="confirm = true"
+      :loading="loading == item.id"
+    />
     <q-dialog v-model="confirm" persistent>
       <q-card>
         <q-card-section class="row items-center">
@@ -9,7 +15,13 @@
 
         <q-card-actions align="right">
           <q-btn flat label="取消" color="primary" v-close-popup />
-          <q-btn flat label="確定" color="negative" v-close-popup @click="deleteProduct" />
+          <q-btn
+            flat
+            label="確定"
+            color="negative"
+            v-close-popup
+            @click="deleteProduct"
+          />
         </q-card-actions>
       </q-card>
     </q-dialog>

@@ -1,21 +1,70 @@
 <template>
-  <ValidationObserver tag="div" class="column q-mt-sm" v-slot="{ invalid }" ref="check">
+  <ValidationObserver
+    tag="div"
+    class="column q-mt-sm"
+    v-slot="{ invalid }"
+    ref="check"
+  >
     <div class="col q-gutter-sm q-pa-sm">
       <div>Email</div>
-      <ValidationProvider rules="required|email" name="Email" v-slot="{ failed, errors }" tag="div">
-        <q-input outlined v-model="order.user.email" label="請輸入 Email" :error="failed" :error-message="errors[0]" />
+      <ValidationProvider
+        rules="required|email"
+        name="Email"
+        v-slot="{ failed, errors }"
+        tag="div"
+      >
+        <q-input
+          outlined
+          v-model="order.user.email"
+          label="請輸入 Email"
+          :error="failed"
+          :error-message="errors[0]"
+        />
       </ValidationProvider>
       <div>收件人姓名</div>
-      <ValidationProvider rules="required" name="姓名" v-slot="{ failed, errors }" tag="div">
-        <q-input outlined v-model="order.user.name" label="請輸入姓名" :error="failed" :error-message="errors[0]" />
+      <ValidationProvider
+        rules="required"
+        name="姓名"
+        v-slot="{ failed, errors }"
+        tag="div"
+      >
+        <q-input
+          outlined
+          v-model="order.user.name"
+          label="請輸入姓名"
+          :error="failed"
+          :error-message="errors[0]"
+        />
       </ValidationProvider>
       <div>收件人電話</div>
-      <ValidationProvider rules="required|numeric|length:10" name="電話" v-slot="{ failed, errors }" tag="div">
-        <q-input outlined v-model="order.user.tel" label="請輸入電話" :error="failed" :error-message="errors[0]" />
+      <ValidationProvider
+        rules="required|numeric|length:10"
+        name="電話"
+        v-slot="{ failed, errors }"
+        tag="div"
+      >
+        <q-input
+          outlined
+          v-model="order.user.tel"
+          label="請輸入電話"
+          :error="failed"
+          :error-message="errors[0]"
+        />
       </ValidationProvider>
       <div>收件人地址</div>
-      <ValidationProvider rules="required" name="地址" v-slot="{ failed, errors }" tag="div">
-        <q-input outlined v-model="order.user.address" label="請輸入地址" :error="failed" :error-message="errors[0]" />
+      <ValidationProvider
+        rules="required"
+        name="地址"
+        v-slot="{ failed, errors }"
+        tag="div"
+      >
+        <q-input
+          outlined
+          v-model="order.user.address"
+          label="請輸入地址"
+          :error="failed"
+          :error-message="errors[0]"
+        />
       </ValidationProvider>
     </div>
     <div class="col q-pa-md">
@@ -39,7 +88,13 @@
       />
     </ValidationProvider>
     <div class="col q-pa-sm q-my-md row justify-end">
-      <q-btn color="primary" label="送出訂單" @click="createOrder(order)" :loading="loading" :disable="invalid"></q-btn>
+      <q-btn
+        color="primary"
+        label="送出訂單"
+        @click="createOrder(order)"
+        :loading="loading"
+        :disable="invalid"
+      ></q-btn>
     </div>
   </ValidationObserver>
 </template>
@@ -61,7 +116,10 @@ export default {
   mounted() {
     this.$watch(() => {
       if (!this.$refs.check.flags.invalid) {
-        this.$store.commit('front/checkOrderInfo', this.$refs.check.flags.invalid);
+        this.$store.commit(
+          'front/checkOrderInfo',
+          this.$refs.check.flags.invalid
+        );
         if (this.submit) {
           this.createOrder(this.order);
         }

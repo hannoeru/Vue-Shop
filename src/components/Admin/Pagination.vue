@@ -25,7 +25,8 @@ export default {
         return this.pagination.current_page;
       },
       set(val) {
-        const patch = this.location == 'products' ? 'admin/getProducts' : 'admin/getOrders';
+        const patch =
+          this.location == 'products' ? 'admin/getProducts' : 'admin/getOrders';
         this.$store.dispatch(patch, val);
       }
     },

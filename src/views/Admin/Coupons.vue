@@ -1,6 +1,13 @@
 <template>
   <q-page class="q-pa-lg">
-    <q-table title="商品" :data="coupons" :columns="headers" row-key="name" :loading="loading" :pagination="pagination">
+    <q-table
+      title="商品"
+      :data="coupons"
+      :columns="headers"
+      row-key="name"
+      :loading="loading"
+      :pagination="pagination"
+    >
       <template v-slot:top>
         <div class="text-h6">優惠卷列表</div>
         <q-space />

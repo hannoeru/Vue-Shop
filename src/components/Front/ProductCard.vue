@@ -9,9 +9,15 @@
         <div class="text-h6">{{ item.title }}</div>
         <div class="text-subtitle2">{{ item.content }}</div>
         <div class="column q-mt-xl">
-          <div class="text-body1" v-if="!item.price">{{ item.origin_price }} 元</div>
-          <del class="text-body2" v-if="item.price">原價 {{ item.origin_price }} 元</del>
-          <div class="text-body1" v-if="item.price">現在只要 <br />{{ item.price }} 元</div>
+          <div class="text-body1" v-if="!item.price">
+            {{ item.origin_price }} 元
+          </div>
+          <del class="text-body2" v-if="item.price">
+            原價 {{ item.origin_price }} 元
+          </del>
+          <div class="text-body1" v-if="item.price">
+            現在只要 <br />{{ item.price }} 元
+          </div>
         </div>
       </q-card-section>
     </q-card-section>

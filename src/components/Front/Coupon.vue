@@ -1,7 +1,18 @@
 <template>
   <div class="row q-gutter-md q-mt-sm">
-    <q-input class="col" outlined label="請輸入優惠卷" v-model="coupon" :dense="true" />
-    <q-btn outline color="primary" label="套用" @click="addCouponCode(coupon)" />
+    <q-input
+      class="col"
+      outlined
+      label="請輸入優惠卷"
+      v-model="coupon"
+      :dense="true"
+    />
+    <q-btn
+      outline
+      color="primary"
+      label="套用"
+      @click="addCouponCode(coupon)"
+    />
   </div>
 </template>
 <script>

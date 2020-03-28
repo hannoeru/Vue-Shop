@@ -1,8 +1,21 @@
 <template>
-  <q-drawer v-model="drawer" show-if-above :width="200" :breakpoint="500" bordered content-class="bg-grey-3">
+  <q-drawer
+    v-model="drawer"
+    show-if-above
+    :width="200"
+    :breakpoint="500"
+    bordered
+    content-class="bg-grey-3"
+  >
     <q-scroll-area class="fit">
       <q-list v-for="(menuItem, index) in menuList" :key="index">
-        <q-item clickable :active="menuItem.label === 'Outbox'" v-ripple :to="menuItem.link" exact>
+        <q-item
+          clickable
+          :active="menuItem.label === 'Outbox'"
+          v-ripple
+          :to="menuItem.link"
+          exact
+        >
           <q-item-section avatar>
             <q-icon :name="menuItem.icon" :color="menuItem.iconColor" />
           </q-item-section>

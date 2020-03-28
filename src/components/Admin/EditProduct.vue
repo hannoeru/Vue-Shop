@@ -1,9 +1,32 @@
 <template>
   <div>
-    <q-btn color="primary" label="新增商品" @click="init" v-if="isNew" :loading="loading == 'new'" />
-    <q-btn flat color="primary" icon="fas fa-edit" @click="init" v-else :loading="loading == item.id" />
-    <q-dialog v-model="persistent" persistent transition-show="scale" transition-hide="scale">
-      <ValidationObserver tag="div" class="q-card" style="width:80vw;max-width:700px" v-slot="{ invalid }">
+    <q-btn
+      color="primary"
+      label="新增商品"
+      @click="init"
+      v-if="isNew"
+      :loading="loading == 'new'"
+    />
+    <q-btn
+      flat
+      color="primary"
+      icon="fas fa-edit"
+      @click="init"
+      v-else
+      :loading="loading == item.id"
+    />
+    <q-dialog
+      v-model="persistent"
+      persistent
+      transition-show="scale"
+      transition-hide="scale"
+    >
+      <ValidationObserver
+        tag="div"
+        class="q-card"
+        style="width:80vw;max-width:700px"
+        v-slot="{ invalid }"
+      >
         <q-card-section>
           <div class="text-h6">{{ isNew ? '新增商品' : '編輯商品' }}</div>
         </q-card-section>
@@ -13,7 +36,12 @@
             <div class="row">
               <div class="col-12 q-px-md">
                 <div class="q-mb-sm">圖片網址</div>
-                <q-input outlined v-model="tempProduct.imageUrl" label="請輸入圖片網址" class="q-mb-md" />
+                <q-input
+                  outlined
+                  v-model="tempProduct.imageUrl"
+                  label="請輸入圖片網址"
+                  class="q-mb-md"
+                />
                 <div class="q-mb-sm">或 上傳圖片</div>
                 <q-file
                   v-model="file"

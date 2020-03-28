@@ -8,9 +8,27 @@
           </q-card-section>
           <q-card-section class="q-pb-lg">
             <q-form class="q-gutter-y-md column" @submit="signin">
-              <q-input outlined v-model="username" type="text" label="username" />
-              <q-input outlined v-model="password" type="password" label="password" autocomplete="off" />
-              <q-btn unelevated color="blue" size="lg" class="full-width q-mt-lg" label="Login" type="submit" />
+              <q-input
+                outlined
+                v-model="username"
+                type="text"
+                label="username"
+              />
+              <q-input
+                outlined
+                v-model="password"
+                type="password"
+                label="password"
+                autocomplete="off"
+              />
+              <q-btn
+                unelevated
+                color="blue"
+                size="lg"
+                class="full-width q-mt-lg"
+                label="Login"
+                type="submit"
+              />
             </q-form>
           </q-card-section>
         </q-card>

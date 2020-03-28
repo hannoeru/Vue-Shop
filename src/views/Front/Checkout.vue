@@ -2,12 +2,22 @@
   <q-page class="q-pa-lg row justify-center items-center">
     <div class="col-6">
       <q-stepper v-model="step" ref="stepper" color="primary" animated>
-        <q-step :name="1" title="確認訂單內容" icon="fas fa-shopping-bag" :done="step > 1">
+        <q-step
+          :name="1"
+          title="確認訂單內容"
+          icon="fas fa-shopping-bag"
+          :done="step > 1"
+        >
           <Cart />
           <Coupon />
         </q-step>
 
-        <q-step :name="2" title="填寫用戶資料" icon="assignment" :done="step > 2">
+        <q-step
+          :name="2"
+          title="填寫用戶資料"
+          icon="assignment"
+          :done="step > 2"
+        >
           <Order :submit="submit" />
         </q-step>
 
