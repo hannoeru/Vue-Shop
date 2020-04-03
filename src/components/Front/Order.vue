@@ -105,12 +105,12 @@ export default {
   data() {
     return {
       order: {
-        user: {}
-      }
+        user: {},
+      },
     };
   },
   computed: mapState('front', {
-    loading: state => state.loadings.createOrder
+    loading: (state) => state.loadings.createOrder,
   }),
   methods: mapActions('front', ['createOrder']),
   mounted() {
@@ -125,6 +125,6 @@ export default {
         }
       }
     });
-  }
+  },
 };
 </script>

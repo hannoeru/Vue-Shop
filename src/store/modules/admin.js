@@ -1,20 +1,7 @@
-import axiosBase from 'axios';
-import { Notify } from 'quasar';
+import notify from '../../utils/notify';
 import headers from '../headers';
 import router from '../../router';
-
-const axios = axiosBase.create({
-  baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}/admin`,
-  withCredentials: true
-});
-
-const notify = function(data, isUpload = false) {
-  const message = isUpload ? (data.success ? '上傳成功' : '上傳失敗') : data.message;
-  Notify.create({
-    type: data.success ? 'positive' : 'negative',
-    message: message
-  });
-};
+import api from '../../api/admin';
 
 const state = {
   products: [],
@@ -99,107 +86,83 @@ const getters = {
 const actions = {
   async getProducts({ commit }, page = 1) {
     commit('updateLoading', ['products', true]);
-    await axios.get('products?page=' + page).then(res => {
-      if (res.data.success) {
-        commit('updateProducts', res.data.products);
-        commit('updatePagination', [res.data.pagination, 'products']);
-      } else {
-        notify(res.data);
-        router.push('login');
-      }
-      commit('updateLoading', ['products', false]);
-    });
+    const res = await api.getProducts(page);
+    const data = res.data;
+    commit('updateLoading', ['products', false]);
+    if (!data.success) {
+      notify(data);
+      return router.push('login');
+    }
+    commit('updateProducts', data.products);
+    commit('updatePagination', [data.pagination, 'products']);
   },
   async getOrders({ commit }, page = 1) {
     commit('updateLoading', ['orders', true]);
-    await axios.get('orders?page=' + page).then(res => {
-      if (res.data.success) {
-        commit('updateOrders', res.data.orders);
-        commit('updatePagination', [res.data.pagination, 'orders']);
-      } else {
-        notify(res.data);
-        router.push('login');
-      }
-      commit('updateLoading', ['orders', false]);
-    });
+    const res = await api.getOrders(page);
+    const data = res.data;
+    commit('updateLoading', ['orders', false]);
+    if (!data.success) {
+      notify(data);
+      return router.push('login');
+    }
+    commit('updateOrders', res.data.orders);
+    commit('updatePagination', [res.data.pagination, 'orders']);
   },
   async getCoupons({ commit }) {
     commit('updateLoading', ['coupons', true]);
-    await axios.get('coupons').then(res => {
-      if (res.data.success) {
-        commit('updateCoupons', res.data.coupons);
-      } else {
-        notify(res.data);
-        router.push('login');
-      }
-      commit('updateLoading', ['coupons', false]);
-    });
+    const res = await api.getCoupons();
+    const data = res.data;
+    commit('updateLoading', ['coupons', false]);
+    if (!data.success) {
+      notify(data);
+      return router.push('login');
+    }
+    commit('updateCoupons', data.coupons);
   },
   async updateProduct({ dispatch, commit }, { isNew, product }) {
     commit('updateLoading', ['productUpdate', isNew ? 'new' : product.id]);
-    const url = isNew ? 'product' : 'product/' + product.id;
-    const httpMethod = isNew ? 'post' : 'put';
-    const data = { data: product };
-    await axios[httpMethod](url, data).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getProducts');
-      }
-      commit('updateLoading', ['productUpdate', null]);
-    });
+    const res = await api.updateProduct(product, isNew);
+    const data = res.data;
+    commit('updateLoading', ['productUpdate', null]);
+    notify(data);
+    if (data.success) return;
+    dispatch('getProducts');
   },
   async updateCoupon({ dispatch, commit }, { isNew, coupon }) {
     commit('updateLoading', ['couponUpdate', isNew ? 'new' : coupon.id]);
-    const url = isNew ? 'coupon' : 'coupon/' + coupon.id;
-    const httpMethod = isNew ? 'post' : 'put';
-    const data = { data: coupon };
-    await axios[httpMethod](url, data).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getCoupons');
-      }
-      commit('updateLoading', ['couponUpdate', null]);
-    });
+    const res = await api.updateCoupon(coupon, isNew);
+    const data = res.data;
+    commit('updateLoading', ['couponUpdate', null]);
+    notify(data);
+    if (data.success) return;
+    dispatch('getCoupons');
   },
   async deleteProduct({ dispatch, commit }, id) {
     commit('updateLoading', ['productDelete', id]);
-    let url = 'product/' + id;
-    await axios.delete(url).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getProducts');
-      }
-      commit('updateLoading', ['productDelete', null]);
-    });
+    const res = await api.deleteProduct(id);
+    const data = res.data;
+    commit('updateLoading', ['productDelete', null]);
+    notify(data);
+    if (data.success) return;
+    dispatch('getProducts');
   },
   async deleteCoupon({ dispatch, commit }, id) {
     commit('updateLoading', ['couponDelete', id]);
-    let url = 'coupon/' + id;
-    await axios.delete(url).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getCoupons');
-      }
-      commit('updateLoading', ['couponDelete', null]);
-    });
+    const res = await api.deleteProduct(id);
+    const data = res.data;
+    commit('updateLoading', ['couponDelete', null]);
+    notify(data);
+    if (data.success) return;
+    dispatch('getCoupons');
   },
   async uploadFile({ commit }, file) {
     commit('updateLoading', ['uploading', true]);
-    let imageUrl = null;
-    const formData = new FormData();
-    formData.append('file-to-upload', file);
-    await axios
-      .post('upload', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      })
-      .then(res => {
-        notify(res.data, true);
-        if (res.data.success) {
-          commit('updateLoading', ['uploading', false]);
-          imageUrl = res.data.imageUrl;
-        }
-      });
-    return await imageUrl;
+    const res = await api.uploadFile(file);
+    const data = res.data;
+    commit('updateLoading', ['uploading', false]);
+    notify(data, true);
+    if (data.success) return;
+    return data.imageUrl;
   }
 };
 

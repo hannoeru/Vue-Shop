@@ -1,19 +1,6 @@
-import axiosBase from 'axios';
-import { Notify } from 'quasar';
+import notify from '../../utils/notify';
 import router from '../../router';
-
-const axios = axiosBase.create({
-  baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}`,
-  withCredentials: true
-});
-
-const notify = function(data, isUpload = false) {
-  const message = isUpload ? (data.success ? '上傳成功' : '上傳失敗') : data.message;
-  Notify.create({
-    type: data.success ? 'positive' : 'negative',
-    message: message
-  });
-};
+import api from '../../api/front';
 
 const state = {
   title: '網路點數專賣',
@@ -54,111 +41,118 @@ const getters = {
 const actions = {
   async getProducts({ commit }, page = 1) {
     commit('updateLoading', ['products', true]);
-    await axios.get('products?page=' + page).then(res => {
-      if (res.data.success) {
-        commit('updateProducts', res.data.products);
-        commit('updatePagination', [res.data.pagination, 'products']);
-      }
-      commit('updateLoading', ['products', false]);
-    });
+    // Api
+    const res = await api.getProducts(page);
+    const data = res.data;
+    commit('updateLoading', ['products', false]);
+    // Error msg
+    if (!data.success) return notify(data);
+    // Update data
+    commit('updateProducts', res.data.products);
+    commit('updatePagination', [res.data.pagination, 'products']);
   },
   async getAllProducts({ commit }) {
     commit('updateLoading', ['products', true]);
-    await axios.get('products/all').then(res => {
-      if (res.data.success) {
-        commit('updateProducts', res.data.products);
-      }
-      commit('updateLoading', ['products', false]);
-    });
+    // Api
+    const res = await api.getAllProducts();
+    const data = res.data;
+    commit('updateLoading', ['products', false]);
+    // Error msg
+    if (!data.success) return notify(data);
+    // Update data
+    commit('updateProducts', res.data.products);
   },
   async getProduct({ commit }, id) {
     commit('updateLoading', ['product', id]);
-    let product = {};
-    await axios.get('product/' + id).then(res => {
-      if (res.data.success) {
-        product = res.data.product;
-      } else {
-        notify(res.data);
-      }
-      commit('updateLoading', ['product', null]);
-    });
-    return await product;
+    // Api
+    const res = await api.getProduct(id);
+    const product = res.data.product;
+    commit('updateLoading', ['product', null]);
+    // Error msg
+    if (!res.data.success) return notify(res.data);
+    // Return data
+    return product;
   },
   async addToCart({ dispatch, commit }, [id, num = 1]) {
     commit('updateLoading', ['addToCart', id]);
-    const cart = {
-      data: {
-        product_id: id,
-        qty: num
-      }
-    };
-    await axios.post('cart', cart).then(res => {
-      notify(res.data);
-      dispatch('getCarts');
-      commit('updateLoading', ['addToCart', null]);
-    });
+    console.log(num);
+
+    // Api
+    const res = await api.addToCart(id, num);
+    commit('updateLoading', ['addToCart', null]);
+    // Message
+    notify(res.data);
+    // ErrorHandler
+    if (!res.data.success) return;
+    // Update data
+    dispatch('getCarts');
   },
   async getCarts({ commit }) {
     commit('updateLoading', ['cart', true]);
-    await axios.get('cart').then(res => {
-      if (res.data.success) {
-        commit('updateCartData', res.data.data);
-      }
-      commit('updateLoading', ['cart', false]);
-    });
+    // Api
+    const res = await api.getCarts();
+    commit('updateLoading', ['cart', false]);
+    // Error msg
+    if (!res.data.success) return notify(res.data);
+    // Update data
+    commit('updateCartData', res.data.data);
   },
   async deleteCart({ dispatch, commit }, id) {
     commit('updateLoading', ['deleteCart', id]);
-    let url = 'cart/' + id;
-    await axios.delete(url).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getCarts');
-      }
-      commit('updateLoading', ['deleteCart', null]);
-    });
+    // Api
+    const res = await api.deleteCart(id);
+    commit('updateLoading', ['deleteCart', null]);
+    // Message
+    notify(res.data);
+    // ErrorHandler
+    if (!res.data.success) return;
+    // Update data
+    dispatch('getCarts');
   },
   async addCouponCode({ dispatch, commit }, code) {
     commit('updateLoading', ['addCouponCode', true]);
-    const coupon = {
-      data: { code: code }
-    };
-    await axios.post('coupon', coupon).then(res => {
-      notify(res.data);
-      dispatch('getCarts');
-      commit('updateLoading', ['addCouponCode', false]);
-    });
+    // Api
+    const res = await api.addCouponCode(code);
+    commit('updateLoading', ['addCouponCode', false]);
+    // Message
+    notify(res.data);
+    // ErrorHandler
+    if (!res.data.success) return;
+    // Update data
+    dispatch('getCarts');
   },
   async createOrder({ dispatch, commit }, order) {
     commit('updateLoading', ['createOrder', true]);
-    const data = { data: order };
-    await axios.post('order', data).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getCarts');
-        router.push('payment/' + res.data.orderId);
-      }
-      commit('updateLoading', ['createOrder', false]);
-    });
+    // Api
+    const res = await api.createOrder(order);
+    commit('updateLoading', ['createOrder', false]);
+    // Message
+    notify(res.data);
+    // ErrorHandler
+    if (!res.data.success) return;
+    // Update data
+    dispatch('getCarts');
+    // redirect
+    router.push('payment/' + res.data.orderId);
   },
   async getOrder({ commit }, id) {
     commit('updateLoading', ['getOrder', true]);
-    await axios.get('order/' + id).then(res => {
-      if (res.data.success) {
-        commit('updateOrder', res.data.order);
-      }
-      commit('updateLoading', ['getOrder', false]);
-    });
+    // Api
+    const res = await api.getOrder(id);
+    commit('updateLoading', ['getOrder', false]);
+    // Error msg
+    if (!res.data.success) return notify(res.data);
+    // Update data
+    commit('updateOrder', res.data.order);
   },
   async payOrder({ dispatch, commit }, id) {
     commit('updateLoading', ['payOrder', true]);
-    await axios.post('pay/' + id).then(res => {
-      notify(res.data);
-      if (res.data.success) {
-        dispatch('getOrder', id);
-      }
-      commit('updateLoading', ['payOrder', false]);
-    });
+    // Api
+    const res = await api.payOrder(id);
+    commit('updateLoading', ['payOrder', false]);
+    notify(res.data);
+    if (!res.data.success) return;
+    dispatch('getOrder', id);
   }
 };
 

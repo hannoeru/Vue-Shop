@@ -74,12 +74,12 @@ export default {
   computed: {
     ...mapState('front', ['cartData']),
     ...mapState('front', {
-      loading: state => state.loadings.deleteCart
-    })
+      loading: (state) => state.loadings.deleteCart,
+    }),
   },
   methods: mapActions('front', ['getCarts', 'deleteCart', 'addCouponCode']),
   created() {
     this.getCarts();
-  }
+  },
 };
 </script>
