@@ -75,8 +75,6 @@ const actions = {
   },
   async addToCart({ dispatch, commit }, [id, num = 1]) {
     commit('updateLoading', ['addToCart', id]);
-    console.log(num);
-
     // Api
     const res = await api.addToCart(id, num);
     commit('updateLoading', ['addToCart', null]);
