@@ -42,98 +42,93 @@ const actions = {
   async getProducts({ commit }, page = 1) {
     commit('updateLoading', ['products', true]);
     // Api
-    const res = await api.getProducts(page);
-    const data = res.data;
+    const { data } = await api.getProducts(page);
     commit('updateLoading', ['products', false]);
     // Error msg
-    if (!data.success) return notify(data);
+    if (data.success) return notify(data);
     // Update data
-    commit('updateProducts', res.data.products);
-    commit('updatePagination', [res.data.pagination, 'products']);
+    commit('updateProducts', data.products);
+    commit('updatePagination', [data.pagination, 'products']);
   },
   async getAllProducts({ commit }) {
     commit('updateLoading', ['products', true]);
     // Api
-    const res = await api.getAllProducts();
-    const data = res.data;
+    const { data } = await api.getAllProducts();
     commit('updateLoading', ['products', false]);
     // Error msg
     if (!data.success) return notify(data);
     // Update data
-    commit('updateProducts', res.data.products);
+    commit('updateProducts', data.products);
   },
   async getProduct({ commit }, id) {
     commit('updateLoading', ['product', id]);
     // Api
-    const res = await api.getProduct(id);
-    const product = res.data.product;
+    const { data } = await api.getProduct(id);
     commit('updateLoading', ['product', null]);
     // Error msg
-    if (!res.data.success) return notify(res.data);
+    if (!data.success) return notify(data);
     // Return data
-    return product;
+    return data.product;
   },
   async addToCart({ dispatch, commit }, [id, num = 1]) {
     commit('updateLoading', ['addToCart', id]);
-    console.log(num);
-
     // Api
-    const res = await api.addToCart(id, num);
+    const { data } = await api.addToCart(id, num);
     commit('updateLoading', ['addToCart', null]);
     // Message
-    notify(res.data);
+    notify(data);
     // ErrorHandler
-    if (!res.data.success) return;
+    if (!data.success) return;
     // Update data
     dispatch('getCarts');
   },
   async getCarts({ commit }) {
     commit('updateLoading', ['cart', true]);
     // Api
-    const res = await api.getCarts();
+    const { data } = await api.getCarts();
     commit('updateLoading', ['cart', false]);
     // Error msg
-    if (!res.data.success) return notify(res.data);
+    if (!data.success) return notify(data);
     // Update data
-    commit('updateCartData', res.data.data);
+    commit('updateCartData', data.data);
   },
   async deleteCart({ dispatch, commit }, id) {
     commit('updateLoading', ['deleteCart', id]);
     // Api
-    const res = await api.deleteCart(id);
+    const { data } = await api.deleteCart(id);
     commit('updateLoading', ['deleteCart', null]);
     // Message
-    notify(res.data);
+    notify(data);
     // ErrorHandler
-    if (!res.data.success) return;
+    if (!data.success) return;
     // Update data
     dispatch('getCarts');
   },
   async addCouponCode({ dispatch, commit }, code) {
     commit('updateLoading', ['addCouponCode', true]);
     // Api
-    const res = await api.addCouponCode(code);
+    const { data } = await api.addCouponCode(code);
     commit('updateLoading', ['addCouponCode', false]);
     // Message
-    notify(res.data);
+    notify(data);
     // ErrorHandler
-    if (!res.data.success) return;
+    if (!data.success) return;
     // Update data
     dispatch('getCarts');
   },
   async createOrder({ dispatch, commit }, order) {
     commit('updateLoading', ['createOrder', true]);
     // Api
-    const res = await api.createOrder(order);
+    const { data } = await api.createOrder(order);
     commit('updateLoading', ['createOrder', false]);
     // Message
-    notify(res.data);
+    notify(data);
     // ErrorHandler
-    if (!res.data.success) return;
+    if (!data.success) return;
     // Update data
     dispatch('getCarts');
     // redirect
-    router.push('payment/' + res.data.orderId);
+    router.push('payment/' + data.orderId);
   },
   async getOrder({ commit }, id) {
     commit('updateLoading', ['getOrder', true]);
@@ -148,10 +143,10 @@ const actions = {
   async payOrder({ dispatch, commit }, id) {
     commit('updateLoading', ['payOrder', true]);
     // Api
-    const res = await api.payOrder(id);
+    const { data } = await api.payOrder(id);
     commit('updateLoading', ['payOrder', false]);
-    notify(res.data);
-    if (!res.data.success) return;
+    notify(data);
+    if (!data.success) return;
     dispatch('getOrder', id);
   }
 };

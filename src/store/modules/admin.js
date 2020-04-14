@@ -86,82 +86,97 @@ const getters = {
 const actions = {
   async getProducts({ commit }, page = 1) {
     commit('updateLoading', ['products', true]);
-    const res = await api.getProducts(page);
-    const data = res.data;
+    // Api
+    const { data } = await api.getProducts(page);
     commit('updateLoading', ['products', false]);
+    // Error msg
     if (!data.success) {
       notify(data);
       return router.push('login');
     }
+    // Update data
     commit('updateProducts', data.products);
     commit('updatePagination', [data.pagination, 'products']);
   },
   async getOrders({ commit }, page = 1) {
     commit('updateLoading', ['orders', true]);
-    const res = await api.getOrders(page);
-    const data = res.data;
+    // Api
+    const { data } = await api.getOrders(page);
     commit('updateLoading', ['orders', false]);
+    // Error msg
     if (!data.success) {
       notify(data);
       return router.push('login');
     }
-    commit('updateOrders', res.data.orders);
-    commit('updatePagination', [res.data.pagination, 'orders']);
+    // Update data
+    commit('updateOrders', data.orders);
+    commit('updatePagination', [data.pagination, 'orders']);
   },
   async getCoupons({ commit }) {
     commit('updateLoading', ['coupons', true]);
-    const res = await api.getCoupons();
-    const data = res.data;
+    // Api
+    const { data } = await api.getCoupons();
     commit('updateLoading', ['coupons', false]);
+    // Error msg
     if (!data.success) {
       notify(data);
       return router.push('login');
     }
+    // Update data
     commit('updateCoupons', data.coupons);
   },
   async updateProduct({ dispatch, commit }, { isNew, product }) {
     commit('updateLoading', ['productUpdate', isNew ? 'new' : product.id]);
-    const res = await api.updateProduct(product, isNew);
-    const data = res.data;
+    // Api
+    const { data } = await api.updateProduct(product, isNew);
     commit('updateLoading', ['productUpdate', null]);
+    // Error msg
     notify(data);
-    if (data.success) return;
+    if (!data.success) return;
+    // Update data
     dispatch('getProducts');
   },
   async updateCoupon({ dispatch, commit }, { isNew, coupon }) {
     commit('updateLoading', ['couponUpdate', isNew ? 'new' : coupon.id]);
-    const res = await api.updateCoupon(coupon, isNew);
-    const data = res.data;
+    // Api
+    const { data } = await api.updateCoupon(coupon, isNew);
     commit('updateLoading', ['couponUpdate', null]);
+    // Error msg
     notify(data);
-    if (data.success) return;
+    if (!data.success) return;
+    // Update data
     dispatch('getCoupons');
   },
   async deleteProduct({ dispatch, commit }, id) {
     commit('updateLoading', ['productDelete', id]);
-    const res = await api.deleteProduct(id);
-    const data = res.data;
+    // Api
+    const { data } = await api.deleteProduct(id);
     commit('updateLoading', ['productDelete', null]);
+    // Error msg
     notify(data);
-    if (data.success) return;
+    if (!data.success) return;
+    // Update data
     dispatch('getProducts');
   },
   async deleteCoupon({ dispatch, commit }, id) {
     commit('updateLoading', ['couponDelete', id]);
-    const res = await api.deleteProduct(id);
-    const data = res.data;
+    // Api
+    const { data } = await api.deleteProduct(id);
     commit('updateLoading', ['couponDelete', null]);
     notify(data);
-    if (data.success) return;
+    if (!data.success) return;
+    // Update data
     dispatch('getCoupons');
   },
   async uploadFile({ commit }, file) {
     commit('updateLoading', ['uploading', true]);
-    const res = await api.uploadFile(file);
-    const data = res.data;
+    // Api
+    const { data } = await api.uploadFile(file);
     commit('updateLoading', ['uploading', false]);
+    // Error msg
     notify(data, true);
-    if (data.success) return;
+    if (!data.success) return;
+    // Update data
     return data.imageUrl;
   }
 };
