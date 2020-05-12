@@ -35,7 +35,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "material-design-icons-iconfont": "^5.0.1",
     "node-sass": "^4.14.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.0",
     "vue-cli-plugin-quasar": "^2.0.2",
