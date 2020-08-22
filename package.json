@@ -11,7 +11,7 @@
     "@quasar/extras": "1.9.4",
     "axios": "0.20.0",
     "core-js": "3.6.5",
-    "quasar": "1.13.0",
+    "quasar": "1.13.1",
     "vee-validate": "3.3.9",
     "vue": "2.6.12",
     "vue-axios": "2.1.5",
