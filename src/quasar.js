@@ -5,7 +5,7 @@ import lang from 'quasar/lang/zh-hant.js';
 import '@quasar/extras/roboto-font/roboto-font.css';
 import '@quasar/extras/material-icons/material-icons.css';
 import '@quasar/extras/fontawesome-v5/fontawesome-v5.css';
-import { Quasar, Notify } from 'quasar';
+import { Quasar, Notify } from '@quasar/app';
 
 Vue.use(Quasar, {
   config: {

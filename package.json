@@ -21,6 +21,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "5.14.0",
     "@mdi/font": "5.5.55",
+    "@quasar/app": "^2.0.9",
     "@vue/cli-plugin-babel": "4.5.4",
     "@vue/cli-plugin-eslint": "4.5.4",
     "@vue/cli-plugin-router": "4.5.4",
@@ -40,5 +41,16 @@
     "sass-loader": "10.0.1",
     "vue-cli-plugin-quasar": "~2.0.2",
     "vue-template-compiler": "2.6.12"
-  }
+  },
+  "browserslist": [
+    "last 10 Chrome versions",
+    "last 10 Firefox versions",
+    "last 4 Edge versions",
+    "last 7 Safari versions",
+    "last 8 Android versions",
+    "last 8 ChromeAndroid versions",
+    "last 8 FirefoxAndroid versions",
+    "last 10 iOS versions",
+    "last 5 Opera versions"
+  ]
 }

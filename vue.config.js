@@ -9,7 +9,7 @@ module.exports = {
   publicPath: '/Vue-Shop/',
   pluginOptions: {
     quasar: {
-      importStrategy: 'kebab',
+      importStrategy: 'auto',
       rtlSupport: false
     }
   }
