@@ -1,9 +1,9 @@
 import axiosBase from 'axios';
 import router from '../../router';
 import { Notify } from 'quasar';
+axiosBase.defaults.withCredentials = true;
 const axios = axiosBase.create({
-  baseURL: process.env.VUE_APP_API_PATH,
-  withCredentials: true
+  baseURL: process.env.VUE_APP_API_PATH
 });
 const state = {
   user: { username: '', password: '' },

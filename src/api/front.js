@@ -1,8 +1,7 @@
 import axiosBase from 'axios';
-
+axiosBase.defaults.withCredentials = true;
 const axios = axiosBase.create({
-  baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}`,
-  withCredentials: true
+  baseURL: `${process.env.VUE_APP_API_PATH}/api/${process.env.VUE_APP_CUSTOM_PATH}`
 });
 
 const getProducts = function(page) {
