@@ -1,8 +1,8 @@
 dependencies:
-  '@quasar/extras': 1.9.4
+  '@quasar/extras': 1.9.5
   axios: 0.20.0
   core-js: 3.6.5
-  quasar: 1.13.1
+  quasar: 1.13.2
   vee-validate: 3.3.9_vue@2.6.12
   vue: 2.6.12
   vue-axios: 2.1.5_vue@2.6.12
@@ -16,16 +16,16 @@ devDependencies:
   '@vue/cli-plugin-router': 4.5.4_@vue+cli-service@4.5.4
   '@vue/cli-plugin-vuex': 4.5.4_@vue+cli-service@4.5.4
   '@vue/cli-service': 4.5.4_44ec78969f5e89b8f1c44a668f58ac1f
-  '@vue/eslint-config-prettier': 6.0.0_24bcece3a881f7758ca08a04dc68af8e
+  '@vue/eslint-config-prettier': 6.0.0_83e4acdb49b166eaa7fa1e1f867e09ab
   babel-eslint: 10.1.0_eslint@7.8.1
-  babel-plugin-transform-imports: 1.5.0
+  babel-plugin-transform-imports: 2.0.0
   eslint: 7.8.1
   eslint-config-prettier: 6.11.0_eslint@7.8.1
-  eslint-plugin-prettier: 3.1.4_eslint@7.8.1+prettier@2.1.0
+  eslint-plugin-prettier: 3.1.4_eslint@7.8.1+prettier@2.1.1
   eslint-plugin-vue: 6.2.2_eslint@7.8.1
-  material-design-icons-iconfont: 5.0.1
+  material-design-icons-iconfont: 6.0.1
   node-sass: 4.14.1
-  prettier: 2.1.0
+  prettier: 2.1.1
   sass: 1.26.10
   sass-loader: 10.0.1_node-sass@4.14.1+sass@1.26.10
   vue-cli-plugin-quasar: 2.0.2
@@ -1103,10 +1103,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
-  /@quasar/extras/1.9.4:
+  /@quasar/extras/1.9.5:
     dev: false
     resolution:
-      integrity: sha512-g0a39r4ejpTBsrygSfvc1gcZEhnGMl0Rj/xSH6kvmn42NtAwkKiORqFckhhHJ3ZsubE1c5F2jAFcpWAaaC/t8A==
+      integrity: sha512-eUJrYw51qWtJfw12Ha2VBK8wBqkperHh8iaktQoMUrda4goUZ8nYpbfq/ZQdmsDiBku/kpUIrr0pPRmjzVJwkQ==
   /@soda/friendly-errors-webpack-plugin/1.7.1_webpack@4.44.1:
     dependencies:
       chalk: 1.1.3
@@ -1561,12 +1561,12 @@ packages:
       prettier: 1.19.1
     resolution:
       integrity: sha512-lejBLa7xAMsfiZfNp7Kv51zOzifnb29FwdnMLa96z26kXErPFioSf9BMcePVIQ6/Gc6/mC0UrPpxAWIHyae0vw==
-  /@vue/eslint-config-prettier/6.0.0_24bcece3a881f7758ca08a04dc68af8e:
+  /@vue/eslint-config-prettier/6.0.0_83e4acdb49b166eaa7fa1e1f867e09ab:
     dependencies:
       eslint: 7.8.1
       eslint-config-prettier: 6.11.0_eslint@7.8.1
-      eslint-plugin-prettier: 3.1.4_eslint@7.8.1+prettier@2.1.0
-      prettier: 2.1.0
+      eslint-plugin-prettier: 3.1.4_eslint@7.8.1+prettier@2.1.1
+      prettier: 2.1.1
     dev: true
     peerDependencies:
       eslint: '>= 5.0.0'
@@ -2118,33 +2118,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-jZVI+s9Zg3IqA/kdi0i6UDCybUI3aSBLnglhYbSSjKlV7yF1F/5LWv8MakQmvYpnbJDS6fcBL2KzHSxNCMtWSQ==
-  /babel-plugin-transform-imports/1.5.0:
+  /babel-plugin-transform-imports/2.0.0:
     dependencies:
-      babel-types: 6.26.0
+      '@babel/types': 7.11.5
       is-valid-path: 0.1.1
-      lodash.camelcase: 4.3.0
-      lodash.findkey: 4.6.0
-      lodash.kebabcase: 4.1.1
-      lodash.snakecase: 4.1.1
     dev: true
     resolution:
-      integrity: sha1-MQUIKrSJsc7hYuQtL/57j3xoXy4=
-  /babel-runtime/6.26.0:
-    dependencies:
-      core-js: 2.6.11
-      regenerator-runtime: 0.11.1
-    dev: true
-    resolution:
-      integrity: sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
-  /babel-types/6.26.0:
-    dependencies:
-      babel-runtime: 6.26.0
-      esutils: 2.0.3
-      lodash: 4.17.20
-      to-fast-properties: 1.0.3
-    dev: true
-    resolution:
-      integrity: sha1-o7Bz+Uq0nrb6Vc1lInozQ4BjJJc=
+      integrity: sha512-65ewumYJ85QiXdcB/jmiU0y0jg6eL6CdnDqQAqQ8JMOKh1E52VPG3NJzbVKWcgovUR5GBH8IWpCXQ7I8Q3wjgw==
   /balanced-match/1.0.0:
     dev: true
     resolution:
@@ -3014,12 +2994,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-7ItTKOhOZbznhXAQ2g/slGg1PJV5zDO/WdkTwi7UEOJmkvsE32PWvx6mKtDjiMpjnR2CNf6BAD6sSxIlv7ptng==
-  /core-js/2.6.11:
-    deprecated: 'core-js@<3 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.'
-    dev: true
-    requiresBuild: true
-    resolution:
-      integrity: sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
   /core-js/3.6.5:
     requiresBuild: true
     resolution:
@@ -3777,10 +3751,10 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-prettier/3.1.4_eslint@7.8.1+prettier@2.1.0:
+  /eslint-plugin-prettier/3.1.4_eslint@7.8.1+prettier@2.1.1:
     dependencies:
       eslint: 7.8.1
-      prettier: 2.1.0
+      prettier: 2.1.1
       prettier-linter-helpers: 1.0.0
     dev: true
     engines:
@@ -5787,18 +5761,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==
-  /lodash.camelcase/4.3.0:
-    dev: true
-    resolution:
-      integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
   /lodash.defaultsdeep/4.6.1:
     dev: true
     resolution:
       integrity: sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
-  /lodash.findkey/4.6.0:
-    dev: true
-    resolution:
-      integrity: sha1-gwWOkDtRy7dZ0JzPVG3qPqOcRxg=
   /lodash.kebabcase/4.1.1:
     dev: true
     resolution:
@@ -5811,10 +5777,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
-  /lodash.snakecase/4.1.1:
-    dev: true
-    resolution:
-      integrity: sha1-OdcUo1NXFHg3rv1ktdy7Fr7Nj40=
   /lodash.transform/4.6.0:
     dev: true
     resolution:
@@ -5911,10 +5873,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
-  /material-design-icons-iconfont/5.0.1:
+  /material-design-icons-iconfont/6.0.1:
     dev: true
     resolution:
-      integrity: sha512-Xg6rIdGrfySTqiTZ6d+nQbcFepS6R4uKbJP0oAqyeZXJY/bX6mZDnOmmUJusqLXfhIwirs0c++a6JpqVa8RFvA==
+      integrity: sha512-NDC8gQD0ORRum5dkwwF8hiDzW+y4cROyu213HJa1c7ediok9lsi8TMmmSvbA51WApYbgcdE9X5u0TzgL8n4zTw==
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -7377,13 +7339,13 @@ packages:
     optional: true
     resolution:
       integrity: sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
-  /prettier/2.1.0:
+  /prettier/2.1.1:
     dev: true
     engines:
       node: '>=10.13.0'
     hasBin: true
     resolution:
-      integrity: sha512-lz28cCbA1cDFHVuY8vvj6QuqOwIpyIfPUYkSl8AZ/vxH8qBXMMjE2knfLHCrZCmUsK/H1bg1P0tOo0dJkTJHvw==
+      integrity: sha512-9bY+5ZWCfqj3ghYBLxApy2zf6m+NJo5GzmLTpr9FsApsfjriNnS2dahWReHMi7qNPhhHl9SYHJs2cHZLgexNIw==
   /pretty-error/2.1.1:
     dependencies:
       renderkid: 2.0.3
@@ -7498,14 +7460,14 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /quasar/1.13.1:
+  /quasar/1.13.2:
     dev: false
     engines:
       node: '>= 10.0.0'
       npm: '>= 5.6.0'
       yarn: '>= 1.6.0'
     resolution:
-      integrity: sha512-8oyECYkT8xoe4+wfJ7Rn+SrISe/s0+KhmQj5ZkaFI9D1kxKAR5Qjj04ikc7UoyQoHtAoy+7imkO+eStpExE9Xg==
+      integrity: sha512-HJtWz38rLXLvTJqZ5c9GIS6SSwLjN0t8iTwAwD2AQ5FOsUTji6sq3XzzoPll5degXFevnVJlyFH5YTqMYnawVg==
   /query-string/4.3.4:
     dependencies:
       object-assign: 4.1.1
@@ -7652,10 +7614,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-j2+C8+NtXQgEKWk49MMP5P/u2GhnahTtVkRIHr5R5lVRlbKvmQ+oS+A5aLKWp2ma5VkT8sh6v+v4hbH0YHR66A==
-  /regenerator-runtime/0.11.1:
-    dev: true
-    resolution:
-      integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
   /regenerator-runtime/0.13.7:
     dev: true
     resolution:
@@ -8797,12 +8755,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
-  /to-fast-properties/1.0.3:
-    dev: true
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha1-uDVx+k2MJbguIxsG46MFXeTKGkc=
   /to-fast-properties/2.0.0:
     dev: true
     engines:
@@ -9664,7 +9616,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.14.0
   '@mdi/font': 5.5.55
-  '@quasar/extras': 1.9.4
+  '@quasar/extras': 1.9.5
   '@vue/cli-plugin-babel': 4.5.4
   '@vue/cli-plugin-eslint': 4.5.4
   '@vue/cli-plugin-router': 4.5.4
@@ -9673,16 +9625,16 @@ specifiers:
   '@vue/eslint-config-prettier': 6.0.0
   axios: 0.20.0
   babel-eslint: 10.1.0
-  babel-plugin-transform-imports: 1.5.0
+  babel-plugin-transform-imports: 2.0.0
   core-js: 3.6.5
-  eslint: ^7.7.0
+  eslint: ^7.8.1
   eslint-config-prettier: 6.11.0
   eslint-plugin-prettier: 3.1.4
   eslint-plugin-vue: 6.2.2
-  material-design-icons-iconfont: 5.0.1
+  material-design-icons-iconfont: 6.0.1
   node-sass: 4.14.1
-  prettier: 2.1.0
-  quasar: 1.13.1
+  prettier: 2.1.1
+  quasar: 1.13.2
   sass: 1.26.10
   sass-loader: 10.0.1
   vee-validate: 3.3.9
