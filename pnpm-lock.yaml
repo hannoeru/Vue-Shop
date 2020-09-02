@@ -1513,7 +1513,7 @@ packages:
       integrity: sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
   /@types/terser-webpack-plugin/3.0.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.21
       terser: 4.8.0
     dev: true
     resolution:
@@ -1526,7 +1526,7 @@ packages:
       integrity: sha512-KswB5C7Kwduwjj04Ykz+AjvPcfgv/37Za24O2EDzYNbwyzOo8+ydtvzUfZ5UMguiVu29Gx44l1A6VsPPcmYu9w==
   /@types/webpack-bundle-analyzer/3.8.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.21
     dev: true
     resolution:
       integrity: sha512-Ah6FbkXLAVUNI/ExXHsTS90iRS/Efplh333NySjhGx09oeH9qXf57NMUfl4RADTL5a89hQaq/nbT4eb0LwsQJw==
@@ -1536,7 +1536,7 @@ packages:
       '@types/express': 4.17.6
       '@types/http-proxy-middleware': 0.19.3
       '@types/serve-static': 1.13.5
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.21
     dev: true
     resolution:
       integrity: sha512-3+86AgSzl18n5P1iUP9/lz3G3GMztCp+wxdDvVuNhx1sr1jE79GpYfKHL8k+Vht3N74K2n98CuAEw4YPJCYtDA==
@@ -5686,7 +5686,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 5.1.0
       '@types/tapable': 1.0.6
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.21
       html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
       lodash: 4.17.20
@@ -11322,7 +11322,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.14.0
   '@mdi/font': 5.5.55
-  '@quasar/app': ^2.0.9
+  '@quasar/app': 2.0.9
   '@quasar/extras': 1.9.5
   '@vue/cli-plugin-babel': 4.5.4
   '@vue/cli-plugin-eslint': 4.5.4
@@ -11334,7 +11334,7 @@ specifiers:
   babel-eslint: 10.1.0
   babel-plugin-transform-imports: 2.0.0
   core-js: 3.6.5
-  eslint: ^7.8.1
+  eslint: 7.8.1
   eslint-config-prettier: 6.11.0
   eslint-plugin-prettier: 3.1.4
   eslint-plugin-vue: 6.2.2
@@ -11347,7 +11347,7 @@ specifiers:
   vee-validate: 3.3.9
   vue: 2.6.12
   vue-axios: 2.1.5
-  vue-cli-plugin-quasar: ~2.0.2
+  vue-cli-plugin-quasar: 2.0.2
   vue-router: 3.4.3
   vue-template-compiler: 2.6.12
   vuex: 3.5.1
