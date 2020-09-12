@@ -2,10 +2,10 @@ dependencies:
   '@quasar/extras': 1.9.5
   axios: 0.20.0
   core-js: 3.6.5
-  quasar: 1.13.2
-  vee-validate: 3.3.11_vue@2.6.12
+  quasar: 1.14.0
+  vee-validate: 3.3.11
   vue: 2.6.12
-  vue-axios: 2.1.5_vue@2.6.12
+  vue-axios: 2.1.5
   vue-router: 3.4.3
   vuex: 3.5.1_vue@2.6.12
 devDependencies:
@@ -8730,14 +8730,14 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /quasar/1.13.2:
+  /quasar/1.14.0:
     dev: false
     engines:
       node: '>= 10.0.0'
       npm: '>= 5.6.0'
       yarn: '>= 1.6.0'
     resolution:
-      integrity: sha512-HJtWz38rLXLvTJqZ5c9GIS6SSwLjN0t8iTwAwD2AQ5FOsUTji6sq3XzzoPll5degXFevnVJlyFH5YTqMYnawVg==
+      integrity: sha512-S7tREMAKP53n9slk1E6e0qwKQaNAA5N1aGUDUTr3zyVtaDj3FeIvacoppTZFUhXTrwAbbRd/mMZdMHLSuNsbBQ==
   /query-string/4.3.4:
     dependencies:
       object-assign: 4.1.1
@@ -10734,9 +10734,7 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
-  /vee-validate/3.3.11_vue@2.6.12:
-    dependencies:
-      vue: 2.6.12
+  /vee-validate/3.3.11:
     dev: false
     peerDependencies:
       vue: ^2.5.18
@@ -10760,9 +10758,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-  /vue-axios/2.1.5_vue@2.6.12:
-    dependencies:
-      vue: 2.6.12
+  /vue-axios/2.1.5:
     dev: false
     peerDependencies:
       vue: '>= 1.0.0'
@@ -11355,7 +11351,7 @@ specifiers:
   material-design-icons-iconfont: 6.1.0
   node-sass: 4.14.1
   prettier: 2.1.1
-  quasar: 1.13.2
+  quasar: 1.14.0
   sass: 1.26.10
   sass-loader: 10.0.2
   vee-validate: 3.3.11
