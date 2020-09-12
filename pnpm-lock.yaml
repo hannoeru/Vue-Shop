@@ -3,15 +3,15 @@ dependencies:
   axios: 0.20.0
   core-js: 3.6.5
   quasar: 1.13.2
-  vee-validate: 3.3.11
+  vee-validate: 3.3.11_vue@2.6.12
   vue: 2.6.12
-  vue-axios: 2.1.5
+  vue-axios: 2.1.5_vue@2.6.12
   vue-router: 3.4.3
   vuex: 3.5.1_vue@2.6.12
 devDependencies:
   '@fortawesome/fontawesome-free': 5.14.0
   '@mdi/font': 5.5.55
-  '@quasar/app': 2.0.9_sass@1.26.10
+  '@quasar/app': 2.1.0_sass@1.26.10
   '@vue/cli-plugin-babel': 4.5.6_158dd777044bae538fee5b12e0b3d5c2
   '@vue/cli-plugin-eslint': 4.5.6_1d88d859a991de925c904894e047913a
   '@vue/cli-plugin-router': 4.5.6_@vue+cli-service@4.5.6
@@ -1186,7 +1186,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.0.9_sass@1.26.10:
+  /@quasar/app/2.1.0_sass@1.26.10:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.1
       '@quasar/fastclick': 1.1.4
@@ -1274,7 +1274,7 @@ packages:
     peerDependencies:
       sass: '*'
     resolution:
-      integrity: sha512-Iy7W2R6sF8y0iZVudYjOYAWUBu7chuGA0w9eDopUoSW5g4qahXMFeDgAUsQXfL3PquJFZogzyTcu7EHoj6XuGg==
+      integrity: sha512-f9ij7MU9DgckY+2IoDFQwZNpqGqD2dv+FZAy4kb/aqBKomsnVzSboGiw6eGwYWSMA5ODYFrJwMWSA9546hjU7Q==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.1:
     dependencies:
       '@babel/core': 7.11.6
@@ -1499,7 +1499,7 @@ packages:
       integrity: sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
   /@types/terser-webpack-plugin/3.0.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
       terser: 4.8.0
     dev: true
     resolution:
@@ -1512,7 +1512,7 @@ packages:
       integrity: sha512-KswB5C7Kwduwjj04Ykz+AjvPcfgv/37Za24O2EDzYNbwyzOo8+ydtvzUfZ5UMguiVu29Gx44l1A6VsPPcmYu9w==
   /@types/webpack-bundle-analyzer/3.8.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
     dev: true
     resolution:
       integrity: sha512-Ah6FbkXLAVUNI/ExXHsTS90iRS/Efplh333NySjhGx09oeH9qXf57NMUfl4RADTL5a89hQaq/nbT4eb0LwsQJw==
@@ -5699,7 +5699,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 5.1.0
       '@types/tapable': 1.0.6
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
       html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
       lodash: 4.17.20
@@ -10734,7 +10734,9 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
-  /vee-validate/3.3.11:
+  /vee-validate/3.3.11_vue@2.6.12:
+    dependencies:
+      vue: 2.6.12
     dev: false
     peerDependencies:
       vue: ^2.5.18
@@ -10758,7 +10760,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
-  /vue-axios/2.1.5:
+  /vue-axios/2.1.5_vue@2.6.12:
+    dependencies:
+      vue: 2.6.12
     dev: false
     peerDependencies:
       vue: '>= 1.0.0'
@@ -11332,7 +11336,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.14.0
   '@mdi/font': 5.5.55
-  '@quasar/app': 2.0.9
+  '@quasar/app': 2.1.0
   '@quasar/extras': 1.9.5
   '@vue/cli-plugin-babel': 4.5.6
   '@vue/cli-plugin-eslint': 4.5.6
