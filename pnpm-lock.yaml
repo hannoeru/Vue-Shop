@@ -10,7 +10,7 @@ dependencies:
   vuex: 3.5.1_vue@2.6.12
 devDependencies:
   '@fortawesome/fontawesome-free': 5.14.0
-  '@mdi/font': 5.5.55
+  '@mdi/font': 5.6.55
   '@quasar/app': 2.1.0_sass@1.26.10
   '@vue/cli-plugin-babel': 4.5.6_158dd777044bae538fee5b12e0b3d5c2
   '@vue/cli-plugin-eslint': 4.5.6_1d88d859a991de925c904894e047913a
@@ -1131,10 +1131,10 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-zN69TnSr0viRSU6cEDIcuPcP67QcpQ6uHACg58FiN9PDrU6SLyGW3MR4tiISbYxy1kDWAVPwD+XwQTWE5cigAA==
-  /@mdi/font/5.5.55:
+  /@mdi/font/5.6.55:
     dev: true
     resolution:
-      integrity: sha512-xrVCXiRMz7ubB8mu6ehDhMADmGpLBsk3GWZccs39jWmhoTxatFnOvW8STJjqMGtePPNgGYYu/6m/AJVyMjBxnw==
+      integrity: sha512-6wWrpTXiv2wBtoCL+EJ9Xxfy6Tv6Q1KxmrX54/M23tBNmdGmh417y1tn327oXQxO1nq7BiHGAKkWQZ/GQPLTCA==
   /@mrmlnc/readdir-enhanced/2.2.1:
     dependencies:
       call-me-maybe: 1.0.1
@@ -11339,7 +11339,7 @@ packages:
       integrity: sha1-bnyXL8NxxkWmr7A6sUdp3vEU/MA=
 specifiers:
   '@fortawesome/fontawesome-free': 5.14.0
-  '@mdi/font': 5.5.55
+  '@mdi/font': 5.6.55
   '@quasar/app': 2.1.0
   '@quasar/extras': 1.9.5
   '@vue/cli-plugin-babel': 4.5.6
