@@ -6,7 +6,7 @@ dependencies:
   vee-validate: 3.4.0
   vue: 2.6.12
   vue-axios: 2.1.5
-  vue-router: 3.4.3
+  vue-router: 3.4.4
   vuex: 3.5.1_vue@2.6.12
 devDependencies:
   '@fortawesome/fontawesome-free': 5.14.0
@@ -10943,10 +10943,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-khkrcUIzMcI1rDcNtqkvLwfRFzB97GmJEsPAQdj7t/VvpGhmXLOkUfhc+Ah8CvpSXGXwuWuQO+x8Sy/xDhXZIA==
-  /vue-router/3.4.3:
+  /vue-router/3.4.4:
     dev: false
     resolution:
-      integrity: sha512-BADg1mjGWX18Dpmy6bOGzGNnk7B/ZA0RxuA6qedY/YJwirMfKXIDzcccmHbQI0A6k5PzMdMloc0ElHfyOoX35A==
+      integrity: sha512-qFfwwLvxUYq+iDJ0UoE8HMnuZEDtIDA+p573brVMb7NZr0t1vhMeMWDTvgF2b8MqAFOc77bNOTSSwYcR4pCZlg==
   /vue-server-renderer/2.6.12:
     dependencies:
       chalk: 1.1.3
@@ -11574,6 +11574,6 @@ specifiers:
   vue: 2.6.12
   vue-axios: 2.1.5
   vue-cli-plugin-quasar: 2.0.2
-  vue-router: 3.4.3
+  vue-router: 3.4.4
   vue-template-compiler: 2.6.12
   vuex: 3.5.1
