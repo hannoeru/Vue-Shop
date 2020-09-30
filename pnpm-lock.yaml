@@ -23,7 +23,7 @@ devDependencies:
   eslint: 7.10.0
   eslint-config-prettier: 6.12.0_eslint@7.10.0
   eslint-plugin-prettier: 3.1.4_eslint@7.10.0+prettier@2.1.2
-  eslint-plugin-vue: 6.2.2_eslint@7.10.0
+  eslint-plugin-vue: 7.0.0_eslint@7.10.0
   material-design-icons-iconfont: 6.1.0
   node-sass: 4.14.1
   prettier: 2.1.2
@@ -4492,19 +4492,20 @@ packages:
       prettier: '>=1.13.0'
     resolution:
       integrity: sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
-  /eslint-plugin-vue/6.2.2_eslint@7.10.0:
+  /eslint-plugin-vue/7.0.0_eslint@7.10.0:
     dependencies:
       eslint: 7.10.0
+      eslint-utils: 2.1.0
       natural-compare: 1.4.0
-      semver: 5.7.1
+      semver: 7.3.2
       vue-eslint-parser: 7.1.0_eslint@7.10.0
     dev: true
     engines:
       node: '>=8.10'
     peerDependencies:
-      eslint: ^5.0.0 || ^6.0.0
+      eslint: ^6.2.0 || ^7.0.0
     resolution:
-      integrity: sha512-Nhc+oVAHm0uz/PkJAWscwIT4ijTrK5fqNqz9QB1D35SbbuMG1uB6Yr5AJpvPSWg+WOw7nYNswerYh0kOk64gqQ==
+      integrity: sha512-SFcM8ZMdVRUQKrAryl6Q5razrJtloATUOKTZoK/8yvQig1c1L3VRoMLL9AXiV3VNsKXolkk6yeMIiqGf33/Iew==
   /eslint-scope/4.0.3:
     dependencies:
       esrecurse: 4.3.0
@@ -11562,7 +11563,7 @@ specifiers:
   eslint: 7.10.0
   eslint-config-prettier: 6.12.0
   eslint-plugin-prettier: 3.1.4
-  eslint-plugin-vue: 6.2.2
+  eslint-plugin-vue: 7.0.0
   material-design-icons-iconfont: 6.1.0
   node-sass: 4.14.1
   prettier: 2.1.2
