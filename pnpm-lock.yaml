@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.6.55
-  '@quasar/app': 2.1.1_sass@1.26.12
+  '@quasar/app': 2.1.1_sass@1.27.0
   '@vue/cli-plugin-babel': 4.5.7_17d101df640c85c8f1aed9ecc9e79381
   '@vue/cli-plugin-eslint': 4.5.7_32ec9d12de5f8dc004b5352f919e97ea
   '@vue/cli-plugin-router': 4.5.7_@vue+cli-service@4.5.7
@@ -27,8 +27,8 @@ devDependencies:
   material-design-icons-iconfont: 6.1.0
   node-sass: 4.14.1
   prettier: 2.1.2
-  sass: 1.26.12
-  sass-loader: 10.0.2_node-sass@4.14.1+sass@1.26.12
+  sass: 1.27.0
+  sass-loader: 10.0.2_node-sass@4.14.1+sass@1.27.0
   vue-cli-plugin-quasar: 2.0.2
   vue-template-compiler: 2.6.12
 lockfileVersion: 5.1
@@ -1184,7 +1184,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.1.1_sass@1.26.12:
+  /@quasar/app/2.1.1_sass@1.27.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1237,7 +1237,7 @@ packages:
       postcss-rtl: 1.7.3
       postcss-safe-parser: 4.0.2
       register-service-worker: 1.7.1
-      sass-loader: 8.0.2_ef5d6f1a64191561cff083aaae9386c7
+      sass-loader: 8.0.2_c4fcd51a0d4422f9dc1a91cc327b5a29
       semver: 7.3.2
       strip-ansi: 6.0.0
       stylus: 0.54.8
@@ -1765,7 +1765,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.0.2_node-sass@4.14.1+sass@1.26.12
+      sass-loader: 10.0.2_node-sass@4.14.1+sass@1.27.0
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -9313,13 +9313,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/10.0.2_node-sass@4.14.1+sass@1.26.12:
+  /sass-loader/10.0.2_node-sass@4.14.1+sass@1.27.0:
     dependencies:
       klona: 2.0.4
       loader-utils: 2.0.0
       neo-async: 2.6.2
       node-sass: 4.14.1
-      sass: 1.26.12
+      sass: 1.27.0
       schema-utils: 2.7.1
       semver: 7.3.2
     dev: true
@@ -9339,13 +9339,13 @@ packages:
         optional: true
     resolution:
       integrity: sha512-wV6NDUVB8/iEYMalV/+139+vl2LaRFlZGEd5/xmdcdzQcgmis+npyco6NsDTVOlNA3y2NV9Gcz+vHyFMIT+ffg==
-  /sass-loader/8.0.2_ef5d6f1a64191561cff083aaae9386c7:
+  /sass-loader/8.0.2_c4fcd51a0d4422f9dc1a91cc327b5a29:
     dependencies:
       clone-deep: 4.0.1
       loader-utils: 1.4.0
       neo-async: 2.6.2
       node-sass: 4.14.1
-      sass: 1.26.12
+      sass: 1.27.0
       schema-utils: 2.7.1
       semver: 6.3.0
       webpack: 4.44.2_webpack@4.44.2
@@ -9366,7 +9366,7 @@ packages:
         optional: true
     resolution:
       integrity: sha512-7o4dbSK8/Ol2KflEmSco4jTjQoV988bM82P9CZdmo9hR3RLnvNc0ufMNdMrB0caq38JQ/FgF4/7RcbcfKzxoFQ==
-  /sass/1.26.12:
+  /sass/1.27.0:
     dependencies:
       chokidar: 3.4.2
     dev: true
@@ -9374,7 +9374,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-hmSwtBOWoS9zwe0yAS+QmaseVCUELiGV22gXHDR7+9stEsVuEuxfY1GhC8XmUpC+Ir3Hwq7NxSUNbnmkznnF7g==
+      integrity: sha512-0gcrER56OkzotK/GGwgg4fPrKuiFlPNitO7eUJ18Bs+/NBlofJfMxmxqpqJxjae9vu0Wq8TZzrSyxZal00WDig==
   /sax/1.1.4:
     dev: true
     resolution:
@@ -11459,7 +11459,7 @@ specifiers:
   node-sass: 4.14.1
   prettier: 2.1.2
   quasar: 1.14.1
-  sass: 1.26.12
+  sass: 1.27.0
   sass-loader: 10.0.2
   vee-validate: 3.4.0
   vue: 2.6.12
