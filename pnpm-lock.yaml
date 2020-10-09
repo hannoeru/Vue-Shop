@@ -1,5 +1,5 @@
 dependencies:
-  '@quasar/extras': 1.9.7
+  '@quasar/extras': 1.9.8
   axios: 0.20.0
   core-js: 3.6.5
   quasar: 1.14.1
@@ -1304,10 +1304,10 @@ packages:
       webpack: '*'
     resolution:
       integrity: sha512-Eiu8B2rFl3nEvA+PYaybcXknkXcgVy//OqM7+f5fu3UEVw050/JyHBsrnBOMc+muon16Og1RKxOVmQuAWDS1hA==
-  /@quasar/extras/1.9.7:
+  /@quasar/extras/1.9.8:
     dev: false
     resolution:
-      integrity: sha512-LvcY8ILYrW6SV49xH+XeXKPnxFjDRQIX1Uaa10XDarW9y99pL+lUNFUI7wFzO6SwoMP18BlpEnC3BEqnSZ7OAA==
+      integrity: sha512-TXlldW2EVU1ut4ULzTfEnD3mE87YFdJ3jKjpRqjXJhKxuUDXT8r6ZHM48/z0h5rEoiFJKebCDxKPCG3HE7lt3w==
   /@quasar/fastclick/1.1.4:
     dev: true
     resolution:
@@ -11440,7 +11440,7 @@ specifiers:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.6.55
   '@quasar/app': 2.1.1
-  '@quasar/extras': 1.9.7
+  '@quasar/extras': 1.9.8
   '@vue/cli-plugin-babel': 4.5.7
   '@vue/cli-plugin-eslint': 4.5.7
   '@vue/cli-plugin-router': 4.5.7
