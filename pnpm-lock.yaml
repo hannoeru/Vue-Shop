@@ -3,7 +3,7 @@ dependencies:
   axios: 0.20.0
   core-js: 3.6.5
   quasar: 1.14.1
-  vee-validate: 3.4.0
+  vee-validate: 3.4.1
   vue: 2.6.12
   vue-axios: 3.0.1
   vue-router: 3.4.6
@@ -10851,12 +10851,12 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
-  /vee-validate/3.4.0:
+  /vee-validate/3.4.1:
     dev: false
     peerDependencies:
       vue: ^2.5.18
     resolution:
-      integrity: sha512-qxcqrGYr2gchZOjyhBKu7G4NOyOTmH6vk8APGdxAiL/0Iy2QZP/vcOYNbx7+zMhg7P3q418AseHR1sbckB5I+A==
+      integrity: sha512-anWhI3EMF+EWLWtAIcQ9Kj/jyNUA/Bu5GAHE2jEO7D4TRCrO+8S0ZqDw3ydlJSEJPv6dwvkHvqp3WgL6P2Mrew==
   /vendors/1.0.4:
     dev: true
     resolution:
@@ -11477,7 +11477,7 @@ specifiers:
   quasar: 1.14.1
   sass: 1.27.0
   sass-loader: 10.0.3
-  vee-validate: 3.4.0
+  vee-validate: 3.4.1
   vue: 2.6.12
   vue-axios: 3.0.1
   vue-cli-plugin-quasar: 3.0.1
