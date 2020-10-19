@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.7.55
-  '@quasar/app': 2.1.1_sass@1.27.0
+  '@quasar/app': 2.1.2_sass@1.27.0
   '@vue/cli-plugin-babel': 4.5.8_5b7752e5c9d4bf3fd64f7a4cf6aa43d8
   '@vue/cli-plugin-eslint': 4.5.8_1de031b3d097a3094bb29023cb2407ec
   '@vue/cli-plugin-router': 4.5.8_@vue+cli-service@4.5.8
@@ -1179,7 +1179,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.1.1_sass@1.27.0:
+  /@quasar/app/2.1.2_sass@1.27.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1267,7 +1267,7 @@ packages:
     peerDependencies:
       sass: '*'
     resolution:
-      integrity: sha512-Hv1thu3rsJzjvLSfphs9Q8mMkFteqyH8dz12PmD43Vsszr/5+HMSZazgYRPi7JEr9FWodUYRpA9fzrkWBsUiog==
+      integrity: sha512-hmmnOkqm50UM6RQmFyh0bp3pcRFmfCLRc2evL0CrqUFe5bk0zpQLCwb6odu6XCaC+5ALoouUmd3HoUJfc6VGQw==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.2:
     dependencies:
       '@babel/core': 7.12.3
@@ -1481,7 +1481,7 @@ packages:
       integrity: sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
   /@types/terser-webpack-plugin/3.0.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
       terser: 4.8.0
     dev: true
     resolution:
@@ -1494,7 +1494,7 @@ packages:
       integrity: sha512-I0Yd8TUELTbgRHq2K65j8rnDPAzAP+DiaF/syLem7yXwYLsHZhPd+AM2iXsWmf9P2F2NlFCgl5erZPQx9IbM9Q==
   /@types/webpack-bundle-analyzer/3.8.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
     dev: true
     resolution:
       integrity: sha512-Ah6FbkXLAVUNI/ExXHsTS90iRS/Efplh333NySjhGx09oeH9qXf57NMUfl4RADTL5a89hQaq/nbT4eb0LwsQJw==
@@ -5806,7 +5806,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 5.1.1
       '@types/tapable': 1.0.6
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.22
       html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
       lodash: 4.17.20
@@ -11469,7 +11469,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.7.55
-  '@quasar/app': 2.1.1
+  '@quasar/app': 2.1.2
   '@quasar/extras': 1.9.9
   '@vue/cli-plugin-babel': 4.5.8
   '@vue/cli-plugin-eslint': 4.5.8
