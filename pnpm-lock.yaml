@@ -2,7 +2,7 @@ dependencies:
   '@quasar/extras': 1.9.9
   axios: 0.20.0
   core-js: 3.6.5
-  quasar: 1.14.1
+  quasar: 1.14.2
   vee-validate: 3.4.2_vue@2.6.12
   vue: 2.6.12
   vue-axios: 3.0.1
@@ -8822,14 +8822,14 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /quasar/1.14.1:
+  /quasar/1.14.2:
     dev: false
     engines:
       node: '>= 10.0.0'
       npm: '>= 5.6.0'
       yarn: '>= 1.6.0'
     resolution:
-      integrity: sha512-SRv5VbFd/rhKiZjS/jm3yPpe8rYlccin+rI7hyzz7caIBV1nn8+Y20Wf3elm7GjShq5Fj8qmRaGcWmEWXOS+mA==
+      integrity: sha512-1YbIKTZpuIeDHcBrUFaPjU9Tdy9c7r3XcLCIquwtKFbp/A+dPDJdB9ZqGGdFMEOMYt0vfVnDosMgmh4e7rNaWw==
   /query-string/4.3.4:
     dependencies:
       object-assign: 4.1.1
@@ -11488,7 +11488,7 @@ specifiers:
   material-design-icons-iconfont: 6.1.0
   node-sass: 4.14.1
   prettier: 2.1.2
-  quasar: 1.14.1
+  quasar: 1.14.2
   sass: 1.27.0
   sass-loader: 10.0.3
   vee-validate: 3.4.2
