@@ -5766,7 +5766,7 @@ packages:
       he: 1.2.0
       param-case: 2.1.1
       relateurl: 0.2.7
-      uglify-js: 3.11.2
+      uglify-js: 3.11.3
     dev: true
     engines:
       node: '>=6'
@@ -10603,13 +10603,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
-  /uglify-js/3.11.2:
+  /uglify-js/3.11.3:
     dev: true
     engines:
       node: '>=0.8.0'
     hasBin: true
     resolution:
-      integrity: sha512-G440NU6fewtnQftSgqRV1r2A5ChKbU1gqFCJ7I8S7MPpY/eZZfLGefaY6gUZYiWebMaO+txgiQ1ZyLDuNWJulg==
+      integrity: sha512-wDRziHG94mNj2n3R864CvYw/+pc9y/RNImiTyrrf8BzgWn75JgFSwYvXrtZQMnMnOp/4UTrf3iCSQxSStPiByA==
   /uglify-js/3.4.10:
     dependencies:
       commander: 2.19.0
