@@ -21,7 +21,7 @@ devDependencies:
   babel-eslint: 10.1.0_eslint@7.11.0
   babel-plugin-transform-imports: 2.0.0
   eslint: 7.11.0
-  eslint-config-prettier: 6.13.0_eslint@7.11.0
+  eslint-config-prettier: 6.14.0_eslint@7.11.0
   eslint-plugin-prettier: 3.1.4_eslint@7.11.0+prettier@2.1.2
   eslint-plugin-vue: 7.1.0_eslint@7.11.0
   material-design-icons-iconfont: 6.1.0
@@ -1809,6 +1809,7 @@ packages:
       thread-loader: 2.1.3_webpack@4.44.2
       url-loader: 2.3.0_file-loader@4.3.0+webpack@4.44.2
       vue-loader: 15.9.3_e6f9754d45536372aa6e5c6b320144db
+      vue-loader-v16: /vue-loader/16.0.0-beta.8
       vue-style-loader: 4.1.2
       vue-template-compiler: 2.6.12
       webpack: 4.44.2_webpack@4.44.2
@@ -4265,20 +4266,6 @@ packages:
         optional: true
     resolution:
       integrity: sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
-  /debug/4.2.0_supports-color@6.1.0:
-    dependencies:
-      ms: 2.1.2
-      supports-color: 6.1.0
-    dev: true
-    engines:
-      node: '>=6.0'
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    resolution:
-      integrity: sha512-IX2ncY78vDTjZMFUdmsvIRFY2Cf4FnD0wRs+nQwJU8Lu99/tPFdb0VybiiMTPe3I6rQmwsqQqRBvxU+bZ/I8sg==
   /decamelize/1.2.0:
     engines:
       node: '>=0.10.0'
@@ -4878,6 +4865,16 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-LcT0i0LSmnzqK2t764pyIt7kKH2AuuqKRTtJTdddWxOiUja9HdG5GXBVF2gmCTvVYWVsTu8J2MhJLVGRh+pj8w==
+  /eslint-config-prettier/6.14.0_eslint@7.11.0:
+    dependencies:
+      eslint: 7.11.0
+      get-stdin: 6.0.0
+    dev: true
+    hasBin: true
+    peerDependencies:
+      eslint: '>=3.14.1'
+    resolution:
+      integrity: sha512-DbVwh0qZhAC7CNDWcq8cBdK6FcVHiMTKmCypOPWeZkp9hJ8xYwTaWSa6bb6cjfi8KOeJy0e9a8Izxyx+O4+gCQ==
   /eslint-loader/2.2.1_eslint@7.11.0+webpack@4.44.2:
     dependencies:
       eslint: 7.11.0
@@ -7644,7 +7641,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wRJtOo1v1ch+gN8PRsj0IGJznk+kQ8mz13ds/nuhLI+Qyf/931ZlRpd92oq0IRPpZIb+bhX8pRjzIVdcPDKmiQ==
-      tarball: material-design-icons-iconfont/-/material-design-icons-iconfont-6.1.0.tgz
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -10729,31 +10725,27 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+orQK83kyMva3WyPf59k1+Y525csj5JejicWut55zeTWANuN17qSiSLUXWtzHeNWORSvT7GLDJ/E/XiIWoXBTw==
-  /spdy-transport/3.0.0_supports-color@6.1.0:
+  /spdy-transport/3.0.0:
     dependencies:
-      debug: 4.2.0_supports-color@6.1.0
+      debug: 4.2.0
       detect-node: 2.0.4
       hpack.js: 2.1.6
       obuf: 1.1.2
       readable-stream: 3.6.0
       wbuf: 1.7.3
     dev: true
-    peerDependencies:
-      supports-color: '*'
     resolution:
       integrity: sha512-hsLVFE5SjA6TCisWeJXFKniGGOpBgMLmerfO2aCyCU5s7nJ/rpAepqmFifv/GCbSbueEeAJJnmSQ2rKC/g8Fcw==
-  /spdy/4.0.2_supports-color@6.1.0:
+  /spdy/4.0.2:
     dependencies:
-      debug: 4.2.0_supports-color@6.1.0
+      debug: 4.2.0
       handle-thing: 2.0.1
       http-deceiver: 1.2.7
       select-hose: 2.0.0
-      spdy-transport: 3.0.0_supports-color@6.1.0
+      spdy-transport: 3.0.0
     dev: true
     engines:
       node: '>=6.0.0'
-    peerDependencies:
-      supports-color: '*'
     resolution:
       integrity: sha512-r46gZQZQV+Kl9oItvl1JZZqJKGr+oEkB08A6BzkiR7593/7IbtuncXHd2YoYeTsG4157ZssMu9KYvUHLcjcDoA==
   /split-string/3.1.0:
@@ -11993,7 +11985,6 @@ packages:
       hash-sum: 2.0.0
       loader-utils: 2.0.0
     dev: true
-    optional: true
     resolution:
       integrity: sha512-oouKUQWWHbSihqSD7mhymGPX1OQ4hedzAHyvm8RdyHh6m3oIvoRF+NM45i/bhNOlo8jCnuJhaSUf/6oDjv978g==
   /vue-router/3.2.0:
@@ -12128,7 +12119,7 @@ packages:
       chokidar: 2.1.8
       compression: 1.7.4
       connect-history-api-fallback: 1.6.0
-      debug: 4.2.0_supports-color@6.1.0
+      debug: 4.2.0
       del: 4.1.1
       express: 4.17.1
       html-entities: 1.3.1
@@ -12148,7 +12139,7 @@ packages:
       serve-index: 1.9.1
       sockjs: 0.3.20
       sockjs-client: 1.4.0
-      spdy: 4.0.2_supports-color@6.1.0
+      spdy: 4.0.2
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0
@@ -12528,7 +12519,7 @@ specifiers:
   babel-plugin-transform-imports: 2.0.0
   core-js: 3.6.5
   eslint: 7.11.0
-  eslint-config-prettier: 6.13.0
+  eslint-config-prettier: 6.14.0
   eslint-plugin-prettier: 3.1.4
   eslint-plugin-vue: 7.1.0
   material-design-icons-iconfont: 6.1.0
