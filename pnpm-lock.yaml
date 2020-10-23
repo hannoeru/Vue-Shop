@@ -1,6 +1,6 @@
 dependencies:
   '@quasar/extras': 1.9.9
-  axios: 0.20.0
+  axios: 0.21.0
   core-js: 3.6.5
   quasar: 1.14.2
   vee-validate: 3.4.3_vue@2.6.12
@@ -2562,6 +2562,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ANA4rr2BDcmmAQLOKft2fufrtuvlqR+cXNNinUmvfeSNCOF98PZL+7M/v1zIdGo7OLjEA9J2gXJL+j4zGsl0bA==
+  /axios/0.21.0:
+    dependencies:
+      follow-redirects: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw==
   /babel-core/5.8.38:
     dependencies:
       babel-plugin-constant-folding: 1.0.1
@@ -12520,7 +12526,7 @@ specifiers:
   '@vue/cli-plugin-vuex': 4.5.8
   '@vue/cli-service': 4.5.8
   '@vue/eslint-config-prettier': 6.0.0
-  axios: 0.20.0
+  axios: 0.21.0
   babel-eslint: 10.1.0
   babel-plugin-transform-imports: 2.0.0
   core-js: 3.6.5
