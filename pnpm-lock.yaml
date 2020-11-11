@@ -16,7 +16,7 @@ devDependencies:
   '@vue/cli-plugin-eslint': 4.5.8_c0875768978ee4409a3957b81140f3b4
   '@vue/cli-plugin-router': 4.5.8_@vue+cli-service@4.5.8
   '@vue/cli-plugin-vuex': 4.5.8_@vue+cli-service@4.5.8
-  '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
+  '@vue/cli-service': 4.5.8_bef24f377f0077865f33ae38d11939b0
   '@vue/eslint-config-prettier': 6.0.0_6bac4c6a205a7c4131ea3eb87ec10c1e
   babel-eslint: 10.1.0_eslint@7.13.0
   babel-plugin-transform-imports: 2.0.0
@@ -28,7 +28,7 @@ devDependencies:
   node-sass: 5.0.0
   prettier: 2.1.2
   sass: 1.29.0
-  sass-loader: 10.0.5_node-sass@5.0.0+sass@1.29.0
+  sass-loader: 10.1.0_node-sass@5.0.0+sass@1.29.0
   vue-cli-plugin-quasar: 3.0.1
   vue-template-compiler: 2.6.12
 lockfileVersion: 5.2
@@ -1722,7 +1722,7 @@ packages:
     dependencies:
       '@babel/core': 7.12.3
       '@vue/babel-preset-app': 4.5.8_vue@2.6.12
-      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
+      '@vue/cli-service': 4.5.8_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.8
       babel-loader: 8.1.0_427212bc1158d185e577033f19ca0757
       cache-loader: 4.1.0_webpack@4.44.2
@@ -1736,7 +1736,7 @@ packages:
       integrity: sha512-2quuLuCZq2vH29xfp66L5YfUxQvyMX9te5jMslfQGVzvUmFpPbz8ceioZYW9+VqWjg8pzqSuBE+ANJLWdy2RtQ==
   /@vue/cli-plugin-eslint/4.5.8_c0875768978ee4409a3957b81140f3b4:
     dependencies:
-      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
+      '@vue/cli-service': 4.5.8_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.8
       eslint: 7.13.0
       eslint-loader: 2.2.1_eslint@7.13.0+webpack@4.44.2
@@ -1752,7 +1752,7 @@ packages:
       integrity: sha512-1lg3K2D/harXbN4FvRoA1b0X9947H+G4Ql/43rxJY39OqswfK/d1ck438Fo9M4l1+zhBSUNDmcjn7Q2EH6qWmA==
   /@vue/cli-plugin-router/4.5.8_@vue+cli-service@4.5.8:
     dependencies:
-      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
+      '@vue/cli-service': 4.5.8_bef24f377f0077865f33ae38d11939b0
       '@vue/cli-shared-utils': 4.5.8
     dev: true
     peerDependencies:
@@ -1761,13 +1761,13 @@ packages:
       integrity: sha512-tJwVLdX4jj0Ia/1hsBejRbo4gs0hb2z1z5ert+4Ve5RNdpOKUG69OaPQgXPqvuYSQh9MW7bqG0iJmYtVD+KBNw==
   /@vue/cli-plugin-vuex/4.5.8_@vue+cli-service@4.5.8:
     dependencies:
-      '@vue/cli-service': 4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec
+      '@vue/cli-service': 4.5.8_bef24f377f0077865f33ae38d11939b0
     dev: true
     peerDependencies:
       '@vue/cli-service': ^3.0.0 || ^4.0.0-0
     resolution:
       integrity: sha512-wU9WPhay1zBxtdd/HLRYhFRLBbG9lw3YTBJep9sTnYwUeXiEgum4O88Q2j6cwBBPPHMgeMrKMPHS85Jf4hMc0g==
-  /@vue/cli-service/4.5.8_97fbc010f5eb40d730f6254a3dd7a7ec:
+  /@vue/cli-service/4.5.8_bef24f377f0077865f33ae38d11939b0:
     dependencies:
       '@intervolga/optimize-cssnano-plugin': 1.0.6_webpack@4.44.2
       '@soda/friendly-errors-webpack-plugin': 1.7.1_webpack@4.44.2
@@ -1813,7 +1813,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 10.0.5_node-sass@5.0.0+sass@1.29.0
+      sass-loader: 10.1.0_node-sass@5.0.0+sass@1.29.0
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.44.2
       thread-loader: 2.1.3_webpack@4.44.2
@@ -7677,6 +7677,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wRJtOo1v1ch+gN8PRsj0IGJznk+kQ8mz13ds/nuhLI+Qyf/931ZlRpd92oq0IRPpZIb+bhX8pRjzIVdcPDKmiQ==
+      tarball: material-design-icons-iconfont/-/material-design-icons-iconfont-6.1.0.tgz
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -10289,7 +10290,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-VFWDAHOe6mRuT4mZRd4eKE+d8Uedrk6Xnh7Sh9b4NGufQLQjOrvf/MQoOdx+0s92L89FeyUUNfU597j/3uNpag==
-  /sass-loader/10.0.5_node-sass@5.0.0+sass@1.29.0:
+  /sass-loader/10.1.0_node-sass@5.0.0+sass@1.29.0:
     dependencies:
       klona: 2.0.4
       loader-utils: 2.0.0
@@ -10314,7 +10315,7 @@ packages:
       sass:
         optional: true
     resolution:
-      integrity: sha512-2LqoNPtKkZq/XbXNQ4C64GFEleSEHKv6NPSI+bMC/l+jpEXGJhiRYkAQToO24MR7NU4JRY2RpLpJ/gjo2Uf13w==
+      integrity: sha512-ZCKAlczLBbFd3aGAhowpYEy69Te3Z68cg8bnHHl6WnSCvnKpbM6pQrz957HWMa8LKVuhnD9uMplmMAHwGQtHeg==
   /sass-loader/8.0.2_32bfa89520c0f64425e9439f0fc16404:
     dependencies:
       clone-deep: 4.0.1
@@ -12615,7 +12616,7 @@ specifiers:
   prettier: 2.1.2
   quasar: 1.14.3
   sass: 1.29.0
-  sass-loader: 10.0.5
+  sass-loader: 10.1.0
   vee-validate: 3.4.4
   vue: 2.6.12
   vue-axios: 3.1.3
