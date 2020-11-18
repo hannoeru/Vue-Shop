@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.7_node-sass@5.0.0
+  '@quasar/app': 2.1.8_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.9_8ae91920fb9b3c76895c2e8acb765728
   '@vue/cli-plugin-eslint': 4.5.9_dc9f236cf599a704124014e44eb5eaea
   '@vue/cli-plugin-router': 4.5.9_@vue+cli-service@4.5.9
@@ -1182,7 +1182,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.1.7_node-sass@5.0.0:
+  /@quasar/app/2.1.8_node-sass@5.0.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1200,7 +1200,7 @@ packages:
       chalk: 4.1.0
       chokidar: 3.4.3
       ci-info: 2.0.0
-      compression-webpack-plugin: 6.1.1_webpack@4.44.2
+      compression-webpack-plugin: 5.0.1_webpack@4.44.2
       copy-webpack-plugin: 6.3.1_webpack@4.44.2
       cross-spawn: 7.0.3
       css-loader: 3.6.0_webpack@4.44.2
@@ -1270,7 +1270,7 @@ packages:
     peerDependencies:
       node-sass: '*'
     resolution:
-      integrity: sha512-COqWIRR9r/sZ6u8F1nbUvNACpIhsQspwQ+74tQseG0v+TzoQTbiC0qPXOXCut/3j80V2LfO/vOl6m+LzPfWo4g==
+      integrity: sha512-UxzEafauB2hHdvn+VE6seATDgGdTLt/v44wtDNrFCEOP3h/8Ie5MGJQbYnBMNHZ52rfT8X0uTXcKh9hr3JUT9g==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.2:
     dependencies:
       '@babel/core': 7.12.3
@@ -3393,12 +3393,12 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==
-  /compression-webpack-plugin/6.1.1_webpack@4.44.2:
+  /compression-webpack-plugin/5.0.1_webpack@4.44.2:
     dependencies:
       cacache: 15.0.5
       find-cache-dir: 3.3.1
-      schema-utils: 3.0.0
-      serialize-javascript: 5.0.1
+      schema-utils: 2.7.1
+      serialize-javascript: 4.0.0
       webpack: 4.44.2
       webpack-sources: 1.4.3
     dev: true
@@ -3407,7 +3407,7 @@ packages:
     peerDependencies:
       webpack: ^4.0.0 || ^5.0.0
     resolution:
-      integrity: sha512-BEHft9M6lwOqVIQFMS/YJGmeCYXVOakC5KzQk05TFpMBlODByh1qNsZCWjUBxCQhUP9x0WfGidxTbGkjbWO/TQ==
+      integrity: sha512-Wcb99O4UkdDZiM+blEw6h+cUfJYCn2kgK0l3fjLOm72Stso9DVMieQpBD4PVpyI7DLL6+zNh0iJV3p4HDwTinQ==
   /compression/1.7.4:
     dependencies:
       accepts: 1.3.7
@@ -11443,7 +11443,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.7
+  '@quasar/app': 2.1.8
   '@quasar/extras': 1.9.10
   '@vue/cli-plugin-babel': 4.5.9
   '@vue/cli-plugin-eslint': 4.5.9
