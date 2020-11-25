@@ -7,7 +7,7 @@ dependencies:
   vue: 2.6.12
   vue-axios: 3.2.0_axios@0.21.0+vue@2.6.12
   vue-router: 3.4.9
-  vuex: 3.5.1_vue@2.6.12
+  vuex: 3.6.0_vue@2.6.12
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
@@ -6991,6 +6991,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wRJtOo1v1ch+gN8PRsj0IGJznk+kQ8mz13ds/nuhLI+Qyf/931ZlRpd92oq0IRPpZIb+bhX8pRjzIVdcPDKmiQ==
+      tarball: material-design-icons-iconfont/-/material-design-icons-iconfont-6.1.0.tgz
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -10975,10 +10976,19 @@ packages:
   /vuex/3.5.1_vue@2.6.12:
     dependencies:
       vue: 2.6.12
+    dev: true
     peerDependencies:
       vue: ^2.0.0
     resolution:
       integrity: sha512-w7oJzmHQs0FM9LXodfskhw9wgKBiaB+totOdb8sNzbTB2KDCEEwEs29NzBZFh/lmEK1t5tDmM1vtsO7ubG1DFw==
+  /vuex/3.6.0_vue@2.6.12:
+    dependencies:
+      vue: 2.6.12
+    dev: false
+    peerDependencies:
+      vue: ^2.0.0
+    resolution:
+      integrity: sha512-W74OO2vCJPs9/YjNjW8lLbj+jzT24waTo2KShI8jLvJW8OaIkgb3wuAMA7D+ZiUxDOx3ubwSZTaJBip9G8a3aQ==
   /watchpack-chokidar2/2.0.1:
     dependencies:
       chokidar: 2.1.8
@@ -11474,4 +11484,4 @@ specifiers:
   vue-cli-plugin-quasar: 3.0.1
   vue-router: 3.4.9
   vue-template-compiler: 2.6.12
-  vuex: 3.5.1
+  vuex: 3.6.0
