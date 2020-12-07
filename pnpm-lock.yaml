@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.9_node-sass@5.0.0
+  '@quasar/app': 2.1.10_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.9_8ae91920fb9b3c76895c2e8acb765728
   '@vue/cli-plugin-eslint': 4.5.9_9b714a1981b6148ddc0b7f2009716e2c
   '@vue/cli-plugin-router': 4.5.9_@vue+cli-service@4.5.9
@@ -1174,7 +1174,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.1.9_node-sass@5.0.0:
+  /@quasar/app/2.1.10_node-sass@5.0.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1202,7 +1202,6 @@ packages:
       express: 4.17.1
       fast-glob: 3.2.4
       file-loader: 6.2.0_webpack@4.44.2
-      flat: 5.0.2
       fork-ts-checker-webpack-plugin: 4.1.6
       friendly-errors-webpack-plugin: 1.7.0_webpack@4.44.2
       fs-extra: 9.0.1
@@ -1263,7 +1262,7 @@ packages:
     peerDependencies:
       node-sass: '*'
     resolution:
-      integrity: sha512-KhO78w0BBRVGkH5OQhr6IuP9pg26c8DeI/E26TMekjD9DVHgWV8jtxIC6kBseo0NiC6noYHf632aNjXklruwnQ==
+      integrity: sha512-GfHR05/BGhfarG+Q4qgZp7c1eaGLU9FiuZ2F/rw7Je6Fo+edI/dPd+bvknW9jokQ2Pk3NLBnA9foPPLPRh7wxg==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.2:
     dependencies:
       '@babel/core': 7.12.9
@@ -1477,7 +1476,7 @@ packages:
       integrity: sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
   /@types/terser-webpack-plugin/3.0.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.25
       terser: 4.8.0
     dev: true
     resolution:
@@ -1490,17 +1489,17 @@ packages:
       integrity: sha512-7npvPKV+jINLu1SpSYVWG8KvyJBhBa8tmzMMdDoVc2pWUYHN8KIXlPJhjJ4LT97c4dXJA2SHL/q6ADbDriZN+Q==
   /@types/webpack-bundle-analyzer/3.8.0:
     dependencies:
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.25
     dev: true
     resolution:
       integrity: sha512-Ah6FbkXLAVUNI/ExXHsTS90iRS/Efplh333NySjhGx09oeH9qXf57NMUfl4RADTL5a89hQaq/nbT4eb0LwsQJw==
   /@types/webpack-dev-server/3.11.0:
     dependencies:
       '@types/connect-history-api-fallback': 1.3.3
-      '@types/express': 4.17.6
+      '@types/express': 4.17.9
       '@types/http-proxy-middleware': 0.19.3
       '@types/serve-static': 1.13.8
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.25
     dev: true
     resolution:
       integrity: sha512-3+86AgSzl18n5P1iUP9/lz3G3GMztCp+wxdDvVuNhx1sr1jE79GpYfKHL8k+Vht3N74K2n98CuAEw4YPJCYtDA==
@@ -5088,11 +5087,6 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==
-  /flat/5.0.2:
-    dev: true
-    hasBin: true
-    resolution:
-      integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==
   /flatted/3.1.0:
     dev: true
     resolution:
@@ -5393,7 +5387,7 @@ packages:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.3.2
+      semver: 7.3.4
       serialize-error: 7.0.1
     dev: true
     engines:
@@ -5782,7 +5776,7 @@ packages:
     dependencies:
       '@types/html-minifier-terser': 5.1.1
       '@types/tapable': 1.0.6
-      '@types/webpack': 4.41.17
+      '@types/webpack': 4.41.25
       html-minifier-terser: 5.1.1
       loader-utils: 1.4.0
       lodash: 4.17.20
@@ -7006,6 +7000,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-wRJtOo1v1ch+gN8PRsj0IGJznk+kQ8mz13ds/nuhLI+Qyf/931ZlRpd92oq0IRPpZIb+bhX8pRjzIVdcPDKmiQ==
+      tarball: material-design-icons-iconfont/-/material-design-icons-iconfont-6.1.0.tgz
   /md5.js/1.3.5:
     dependencies:
       hash-base: 3.1.0
@@ -11475,7 +11470,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.9
+  '@quasar/app': 2.1.10
   '@quasar/extras': 1.9.10
   '@vue/cli-plugin-babel': 4.5.9
   '@vue/cli-plugin-eslint': 4.5.9
