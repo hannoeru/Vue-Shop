@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.10_node-sass@5.0.0
+  '@quasar/app': 2.1.11_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.9_8ae91920fb9b3c76895c2e8acb765728
   '@vue/cli-plugin-eslint': 4.5.9_9b714a1981b6148ddc0b7f2009716e2c
   '@vue/cli-plugin-router': 4.5.9_@vue+cli-service@4.5.9
@@ -1174,7 +1174,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.1.10_node-sass@5.0.0:
+  /@quasar/app/2.1.11_node-sass@5.0.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1262,7 +1262,7 @@ packages:
     peerDependencies:
       node-sass: '*'
     resolution:
-      integrity: sha512-GfHR05/BGhfarG+Q4qgZp7c1eaGLU9FiuZ2F/rw7Je6Fo+edI/dPd+bvknW9jokQ2Pk3NLBnA9foPPLPRh7wxg==
+      integrity: sha512-MX01izfk1cAFcRVj4IpU6fneQW14oeq4oAPdCqJDjYY1I1M3kYBFG+WvgfvZJxfTGiaVNP6xKWKkU1wIUNgbIw==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.2:
     dependencies:
       '@babel/core': 7.12.9
@@ -11470,7 +11470,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.15.1
   '@mdi/font': 5.8.55
-  '@quasar/app': 2.1.10
+  '@quasar/app': 2.1.11
   '@quasar/extras': 1.9.10
   '@vue/cli-plugin-babel': 4.5.9
   '@vue/cli-plugin-eslint': 4.5.9
