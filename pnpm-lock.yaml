@@ -23,7 +23,7 @@ devDependencies:
   eslint: 7.15.0
   eslint-config-prettier: 7.0.0_eslint@7.15.0
   eslint-plugin-prettier: 3.3.0_eslint@7.15.0+prettier@2.2.1
-  eslint-plugin-vue: 7.2.0_eslint@7.15.0
+  eslint-plugin-vue: 7.3.0_eslint@7.15.0
   material-design-icons-iconfont: 6.1.0
   node-sass: 5.0.0
   prettier: 2.2.1
@@ -4497,20 +4497,20 @@ packages:
         optional: true
     resolution:
       integrity: sha512-tMTwO8iUWlSRZIwS9k7/E4vrTsfvsrcM5p1eftyuqWH25nKsz/o6/54I7jwQ/3zobISyC7wMy9ZsFwgTxOcOpQ==
-  /eslint-plugin-vue/7.2.0_eslint@7.15.0:
+  /eslint-plugin-vue/7.3.0_eslint@7.15.0:
     dependencies:
       eslint: 7.15.0
       eslint-utils: 2.1.0
       natural-compare: 1.4.0
       semver: 7.3.4
-      vue-eslint-parser: 7.2.0_eslint@7.15.0
+      vue-eslint-parser: 7.3.0_eslint@7.15.0
     dev: true
     engines:
       node: '>=8.10'
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0
     resolution:
-      integrity: sha512-4mt0yIv6rBDNtvis/g22a0ozJ12GfcdEzX77u0ICYjKlxOVtGrKGEvo0cbOObHaKDg9a9kJcoaNodqE4TPfS2A==
+      integrity: sha512-4rc9xrZgwT4aLz3XE6lrHu+FZtDLWennYvtzVvvS81kW9c65U4DUzQQWAFjDCgCFvN6HYWxi7ueEtxZVSB+f0g==
   /eslint-scope/4.0.3:
     dependencies:
       esrecurse: 4.3.0
@@ -10914,7 +10914,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-D+0TecjLDhp1IzGh6foHml8C+ICwofei8wpAbvObhjeE93HZXJsDHtWV9iiHKD0Um2jI8gZp9gUO621i4zOSyw==
-  /vue-eslint-parser/7.2.0_eslint@7.15.0:
+  /vue-eslint-parser/7.3.0_eslint@7.15.0:
     dependencies:
       debug: 4.3.1
       eslint: 7.15.0
@@ -10929,7 +10929,7 @@ packages:
     peerDependencies:
       eslint: '>=5.0.0'
     resolution:
-      integrity: sha512-uVcQqe8sUNzdHGcRHMd2Z/hl6qEaWrAmglTKP92Fnq9TYU9un8xsyFgEdFJaXh/1rd7h8Aic1GaiQow5nVneow==
+      integrity: sha512-n5PJKZbyspD0+8LnaZgpEvNCrjQx1DyDHw8JdWwoxhhC+yRip4TAvSDpXGf9SWX6b0umeB5aR61gwUo6NVvFxw==
   /vue-hot-reload-api/2.3.4:
     dev: true
     resolution:
@@ -11519,7 +11519,7 @@ specifiers:
   eslint: 7.15.0
   eslint-config-prettier: 7.0.0
   eslint-plugin-prettier: 3.3.0
-  eslint-plugin-vue: 7.2.0
+  eslint-plugin-vue: 7.3.0
   material-design-icons-iconfont: 6.1.0
   node-sass: 5.0.0
   prettier: 2.2.1
