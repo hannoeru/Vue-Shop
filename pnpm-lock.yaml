@@ -1,7 +1,7 @@
 dependencies:
   '@quasar/extras': 1.9.12
   axios: 0.21.1
-  core-js: 3.8.1
+  core-js: 3.8.2
   quasar: 1.15.0
   vee-validate: 4.1.3_vue@2.6.12
   vue: 2.6.12
@@ -3547,9 +3547,15 @@ packages:
     resolution:
       integrity: sha512-a16TLmy9NVD1rkjUGbwuyWkiDoN0FDpAwrfLONvHFQx0D9k7J9y0srwMT8QP/Z6HE3MIFaVynEeYwZwPX1o5RQ==
   /core-js/3.8.1:
+    dev: true
     requiresBuild: true
     resolution:
       integrity: sha512-9Id2xHY1W7m8hCl8NkhQn5CufmF/WuR30BTRewvCXc1aZd3kMECwNZ69ndLbekKfakw9Rf2Xyc+QR6E7Gg+obg==
+  /core-js/3.8.2:
+    dev: false
+    requiresBuild: true
+    resolution:
+      integrity: sha512-FfApuSRgrR6G5s58casCBd9M2k+4ikuu4wbW6pJyYU7bd9zvFc9qf7vr5xmrZOhT9nn+8uwlH1oRR9jTnFoA3A==
   /core-util-is/1.0.2:
     dev: true
     resolution:
@@ -11500,7 +11506,7 @@ specifiers:
   axios: 0.21.1
   babel-eslint: 10.1.0
   babel-plugin-transform-imports: 2.0.0
-  core-js: 3.8.1
+  core-js: 3.8.2
   eslint: 7.17.0
   eslint-config-prettier: 7.1.0
   eslint-plugin-prettier: 3.3.0
