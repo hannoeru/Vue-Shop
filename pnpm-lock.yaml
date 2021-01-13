@@ -9,7 +9,7 @@ dependencies:
   vue-router: 3.4.9
   vuex: 3.6.0_vue@2.6.12
 devDependencies:
-  '@fortawesome/fontawesome-free': 5.15.1
+  '@fortawesome/fontawesome-free': 5.15.2
   '@mdi/font': 5.8.55
   '@quasar/app': 2.1.14_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.10_dabf20fabaf63c3f959ce5b63391b3e6
@@ -1067,13 +1067,13 @@ packages:
       node: ^10.12.0 || >=12.0.0
     resolution:
       integrity: sha512-EfB5OHNYp1F4px/LI/FEnGylop7nOqkQ1LRzCM0KccA2U8tvV8w01KBv37LbO7nW4H+YhKyo2LcJhRwjjV17QQ==
-  /@fortawesome/fontawesome-free/5.15.1:
+  /@fortawesome/fontawesome-free/5.15.2:
     dev: true
     engines:
       node: '>=6'
     requiresBuild: true
     resolution:
-      integrity: sha512-OEdH7SyC1suTdhBGW91/zBfR6qaIhThbcN8PUXtXilY4GYnSBbVqOntdHbC1vXwsDnX0Qix2m2+DSU1J51ybOQ==
+      integrity: sha512-7l/AX41m609L/EXI9EKH3Vs3v0iA8tKlIOGtw+kgcoanI7p+e4I4GYLqW3UXWiTnjSFymKSmTTPKYrivzbxxqA==
   /@hapi/address/2.1.4:
     deprecated: Moved to 'npm install @sideway/address'
     dev: true
@@ -11728,7 +11728,7 @@ packages:
     resolution:
       integrity: sha1-bnyXL8NxxkWmr7A6sUdp3vEU/MA=
 specifiers:
-  '@fortawesome/fontawesome-free': 5.15.1
+  '@fortawesome/fontawesome-free': 5.15.2
   '@mdi/font': 5.8.55
   '@quasar/app': 2.1.14
   '@quasar/extras': 1.9.13
