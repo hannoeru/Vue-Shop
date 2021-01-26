@@ -7,7 +7,7 @@ dependencies:
   vue: 2.6.12
   vue-axios: 3.2.2_axios@0.21.1+vue@2.6.12
   vue-router: 3.5.1
-  vuex: 3.6.1_vue@2.6.12
+  vuex: 3.6.2_vue@2.6.12
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.2
   '@mdi/font': 5.9.55
@@ -11148,14 +11148,14 @@ packages:
       vue: ^2.0.0
     resolution:
       integrity: sha512-W74OO2vCJPs9/YjNjW8lLbj+jzT24waTo2KShI8jLvJW8OaIkgb3wuAMA7D+ZiUxDOx3ubwSZTaJBip9G8a3aQ==
-  /vuex/3.6.1_vue@2.6.12:
+  /vuex/3.6.2_vue@2.6.12:
     dependencies:
       vue: 2.6.12
     dev: false
     peerDependencies:
       vue: ^2.0.0
     resolution:
-      integrity: sha512-fsVwP9akzE2TYxZcFm3SHQgbyOI5c13IZJ9GH1ivrCeTaXk8JiEm9szJvIxO5+evu2+REk2E9smjce+9vgVGLg==
+      integrity: sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
   /watchpack-chokidar2/2.0.1:
     dependencies:
       chokidar: 2.1.8
@@ -11787,4 +11787,4 @@ specifiers:
   vue-cli-plugin-quasar: 3.0.1
   vue-router: 3.5.1
   vue-template-compiler: 2.6.12
-  vuex: 3.6.1
+  vuex: 3.6.2
