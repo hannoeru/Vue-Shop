@@ -27,8 +27,8 @@ devDependencies:
   material-design-icons-iconfont: 6.1.0
   node-sass: 5.0.0
   prettier: 2.2.1
-  sass: 1.32.7
-  sass-loader: 11.0.1_node-sass@5.0.0+sass@1.32.7
+  sass: 1.32.8
+  sass-loader: 11.0.1_node-sass@5.0.0+sass@1.32.8
   vue-cli-plugin-quasar: 3.0.1
   vue-template-compiler: 2.6.12
 lockfileVersion: 5.2
@@ -1786,7 +1786,7 @@ packages:
       pnp-webpack-plugin: 1.6.4
       portfinder: 1.0.28
       postcss-loader: 3.0.0
-      sass-loader: 11.0.1_node-sass@5.0.0+sass@1.32.7
+      sass-loader: 11.0.1_node-sass@5.0.0+sass@1.32.8
       ssri: 7.1.0
       terser-webpack-plugin: 2.3.8_webpack@4.46.0
       thread-loader: 2.1.3_webpack@4.46.0
@@ -9434,12 +9434,12 @@ packages:
         optional: true
     resolution:
       integrity: sha512-ZCKAlczLBbFd3aGAhowpYEy69Te3Z68cg8bnHHl6WnSCvnKpbM6pQrz957HWMa8LKVuhnD9uMplmMAHwGQtHeg==
-  /sass-loader/11.0.1_node-sass@5.0.0+sass@1.32.7:
+  /sass-loader/11.0.1_node-sass@5.0.0+sass@1.32.8:
     dependencies:
       klona: 2.0.4
       neo-async: 2.6.2
       node-sass: 5.0.0
-      sass: 1.32.7
+      sass: 1.32.8
     dev: true
     engines:
       node: '>= 10.13.0'
@@ -9466,7 +9466,7 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-ZpwAUFgnvAUCdkjwPREny+17BpUj8nh5Yr6zKPGtLNTLrmtoRYIjm7njP24COhjJldjwW1dcv52Lpf4tNZVVRA==
-  /sass/1.32.7:
+  /sass/1.32.8:
     dependencies:
       chokidar: 3.5.1
     dev: true
@@ -9474,7 +9474,7 @@ packages:
       node: '>=8.9.0'
     hasBin: true
     resolution:
-      integrity: sha512-C8Z4bjqGWnsYa11o8hpKAuoyFdRhrSHcYjCr+XAWVPSIQqC8mp2f5Dx4em0dKYehPzg5XSekmCjqJnEZbIls9A==
+      integrity: sha512-Sl6mIeGpzjIUZqvKnKETfMf0iDAswD9TNlv13A7aAF3XZlRPMq4VvJWBC2N2DXbp94MQVdNSFG6LfF/iOXrPHQ==
   /sax/1.1.4:
     dev: true
     resolution:
@@ -11760,7 +11760,7 @@ specifiers:
   node-sass: 5.0.0
   prettier: 2.2.1
   quasar: 1.15.4
-  sass: 1.32.7
+  sass: 1.32.8
   sass-loader: 11.0.1
   vee-validate: 4.1.19
   vue: 2.6.12
