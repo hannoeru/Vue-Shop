@@ -2,7 +2,7 @@ dependencies:
   '@quasar/extras': 1.9.17
   axios: 0.21.1
   core-js: 3.9.0
-  quasar: 1.15.3
+  quasar: 1.15.4
   vee-validate: 4.1.19_vue@2.6.12
   vue: 2.6.12
   vue-axios: 3.2.4_axios@0.21.1+vue@2.6.12
@@ -5159,6 +5159,20 @@ packages:
     resolution:
       integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==
   /follow-redirects/1.13.2:
+    dev: false
+    engines:
+      node: '>=4.0'
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    resolution:
+      integrity: sha512-6mPTgLxYm3r6Bkkg0vNM0HTjfGrOEtsfbhagQvbxDEsEkpNhw582upBaoRZylzen6krEmxXJgt9Ju6HiI4O7BA==
+  /follow-redirects/1.13.2_debug@4.3.1:
+    dependencies:
+      debug: 4.3.1_supports-color@6.1.0
+    dev: true
     engines:
       node: '>=4.0'
     peerDependencies:
@@ -5940,7 +5954,7 @@ packages:
   /http-proxy/1.18.1_debug@4.3.1:
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.13.2
+      follow-redirects: 1.13.2_debug@4.3.1
       requires-port: 1.0.0
     dev: true
     engines:
@@ -8892,14 +8906,14 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
-  /quasar/1.15.3:
+  /quasar/1.15.4:
     dev: false
     engines:
       node: '>= 10.0.0'
       npm: '>= 5.6.0'
       yarn: '>= 1.6.0'
     resolution:
-      integrity: sha512-WJil2QRNu3VSkw+gg1AMEwizzkCUBa7i36CQRHxPeHfFyKkiCZ4Fi25FNHGGjpuUYuJaMDQztb21ZyNK4mQhRQ==
+      integrity: sha512-m5oXG2qrsOCJVY00+v4qxFQ/q8BRONQWqhomxEhxB+VdYpgdg4tQ3VVyKZREUS0CQK9NTTl8seEiZpjJampI7g==
   /query-string/4.3.4:
     dependencies:
       object-assign: 4.1.1
@@ -11745,7 +11759,7 @@ specifiers:
   material-design-icons-iconfont: 6.1.0
   node-sass: 5.0.0
   prettier: 2.2.1
-  quasar: 1.15.3
+  quasar: 1.15.4
   sass: 1.32.7
   sass-loader: 11.0.1
   vee-validate: 4.1.19
