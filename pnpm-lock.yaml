@@ -13,17 +13,17 @@ devDependencies:
   '@mdi/font': 5.9.55
   '@quasar/app': 2.1.15_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.11_7fd1c33fe171018602ad64aa8e04225c
-  '@vue/cli-plugin-eslint': 4.5.11_c16ffba3cf6db74b0168d417ea19917b
+  '@vue/cli-plugin-eslint': 4.5.11_9fda969a513e1814449ba255c1b89354
   '@vue/cli-plugin-router': 4.5.11_@vue+cli-service@4.5.11
   '@vue/cli-plugin-vuex': 4.5.11_@vue+cli-service@4.5.11
   '@vue/cli-service': 4.5.11_8b562d2a16503669b1fa940b13e399ac
-  '@vue/eslint-config-prettier': 6.0.0_9b76b1ad961fcbdc9fcaa3abc86a1423
-  babel-eslint: 10.1.0_eslint@7.20.0
+  '@vue/eslint-config-prettier': 6.0.0_d13f154e39df47cec6c4ea12bde544b4
+  babel-eslint: 10.1.0_eslint@7.21.0
   babel-plugin-transform-imports: 2.0.0
-  eslint: 7.20.0
-  eslint-config-prettier: 8.1.0_eslint@7.20.0
-  eslint-plugin-prettier: 3.3.1_991a7c46cc739487e9cb2e863aa32c6d
-  eslint-plugin-vue: 7.6.0_eslint@7.20.0
+  eslint: 7.21.0
+  eslint-config-prettier: 8.1.0_eslint@7.21.0
+  eslint-plugin-prettier: 3.3.1_328fff7ca4342e26ba070884b05a404a
+  eslint-plugin-vue: 7.6.0_eslint@7.21.0
   material-design-icons-iconfont: 6.1.0
   node-sass: 5.0.0
   prettier: 2.2.1
@@ -1047,7 +1047,7 @@ packages:
       global-tunnel-ng: 2.7.1
     resolution:
       integrity: sha512-6nr9DbJPUR9Xujw6zD3y+rS95TyItEVM0NVjt1EehY2vUWfIgPiIPVHxCvaTS0xr2B+DRxovYVKbuOWqC35kjg==
-  /@eslint/eslintrc/0.3.0:
+  /@eslint/eslintrc/0.4.0:
     dependencies:
       ajv: 6.12.6
       debug: 4.3.1
@@ -1056,14 +1056,13 @@ packages:
       ignore: 4.0.6
       import-fresh: 3.3.0
       js-yaml: 3.14.1
-      lodash: 4.17.21
       minimatch: 3.0.4
       strip-json-comments: 3.1.1
     dev: true
     engines:
       node: ^10.12.0 || >=12.0.0
     resolution:
-      integrity: sha512-1JTKgrOKAHVivSvOYw+sJOunkBjUOvjqWk1DPja7ZFhIS2mX/4EgTT8M7eTK9jrKhL/FvXXEbQwIs3pg1xp3dg==
+      integrity: sha512-2ZPCc+uNbjV5ERJr+aKSPRwZgKd2z11x0EgLvb1PURmUrn9QNRXFqje0Ldq454PfAVyaJYyrDvvIKSFP4NnBog==
   /@fortawesome/fontawesome-free/5.15.2:
     dev: true
     engines:
@@ -1707,12 +1706,12 @@ packages:
       vue: '*'
     resolution:
       integrity: sha512-ogUMeO2waDtghIWwmuAzMJAnnPdmqRdJlwJDca9u6BK9jX1bxNThBSFS/MN2VmlYzulOnqH4zAC87jTWNg/czg==
-  /@vue/cli-plugin-eslint/4.5.11_c16ffba3cf6db74b0168d417ea19917b:
+  /@vue/cli-plugin-eslint/4.5.11_9fda969a513e1814449ba255c1b89354:
     dependencies:
       '@vue/cli-service': 4.5.11_8b562d2a16503669b1fa940b13e399ac
       '@vue/cli-shared-utils': 4.5.11
-      eslint: 7.20.0
-      eslint-loader: 2.2.1_eslint@7.20.0+webpack@4.46.0
+      eslint: 7.21.0
+      eslint-loader: 2.2.1_eslint@7.21.0+webpack@4.46.0
       globby: 9.2.0
       inquirer: 7.3.3
       webpack: 4.46.0
@@ -1862,11 +1861,11 @@ packages:
       prettier: 1.19.1
     resolution:
       integrity: sha512-lejBLa7xAMsfiZfNp7Kv51zOzifnb29FwdnMLa96z26kXErPFioSf9BMcePVIQ6/Gc6/mC0UrPpxAWIHyae0vw==
-  /@vue/eslint-config-prettier/6.0.0_9b76b1ad961fcbdc9fcaa3abc86a1423:
+  /@vue/eslint-config-prettier/6.0.0_d13f154e39df47cec6c4ea12bde544b4:
     dependencies:
-      eslint: 7.20.0
-      eslint-config-prettier: 6.15.0_eslint@7.20.0
-      eslint-plugin-prettier: 3.3.1_991a7c46cc739487e9cb2e863aa32c6d
+      eslint: 7.21.0
+      eslint-config-prettier: 6.15.0_eslint@7.21.0
+      eslint-plugin-prettier: 3.3.1_328fff7ca4342e26ba070884b05a404a
       prettier: 2.2.1
     dev: true
     peerDependencies:
@@ -2452,13 +2451,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  /babel-eslint/10.1.0_eslint@7.20.0:
+  /babel-eslint/10.1.0_eslint@7.21.0:
     dependencies:
       '@babel/code-frame': 7.12.13
       '@babel/parser': 7.12.17
       '@babel/traverse': 7.12.17
       '@babel/types': 7.12.17
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-visitor-keys: 1.3.0
       resolve: 1.20.0
     deprecated: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
@@ -4492,9 +4491,9 @@ packages:
     optional: true
     resolution:
       integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
-  /eslint-config-prettier/6.15.0_eslint@7.20.0:
+  /eslint-config-prettier/6.15.0_eslint@7.21.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       get-stdin: 6.0.0
     dev: true
     hasBin: true
@@ -4502,18 +4501,18 @@ packages:
       eslint: '>=3.14.1'
     resolution:
       integrity: sha512-a1+kOYLR8wMGustcgAjdydMsQ2A/2ipRPwRKUmfYaSxc9ZPcrku080Ctl6zrZzZNs/U82MjSv+qKREkoq3bJaw==
-  /eslint-config-prettier/8.1.0_eslint@7.20.0:
+  /eslint-config-prettier/8.1.0_eslint@7.21.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
     dev: true
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     resolution:
       integrity: sha512-oKMhGv3ihGbCIimCAjqkdzx2Q+jthoqnXSP+d86M9tptwugycmTFdVR4IpLgq2c4SHifbwO90z2fQ8/Aio73yw==
-  /eslint-loader/2.2.1_eslint@7.20.0+webpack@4.46.0:
+  /eslint-loader/2.2.1_eslint@7.21.0+webpack@4.46.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       loader-fs-cache: 1.0.3
       loader-utils: 1.4.0
       object-assign: 4.1.1
@@ -4527,10 +4526,10 @@ packages:
       webpack: '>=2.0.0 <5.0.0'
     resolution:
       integrity: sha512-RLgV9hoCVsMLvOxCuNjdqOrUqIj9oJg8hF44vzJaYqsAHuY9G2YAeN3joQ9nxP0p5Th9iFSIpKo+SD8KISxXRg==
-  /eslint-plugin-prettier/3.3.1_991a7c46cc739487e9cb2e863aa32c6d:
+  /eslint-plugin-prettier/3.3.1_328fff7ca4342e26ba070884b05a404a:
     dependencies:
-      eslint: 7.20.0
-      eslint-config-prettier: 8.1.0_eslint@7.20.0
+      eslint: 7.21.0
+      eslint-config-prettier: 8.1.0_eslint@7.21.0
       prettier: 2.2.1
       prettier-linter-helpers: 1.0.0
     dev: true
@@ -4545,13 +4544,13 @@ packages:
         optional: true
     resolution:
       integrity: sha512-Rq3jkcFY8RYeQLgk2cCwuc0P7SEFwDravPhsJZOQ5N4YI4DSg50NyqJ/9gdZHzQlHf8MvafSesbNJCcP/FF6pQ==
-  /eslint-plugin-vue/7.6.0_eslint@7.20.0:
+  /eslint-plugin-vue/7.6.0_eslint@7.21.0:
     dependencies:
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-utils: 2.1.0
       natural-compare: 1.4.0
       semver: 7.3.4
-      vue-eslint-parser: 7.5.0_eslint@7.20.0
+      vue-eslint-parser: 7.5.0_eslint@7.21.0
     dev: true
     engines:
       node: '>=8.10'
@@ -4597,10 +4596,10 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-QudtT6av5WXels9WjIM7qz1XD1cWGvX4gGXvp/zBn9nXG02D0utdU3Em2m/QjTnrsk6bBjmCygl3rmj118msQQ==
-  /eslint/7.20.0:
+  /eslint/7.21.0:
     dependencies:
       '@babel/code-frame': 7.12.11
-      '@eslint/eslintrc': 0.3.0
+      '@eslint/eslintrc': 0.4.0
       ajv: 6.12.6
       chalk: 4.1.0
       cross-spawn: 7.0.3
@@ -4641,7 +4640,7 @@ packages:
       node: ^10.12.0 || >=12.0.0
     hasBin: true
     resolution:
-      integrity: sha512-qGi0CTcOGP2OtCQBgWZlQjcTuP0XkIpYFj25XtRTQSHC+umNnp7UMshr2G8SLsRFYDdAPFeHOsiteadmMH02Yw==
+      integrity: sha512-W2aJbXpMNofUp0ztQaF40fveSsJBjlSCSWpy//gzfTvwC+USs/nceBrKmlJOiM8r1bLwP2EuYkCqArn/6QTIgg==
   /espree/6.2.1:
     dependencies:
       acorn: 7.4.1
@@ -10993,10 +10992,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-D+0TecjLDhp1IzGh6foHml8C+ICwofei8wpAbvObhjeE93HZXJsDHtWV9iiHKD0Um2jI8gZp9gUO621i4zOSyw==
-  /vue-eslint-parser/7.5.0_eslint@7.20.0:
+  /vue-eslint-parser/7.5.0_eslint@7.21.0:
     dependencies:
       debug: 4.3.1
-      eslint: 7.20.0
+      eslint: 7.21.0
       eslint-scope: 5.1.1
       eslint-visitor-keys: 1.3.0
       espree: 6.2.1
@@ -11742,7 +11741,7 @@ specifiers:
   babel-eslint: 10.1.0
   babel-plugin-transform-imports: 2.0.0
   core-js: 3.9.0
-  eslint: 7.20.0
+  eslint: 7.21.0
   eslint-config-prettier: 8.1.0
   eslint-plugin-prettier: 3.3.1
   eslint-plugin-vue: 7.6.0
