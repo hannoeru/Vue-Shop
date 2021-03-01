@@ -5208,20 +5208,6 @@ packages:
     resolution:
       integrity: sha512-3Z4XhFZ3992uIq0XOqb9AreonueSYphE6oYbpt5+3u06JWklbsPkNv3ZKkP9Bz/r+1MWCaMoSQ28P85+1Yc77w==
   /follow-redirects/1.13.3:
-    dev: false
-    engines:
-      node: '>=4.0'
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    resolution:
-      integrity: sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
-  /follow-redirects/1.13.3_debug@4.3.1:
-    dependencies:
-      debug: 4.3.1_supports-color@6.1.0
-    dev: true
     engines:
       node: '>=4.0'
     peerDependencies:
@@ -6004,7 +5990,7 @@ packages:
   /http-proxy/1.18.1_debug@4.3.1:
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.13.3_debug@4.3.1
+      follow-redirects: 1.13.3
       requires-port: 1.0.0
     dev: true
     engines:
