@@ -21,7 +21,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "5.15.2",
     "@mdi/font": "5.9.55",
-    "@quasar/app": "2.1.15",
+    "@quasar/app": "2.2.1",
     "@vue/cli-plugin-babel": "4.5.11",
     "@vue/cli-plugin-eslint": "4.5.11",
     "@vue/cli-plugin-router": "4.5.11",
