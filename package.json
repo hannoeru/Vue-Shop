@@ -19,7 +19,7 @@
     "vuex": "3.6.2"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "5.15.2",
+    "@fortawesome/fontawesome-free": "5.15.3",
     "@mdi/font": "5.9.55",
     "@quasar/app": "2.2.1",
     "@vue/cli-plugin-babel": "4.5.11",
