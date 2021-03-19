@@ -11,7 +11,7 @@ dependencies:
 devDependencies:
   '@fortawesome/fontawesome-free': 5.15.3
   '@mdi/font': 5.9.55
-  '@quasar/app': 2.2.1_node-sass@5.0.0
+  '@quasar/app': 2.2.2_node-sass@5.0.0
   '@vue/cli-plugin-babel': 4.5.12_08f6923167e8915a6e44610899c9e3f1
   '@vue/cli-plugin-eslint': 4.5.12_4bedc97b2438d2d021161af09c8b810d
   '@vue/cli-plugin-router': 4.5.12_@vue+cli-service@4.5.12
@@ -1194,7 +1194,7 @@ packages:
     dev: true
     resolution:
       integrity: sha1-FPzHEqUwA475vhzmlSMVqDn0Zqg=
-  /@quasar/app/2.2.1_node-sass@5.0.0:
+  /@quasar/app/2.2.2_node-sass@5.0.0:
     dependencies:
       '@quasar/babel-preset-app': 2.0.1_webpack@4.44.2
       '@quasar/fastclick': 1.1.4
@@ -1205,7 +1205,7 @@ packages:
       '@types/terser-webpack-plugin': 3.0.0
       '@types/webpack': 4.41.26
       '@types/webpack-bundle-analyzer': 3.8.0
-      '@types/webpack-dev-server': 3.11.0
+      '@types/webpack-dev-server': 3.11.2
       archiver: 5.0.2
       autoprefixer: 9.8.6
       browserslist: 4.16.3
@@ -1283,7 +1283,7 @@ packages:
     peerDependencies:
       node-sass: '*'
     resolution:
-      integrity: sha512-oFPxZnxsum7om7fjnE5HqRqyjCywdJmyj/jr1j0QHHY1lP+09p4DKqPN3ft/4P5gBZkGH85joZD8tfz6N2h8zg==
+      integrity: sha512-fmXlxPG+uU1T/Z8KGi5xB3uY/QNCnAx9mstTLCXPP2enGfGpO1t4WXlAHnnLXKabR7Sh6DVpEygxzqqqi4UMqw==
   /@quasar/babel-preset-app/2.0.1_webpack@4.44.2:
     dependencies:
       '@babel/core': 7.13.10
@@ -1420,13 +1420,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-giAlZwstKbmvMk1OO7WXSj4OZ0keXAcl2TQq4LWHiiPH2ByaH7WeUzng+Qej8UPxxv+8lRTuouo0iaNDBuzIBA==
-  /@types/http-proxy-middleware/1.0.0:
-    dependencies:
-      http-proxy-middleware: 1.0.6
-    deprecated: This is a stub types definition. http-proxy-middleware provides its own type definitions, so you do not need this installed.
-    dev: true
-    resolution:
-      integrity: sha512-/s8lFX6rT43hSPqjjD8KNuu0SkPKY7uIdR6u9DCxVqCRhAvfKxGbVOixJsAT2mdpSnCyrGFAGoB39KFh6tmRxw==
   /@types/http-proxy/1.17.5:
     dependencies:
       '@types/node': 14.14.34
@@ -1507,16 +1500,16 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Ah6FbkXLAVUNI/ExXHsTS90iRS/Efplh333NySjhGx09oeH9qXf57NMUfl4RADTL5a89hQaq/nbT4eb0LwsQJw==
-  /@types/webpack-dev-server/3.11.0:
+  /@types/webpack-dev-server/3.11.2:
     dependencies:
       '@types/connect-history-api-fallback': 1.3.3
       '@types/express': 4.17.11
-      '@types/http-proxy-middleware': 1.0.0
       '@types/serve-static': 1.13.9
       '@types/webpack': 4.41.26
+      http-proxy-middleware: 1.0.6
     dev: true
     resolution:
-      integrity: sha512-3+86AgSzl18n5P1iUP9/lz3G3GMztCp+wxdDvVuNhx1sr1jE79GpYfKHL8k+Vht3N74K2n98CuAEw4YPJCYtDA==
+      integrity: sha512-13w1VhaghN+G1rYjkBPgN/GFRoHd9uI2fwK9cSKvLutdmZ22L9iicFEvt69by40DP2I6uNcClaGTyPY6nYhIgQ==
   /@types/webpack-dev-server/3.11.2_debug@4.3.1:
     dependencies:
       '@types/connect-history-api-fallback': 1.3.3
@@ -4963,7 +4956,7 @@ packages:
       integrity: sha512-7Eczs8gIPDrVzT+EksYBcupqMyxSHXXrHOLRRxU2/DicV8789MRBRR8+Hc2uWzUupOs4YS4JzBmBxjjCVBxD/g==
   /faye-websocket/0.10.0:
     dependencies:
-      websocket-driver: 0.6.5
+      websocket-driver: 0.7.4
     dev: true
     engines:
       node: '>=0.4.0'
@@ -5184,7 +5177,7 @@ packages:
       integrity: sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
   /follow-redirects/1.13.3_debug@4.3.1:
     dependencies:
-      debug: 4.3.1
+      debug: 4.3.1_supports-color@6.1.0
     dev: true
     engines:
       node: '>=4.0'
@@ -9495,7 +9488,7 @@ packages:
       node-sass: 5.0.0
       sass: 1.29.0
       schema-utils: 3.0.0
-      semver: 7.3.2
+      semver: 7.3.4
       webpack: 4.44.2
     dev: true
     engines:
@@ -9539,7 +9532,7 @@ packages:
       integrity: sha512-Vp1LcP4slTsTNLEiDkTcm8zGN/XYYrZz2BZybQbliWA8eXveqA/AxsEjllQTpJbg2MzCsx/qNO48sHdZtOaxTw==
   /sass/1.29.0:
     dependencies:
-      chokidar: 3.4.3
+      chokidar: 3.5.1
     dev: true
     engines:
       node: '>=8.9.0'
@@ -11127,7 +11120,7 @@ packages:
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
-      vue-style-loader: 4.1.2
+      vue-style-loader: 4.1.3
       vue-template-compiler: 2.6.12
       webpack: 4.44.2
     dev: true
@@ -11855,7 +11848,7 @@ packages:
 specifiers:
   '@fortawesome/fontawesome-free': 5.15.3
   '@mdi/font': 5.9.55
-  '@quasar/app': 2.2.1
+  '@quasar/app': 2.2.2
   '@quasar/extras': 1.9.19
   '@vue/cli-plugin-babel': 4.5.12
   '@vue/cli-plugin-eslint': 4.5.12
