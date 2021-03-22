@@ -5177,7 +5177,7 @@ packages:
       integrity: sha512-DUgl6+HDzB0iEptNQEXLx/KhTmDb8tZUHSeLqpnjpknR70H0nC2t9N73BK6fN4hOvJ84pKlIQVQ4k5FFlBedKA==
   /follow-redirects/1.13.3_debug@4.3.1:
     dependencies:
-      debug: 4.3.1_supports-color@6.1.0
+      debug: 4.3.1
     dev: true
     engines:
       node: '>=4.0'
